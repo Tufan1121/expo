@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <com.github.snowdream.android.widget.SmartImageView
+        android:id="@+id/imgver"
+        android:layout_width="113dp"
+        android:layout_height="139dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_clave_col"
+        app:layout_constraintVertical_bias="0.956" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="44dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="invisible"
+        app:layout_constraintGuide_begin="91dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="83dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="61dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="173dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="146dp" />
+
+    <TextView
+        android:id="@+id/txtclient"
+        android:layout_width="180dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="212dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/oswald_light"
+        android:text="TextView"
+        android:textColor="@color/colorAccent"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_clave_col"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/oswald_light"
+        android:text="TextView"
+        android:textAlignment="textEnd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/txtclient"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvduracion"
+        android:layout_width="wrap_content"
+        android:layout_height="12dp"
+        android:layout_marginStart="144dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="8dp"
+        android:text="Medida"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/txt_medida_col"
+        android:layout_width="67dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/oswald_light"
+        android:text="TextView"
+        app:layout_constraintEnd_toStartOf="@+id/txtclient"
+        app:layout_constraintHorizontal_bias="0.967"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvduracion" />
+
+    <TextView
+        android:id="@+id/txt_stok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="132dp"
+        android:layout_marginTop="48dp"
+        android:fontFamily="@font/oswald_light"
+        android:text="TextView"
+        android:textColor="@color/colorAccent"
+        app:layout_constraintStart_toEndOf="@+id/txt_precio2"
+        app:layout_constraintTop_toTopOf="@+id/guideline2" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="124dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="8dp"
+        android:text="Existencias"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.867"
+        app:layout_constraintStart_toStartOf="@+id/guideline7"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView26"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/oswald_light"
+        android:text="Bodega 1"
+        android:textSize="9sp"
+        android:visibility="invisible"
+        tools:layout_editor_absoluteX="224dp"
+        tools:layout_editor_absoluteY="174dp" />
+
+    <TextView
+        android:id="@+id/textView27"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/oswald_light"
+        android:text="Bodega 2"
+        android:textSize="9sp"
+        android:visibility="invisible"
+        tools:layout_editor_absoluteX="272dp"
+        tools:layout_editor_absoluteY="183dp" />
+
+    <TextView
+        android:id="@+id/textView28"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/oswald_light"
+        android:text="Bodega 3"
+        android:textSize="9sp"
+        android:visibility="invisible"
+        tools:layout_editor_absoluteX="224dp"
+        tools:layout_editor_absoluteY="190dp" />
+
+    <TextView
+        android:id="@+id/txt_bodega1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/oswald_light"
+        android:text="0"
+        android:textColor="@color/colorAccent"
+        android:textSize="10sp"
+        android:visibility="invisible"
+        tools:layout_editor_absoluteX="259dp"
+        tools:layout_editor_absoluteY="157dp" />
+
+    <TextView
+        android:id="@+id/txt_bodega2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/oswald_light"
+        android:text="0"
+        android:textColor="@color/colorAccent"
+        android:textSize="10sp"
+        android:visibility="invisible"
+        tools:layout_editor_absoluteX="267dp"
+        tools:layout_editor_absoluteY="183dp" />
+
+    <TextView
+        android:id="@+id/txt_bodega3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/oswald_light"
+        android:text="0"
+        android:textColor="@color/colorAccent"
+        android:textSize="10sp"
+        android:visibility="invisible"
+        tools:layout_editor_absoluteX="224dp"
+        tools:layout_editor_absoluteY="173dp" />
+
+    <TextView
+        android:id="@+id/textView29"
+        android:layout_width="47dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginBottom="108dp"
+        android:fontFamily="@font/oswald_light"
+        android:text="Precio Lista"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_medida_col" />
+
+    <TextView
+        android:id="@+id/textView30"
+        android:layout_width="51dp"
+        android:layout_height="14dp"
+        android:layout_marginStart="136dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/oswald_light"
+        android:text="Precio Expo"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline5"
+        app:layout_constraintVertical_bias="0.17" />
+
+    <TextView
+        android:id="@+id/textView31"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="136dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/oswald_light"
+        android:text="Precio Mayoreo"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline5"
+        app:layout_constraintVertical_bias="0.573" />
+
+    <org.fabiomsr.moneytextview.MoneyTextView
+        android:id="@+id/txt_precio1"
+        android:layout_width="60dp"
+        android:layout_height="10dp"
+        android:layout_marginStart="12dp"
+
+        android:layout_marginTop="4dp"
+        android:textAlignment="center"
+        android:textColor="@color/colorAccent"
+        android:textSize="12sp"
+        app:baseTextColor="@color/colorAccent"
+        app:baseTextSize="9sp"
+        app:decimalSeparator="."
+        app:layout_constraintStart_toEndOf="@+id/imgver"
+        app:layout_constraintTop_toBottomOf="@+id/textView29"
+        app:symbol="$" />
+
+    <org.fabiomsr.moneytextview.MoneyTextView
+        android:id="@+id/txt_precio2"
+        android:layout_width="60dp"
+        android:layout_height="10dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="104dp"
+
+        android:textAlignment="center"
+        android:textColor="@color/colorAccent"
+        app:baseTextColor="@color/colorAccent"
+        app:baseTextSize="9sp"
+        app:decimalSeparator="."
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:symbol="$" />
+
+    <org.fabiomsr.moneytextview.MoneyTextView
+        android:id="@+id/txt_precio3"
+        android:layout_width="60dp"
+        android:layout_height="10dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="132dp"
+
+        android:textAlignment="center"
+
+        android:textColor="@color/colorAccent"
+        app:baseTextColor="@color/colorAccent"
+        app:baseTextSize="9sp"
+        app:decimalSeparator="."
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:symbol="$" />
+
+    <TextView
+        android:id="@+id/txtalmacen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="132dp"
+        android:layout_marginTop="82dp"
+        android:layout_marginEnd="126dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/oswald_light"
+        android:text="almacen"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView26"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imgver"
+        app:layout_constraintTop_toBottomOf="@+id/txtclient" />
+
+
+</android.support.constraint.ConstraintLayout>

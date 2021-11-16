@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".pedidos">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btn_nuevocliente"
+        android:layout_width="300dp"
+        android:layout_height="140dp"
+        android:background="@drawable/default_scroll_handle_left"
+        android:backgroundTint="@color/colorAccent"
+        android:drawableRight="@mipmap/usuario"
+        android:fontFamily="@font/oswald_light"
+        android:text="Cliente Nuevo"
+        android:textColor="@android:color/background_light"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.07" />
+
+    <Button
+        android:id="@+id/btn_clienteexistente"
+        android:layout_width="300dp"
+        android:layout_height="140dp"
+        android:background="@drawable/default_scroll_handle_right"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:drawableRight="@mipmap/usuario"
+        android:fontFamily="@font/oswald_light"
+        android:text="Cliente Existente"
+        android:textColor="@android:color/background_light"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.929" />
+
+</android.support.constraint.ConstraintLayout>
