@@ -62,7 +62,7 @@ ArrayList<String> datos;
         this.datosmedida= datosmedida;
 
         //this.dadosimg = dadosimg;
-        inflater=(LayoutInflater)contexto.getSystemService(contexto.LAYOUT_INFLATER_SERVICE);
+        inflater=(LayoutInflater)contexto.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
     @Override
@@ -88,26 +88,26 @@ ArrayList<String> datos;
 
         final View vista = inflater.inflate(R.layout.elemento_lista, null);
 
-        TextView titulo = (TextView) vista.findViewById(R.id.txtclient);
-        TextView duracion = (TextView) vista.findViewById(R.id.tvduracion);
-        final TextView director = (TextView) vista.findViewById(R.id.txtclientRFC);
-        TextView mimedidatapete=(TextView)vista.findViewById(R.id.mimedida);
+        TextView titulo = vista.findViewById(R.id.txtclient);
+        TextView duracion = vista.findViewById(R.id.tvduracion);
+        final TextView director = vista.findViewById(R.id.txtclientRFC);
+        TextView mimedidatapete= vista.findViewById(R.id.mimedida);
         //final ImageView imagen = (ImageView) vista.findViewById(R.id.imagen);
-        smartImageView=(SmartImageView)vista.findViewById(R.id.imgver);
-        Button botonmas = (Button) vista.findViewById(R.id.mas);
-        final Button botonmenos = (Button) vista.findViewById(R.id.menos);
-        final CheckBox preciol = (CheckBox) vista.findViewById(R.id.checkBoxp);
-        final CheckBox precioe = (CheckBox) vista.findViewById(R.id.checkBox2);
-        final CheckBox preciom = (CheckBox) vista.findViewById(R.id.checkBox3);
+        smartImageView= vista.findViewById(R.id.imgver);
+        Button botonmas = vista.findViewById(R.id.mas);
+        final Button botonmenos = vista.findViewById(R.id.menos);
+        final CheckBox preciol = vista.findViewById(R.id.checkBoxp);
+        final CheckBox precioe = vista.findViewById(R.id.checkBox2);
+        final CheckBox preciom = vista.findViewById(R.id.checkBox3);
 
-        final MoneyTextView moneda1=(MoneyTextView)vista.findViewById(R.id.monedalista);
-        final MoneyTextView moneda2=(MoneyTextView)vista.findViewById(R.id.monedalista2);
-        final MoneyTextView moneda3=(MoneyTextView)vista.findViewById(R.id.monedalista3);
+        final MoneyTextView moneda1= vista.findViewById(R.id.monedalista);
+        final MoneyTextView moneda2= vista.findViewById(R.id.monedalista2);
+        final MoneyTextView moneda3= vista.findViewById(R.id.monedalista3);
         //appRutaservidor.IPIMGpedido=appRutaservidor.IPIMpedido;
-        final EditText masdescuanto=(EditText)vista.findViewById(R.id.masdescuento);
-        final Button aplka_descuento = (Button)vista.findViewById(R.id.btn_aplicardes);
-        final TextView cuantos = (TextView) vista.findViewById(R.id.txtcuantos);
-        RatingBar calificacion = (RatingBar) vista.findViewById(R.id.ratingBarPel);
+        final EditText masdescuanto= vista.findViewById(R.id.masdescuento);
+        final Button aplka_descuento = vista.findViewById(R.id.btn_aplicardes);
+        final TextView cuantos = vista.findViewById(R.id.txtcuantos);
+        RatingBar calificacion = vista.findViewById(R.id.ratingBarPel);
 
         cuantos.setText(listaConta.listacont.get(position));
 
@@ -119,13 +119,7 @@ ArrayList<String> datos;
         //duracion.setText(""+ datos.get(position));
         int botonmenosenable = Integer.parseInt(listaConta.listacont.get(position));
 
-        if (botonmenosenable == 1) {
-
-            botonmenos.setEnabled(false);
-        } else {
-            botonmenos.setEnabled(true);
-
-        }
+        botonmenos.setEnabled(botonmenosenable != 1);
 
 //*****************************************************************************************************************************
 //************checar imagen por escaneo de tapete solo vista

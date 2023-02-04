@@ -130,8 +130,8 @@ String pedidoverurl;
         protected void onPostExecute(String s) {
 
             Intent verpdfcreado = new Intent();
-            verpdfcreado.setDataAndType(Uri.parse(appRutaservidor.IP+"/pedidosexpo/"+pedidoverurl+".pdf"), "application/pdf");
-            startActivity(verpdfcreado);
+            //verpdfcreado.setDataAndType(Uri.parse(appRutaservidor.IP+"/pedidosexpo/"+pedidoverurl+".pdf"), "application/pdf");
+            //startActivity(verpdfcreado);
 
 
         }

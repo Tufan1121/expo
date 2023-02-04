@@ -31,6 +31,7 @@ import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
 public class pedidoestatusanticipo extends AppCompatActivity {
@@ -72,23 +73,23 @@ ObtenerWebService2 hiloconexion2;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pedidoestatusanticipo);
-        tituloexpo=(TextView)findViewById(R.id.txtTituloexpo);
-        seriepedido=(TextView)findViewById(R.id.txtpedido);
-        fechadelpedido=(TextView)findViewById(R.id.txt_fechapedido);
-        datoscliente=(TextView)findViewById(R.id.txt_datos_cliente);
-        listatapetesPedido=(ListView)findViewById(R.id.list_detalle_delpedido);
+        tituloexpo= findViewById(R.id.txtTituloexpo);
+        seriepedido= findViewById(R.id.txtpedido);
+        fechadelpedido= findViewById(R.id.txt_fechapedido);
+        datoscliente= findViewById(R.id.txt_datos_cliente);
+        listatapetesPedido= findViewById(R.id.list_detalle_delpedido);
         pedidoavtivo=(String)getIntent().getSerializableExtra("pedido");
-        salir=(Button)findViewById(R.id.salirdevista);
-        pagado=(MoneyTextView)findViewById(R.id.txt_money);
-        pagado2=(MoneyTextView)findViewById(R.id.txt_money2);
-        pagado3=(MoneyTextView)findViewById(R.id.txt_money3);
-        updatepago=(Button)findViewById(R.id.btn_guardapedido);
-        pasarA=(Spinner)findViewById(R.id.sp_envioaestatus);
+        salir= findViewById(R.id.salirdevista);
+        pagado= findViewById(R.id.txt_money);
+        pagado2= findViewById(R.id.txt_money2);
+        pagado3= findViewById(R.id.txt_money3);
+        updatepago= findViewById(R.id.btn_guardapedido);
+        pasarA= findViewById(R.id.sp_envioaestatus);
 
-        seriepedido.setText(pedidoavtivo.toString());
+        seriepedido.setText(pedidoavtivo);
 
         hiloconexion = new ObtenerWebService();
-        String cadenallamada=GET_BY_ID + "?pedido=" + pedidoavtivo.toString();
+        String cadenallamada=GET_BY_ID + "?pedido=" + pedidoavtivo;
         hiloconexion.execute(cadenallamada,"1");
         salir.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -119,7 +120,7 @@ ObtenerWebService2 hiloconexion2;
 
     private void actializapedido() {
         String actializaestadox="";
-        Toast.makeText(this,"tu id pedido es:"+idpedido.toString(),Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,"tu id pedido es:"+ idpedido,Toast.LENGTH_SHORT).show();
 
         if(pasarA.getSelectedItem().toString().trim().equalsIgnoreCase("01 Entregado en EXPO")){
             actializaestadox="1";
@@ -133,7 +134,7 @@ ObtenerWebService2 hiloconexion2;
 
         ObtenerWebService8 hilo = new ObtenerWebService8();
         String ancitipox2=Integer.toString(anticipoupdate2);
-        hilo.execute(UPDATEPedido,"4",idpedido,actializaestadox.toString(),ancitipox2.toString());
+        hilo.execute(UPDATEPedido,"4",idpedido, actializaestadox, ancitipox2);
 
     }
 
@@ -251,7 +252,7 @@ ObtenerWebService2 hiloconexion2;
 
             //resultado.setText(s);
 
-            if(s.toString()=="No hay alumnos"){
+            if(s =="No hay alumnos"){
                 tituloexpo.setText("No disponible");
                 seriepedido.setText("No disponible");
                 fechadelpedido.setText("No disponible");
@@ -259,10 +260,10 @@ ObtenerWebService2 hiloconexion2;
                 pagado.setAmount(0);
 
             }else{
-                tituloexpo.setText(titulo.toString());
+                tituloexpo.setText(titulo);
                 //seriepedido.setText(solicitaJSON.getJSONObject(i).getString("pedidos"));
-                fechadelpedido.setText(fecha.toString());
-                datoscliente.setText(datosclientescadena.toString());
+                fechadelpedido.setText(fecha);
+                datoscliente.setText(datosclientescadena);
                 int mitotalpgado=0;
                 int totalpedido=0;
                 totalpedido=mitotalpgado+Integer.parseInt(moneysrttotal);
@@ -272,7 +273,7 @@ ObtenerWebService2 hiloconexion2;
                 pagado2.setAmount(totalpedido);
                 pagado3.setAmount(anticipoupdate2);
                 hiloconexion2 = new ObtenerWebService2();
-                String cadenallamada2=GET_BY_ID2 + "?idpedido=" + idpedido.toString();
+                String cadenallamada2=GET_BY_ID2 + "?idpedido=" + idpedido;
                 hiloconexion2.execute(cadenallamada2,"1");
 
 
@@ -393,7 +394,7 @@ ObtenerWebService2 hiloconexion2;
 
             //resultado.setText(s);
 
-            if(s.toString()=="No hay alumnos"){
+            if(s =="No hay alumnos"){
                 listItems = new ArrayList<String>();
                 listItems.add("No hay Registros");
                 ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(pedidoestatusanticipo.this, android.R.layout.simple_list_item_1,listItems);
@@ -469,7 +470,7 @@ ObtenerWebService2 hiloconexion2;
                     // Envio los parámetros post.
                     OutputStream os = urlConn.getOutputStream();
                     BufferedWriter writer = new BufferedWriter(
-                            new OutputStreamWriter(os, "UTF-8"));
+                            new OutputStreamWriter(os, StandardCharsets.UTF_8));
                     writer.write(jsonParam.toString());
                     writer.flush();
                     writer.close();
@@ -541,7 +542,7 @@ ObtenerWebService2 hiloconexion2;
 
             finish();
                     */
-            Toast.makeText(pedidoestatusanticipo.this,s.toString(),Toast.LENGTH_SHORT).show();
+            Toast.makeText(pedidoestatusanticipo.this, s,Toast.LENGTH_SHORT).show();
             finish();
 
 

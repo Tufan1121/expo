@@ -16,6 +16,7 @@ import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 
 public class sesion {
     public static String UPDATEsesion = appRutaservidor.IP  + "/sesion.php";
@@ -68,7 +69,7 @@ public class sesion {
                     // Envio los parámetros post.
                     OutputStream os = urlConn.getOutputStream();
                     BufferedWriter writer = new BufferedWriter(
-                            new OutputStreamWriter(os, "UTF-8"));
+                            new OutputStreamWriter(os, StandardCharsets.UTF_8));
                     writer.write(jsonParam.toString());
                     writer.flush();
                     writer.close();

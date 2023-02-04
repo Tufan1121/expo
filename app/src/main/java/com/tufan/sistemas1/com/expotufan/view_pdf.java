@@ -15,7 +15,7 @@ public class view_pdf extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_pdf);
 
-        pdfView=(PDFView)findViewById(R.id.pdfView);
+        pdfView= findViewById(R.id.pdfView);
 
         Bundle bundle=getIntent().getExtras();
 

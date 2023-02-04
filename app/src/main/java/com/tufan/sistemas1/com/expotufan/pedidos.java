@@ -18,8 +18,8 @@ Button pasaclientesexistentes;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pedidos);
 
-        pasaclintesnuevos=(Button)findViewById(R.id.btn_nuevocliente);
-        pasaclientesexistentes=(Button)findViewById(R.id.btn_clienteexistente);
+        pasaclintesnuevos= findViewById(R.id.btn_nuevocliente);
+        pasaclientesexistentes= findViewById(R.id.btn_clienteexistente);
 
         pasaclientesexistentes.setOnClickListener(this);
         pasaclintesnuevos.setOnClickListener(this);

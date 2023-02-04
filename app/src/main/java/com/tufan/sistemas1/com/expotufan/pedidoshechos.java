@@ -15,9 +15,17 @@ Button cotizaexpo;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pedidoshechos);
-        enexpo=(Button)findViewById(R.id.btn_enexpo);
-        fueraexpo=(Button)findViewById(R.id.btn_fueradeexpo);
-        cotizaexpo=(Button)findViewById(R.id.btn_cotizaciones);
+        enexpo= findViewById(R.id.btn_enexpo);
+
+        //Pone invisible boton pedidos en expo
+        //03.02.2022
+        //CEB
+        enexpo.setVisibility(View.GONE);
+
+        fueraexpo= findViewById(R.id.btn_fueradeexpo);
+
+
+        cotizaexpo= findViewById(R.id.btn_cotizaciones);
 
         enexpo.setOnClickListener(this);
         fueraexpo.setOnClickListener(this);

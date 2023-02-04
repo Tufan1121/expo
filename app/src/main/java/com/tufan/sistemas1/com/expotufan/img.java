@@ -24,11 +24,11 @@ TextView medidaT;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_img);
 
-        smartImageView=(SmartImageView)findViewById(R.id.imgver);
-        nombreT=(TextView)findViewById(R.id.txtnombreT);
-        medidaT=(TextView)findViewById(R.id.txtmedidaT);
+        smartImageView= findViewById(R.id.imgver);
+        nombreT= findViewById(R.id.txtnombreT);
+        medidaT= findViewById(R.id.txtmedidaT);
 
-        String urlfinal=appRutaservidor.IPIMG+listaConta.imgver1.toString();
+        String urlfinal=appRutaservidor.IPIMG+ listaConta.imgver1;
         Rect rect=new Rect(smartImageView.getLeft(),smartImageView.getTop(),smartImageView.getRight(),smartImageView.getBottom());
         nombreT.setText(listaConta.nombresT);
         medidaT.setText(listaConta.medidasT);

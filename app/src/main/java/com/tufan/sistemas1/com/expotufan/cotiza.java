@@ -29,6 +29,7 @@ import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.util.regex.Pattern;
 
 public class cotiza extends AppCompatActivity implements View.OnClickListener{
@@ -67,13 +68,13 @@ EditText rfcct;
         setContentView(R.layout.activity_cotiza);
 
 
-        guardar=(Button)findViewById(R.id.btn_agregar);
-        nombrect=(EditText)findViewById(R.id.txt_nombre_user2);
-        apellidoct=(EditText)findViewById(R.id.txt_apellido2);
-        direccionct=(EditText)findViewById(R.id.txt_direccion2);
-        telefonoct=(EditText)findViewById(R.id.txt_telefono2);
-        correoct=(EditText)findViewById(R.id.txt_correoelectronico2);
-        rfcct=(EditText)findViewById(R.id.txt_rfc2);
+        guardar= findViewById(R.id.btn_agregar);
+        nombrect= findViewById(R.id.txt_nombre_user2);
+        apellidoct= findViewById(R.id.txt_apellido2);
+        direccionct= findViewById(R.id.txt_direccion2);
+        telefonoct= findViewById(R.id.txt_telefono2);
+        correoct= findViewById(R.id.txt_correoelectronico2);
+        rfcct= findViewById(R.id.txt_rfc2);
 
         contadoruser();
 
@@ -150,7 +151,7 @@ EditText rfcct;
     }
     public void insertBase(){
         hiloconexion = new cotiza.ObtenerWebService();
-        String i=listaConta.idusuariotufan.toString()+Integer.toString(clientenum);
+        String i= listaConta.idusuariotufan + clientenum;
 
         //*-*-*-*-*-*-*-*-*-*-*-*-*--*--*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-**-*-*-*-*
 
@@ -331,7 +332,7 @@ EditText rfcct;
                     // Envio los parámetros post.
                     OutputStream os = urlConn.getOutputStream();
                     BufferedWriter writer = new BufferedWriter(
-                            new OutputStreamWriter(os, "UTF-8"));
+                            new OutputStreamWriter(os, StandardCharsets.UTF_8));
                     writer.write(jsonParam.toString());
                     writer.flush();
                     writer.close();
@@ -403,7 +404,7 @@ EditText rfcct;
                     // Envio los parámetros post.
                     OutputStream os = urlConn.getOutputStream();
                     BufferedWriter writer = new BufferedWriter(
-                            new OutputStreamWriter(os, "UTF-8"));
+                            new OutputStreamWriter(os, StandardCharsets.UTF_8));
                     writer.write(jsonParam.toString());
                     writer.flush();
                     writer.close();
@@ -469,7 +470,7 @@ EditText rfcct;
                     // Envio los parámetros post.
                     OutputStream os = urlConn.getOutputStream();
                     BufferedWriter writer = new BufferedWriter(
-                            new OutputStreamWriter(os, "UTF-8"));
+                            new OutputStreamWriter(os, StandardCharsets.UTF_8));
                     writer.write(jsonParam.toString());
                     writer.flush();
                     writer.close();

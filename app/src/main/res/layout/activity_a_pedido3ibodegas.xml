@@ -30,7 +30,7 @@
         android:layout_marginTop="1dp"
         android:layout_marginEnd="8dp"
         android:fontFamily="@font/oswald_light"
-        android:text="Inventario Bodegas"
+        android:text="Inventario Bodegas # 2"
         android:textColor="@color/colorAccent"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"

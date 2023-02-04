@@ -33,6 +33,7 @@ import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.regex.Pattern;
 
@@ -73,15 +74,15 @@ EditText correo;
         setContentView(R.layout.activity_clientesnuevos);
 
 
-        guardar=(Button)findViewById(R.id.btn_agregar);
-        nombre=(EditText)findViewById(R.id.txt_nombre_user);
-        apellido=(EditText)findViewById(R.id.txt_apellido);
-        rfc=(EditText)findViewById(R.id.txt_rfc);
-        telefono=(EditText)findViewById(R.id.txt_telefono);
-        direccion=(EditText)findViewById(R.id.txt_direccion2);
-        correo=(EditText)findViewById(R.id.txt_correoelectronico);
-        usoCFDIvar=(Spinner)findViewById(R.id.spinnerusoCFDI);
-        rasonsocial=(Spinner)findViewById(R.id.spinnerRazonSocial);
+        guardar= findViewById(R.id.btn_agregar);
+        nombre= findViewById(R.id.txt_nombre_user);
+        apellido= findViewById(R.id.txt_apellido);
+        rfc= findViewById(R.id.txt_rfc);
+        telefono= findViewById(R.id.txt_telefono);
+        direccion= findViewById(R.id.txt_direccion2);
+        correo= findViewById(R.id.txt_correoelectronico);
+        usoCFDIvar= findViewById(R.id.spinnerusoCFDI);
+        rasonsocial= findViewById(R.id.spinnerRazonSocial);
         contadoruser();
 
         guardar.setOnClickListener(this);
@@ -164,7 +165,7 @@ EditText correo;
 }
     public void insertBase(){
         hiloconexion = new ObtenerWebService();
-        String i=listaConta.idusuariotufan.toString()+Integer.toString(clientenum);
+        String i= listaConta.idusuariotufan + clientenum;
         String textousoCFDI="";
         String textorasonsocial="";
 
@@ -359,7 +360,7 @@ EditText correo;
                     // Envio los parámetros post.
                     OutputStream os = urlConn.getOutputStream();
                     BufferedWriter writer = new BufferedWriter(
-                            new OutputStreamWriter(os, "UTF-8"));
+                            new OutputStreamWriter(os, StandardCharsets.UTF_8));
                     writer.write(jsonParam.toString());
                     writer.flush();
                     writer.close();
@@ -429,7 +430,7 @@ EditText correo;
                     // Envio los parámetros post.
                     OutputStream os = urlConn.getOutputStream();
                     BufferedWriter writer = new BufferedWriter(
-                            new OutputStreamWriter(os, "UTF-8"));
+                            new OutputStreamWriter(os, StandardCharsets.UTF_8));
                     writer.write(jsonParam.toString());
                     writer.flush();
                     writer.close();
@@ -495,7 +496,7 @@ EditText correo;
                     // Envio los parámetros post.
                     OutputStream os = urlConn.getOutputStream();
                     BufferedWriter writer = new BufferedWriter(
-                            new OutputStreamWriter(os, "UTF-8"));
+                            new OutputStreamWriter(os, StandardCharsets.UTF_8));
                     writer.write(jsonParam.toString());
                     writer.flush();
                     writer.close();

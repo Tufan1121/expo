@@ -18,12 +18,12 @@ import javax.mail.internet.MimeMessage;
 
 
 public class clsEnviaCorreo1 extends AsyncTask<Void,Void,Void> {
-    private Context contexto;
+    private final Context contexto;
     private Session De_Sesion;
 
-    private String A_Correo;
-    private String A_Asunto;
-    private String A_Mensaje;
+    private final String A_Correo;
+    private final String A_Asunto;
+    private final String A_Mensaje;
 
    public ProgressDialog progreso;
 

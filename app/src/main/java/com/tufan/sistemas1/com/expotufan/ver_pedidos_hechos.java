@@ -59,10 +59,10 @@ Button salirpedidos;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ver_pedidos_hechos);
-        pedidobuscar=(Button)findViewById(R.id.btn_findpedido);
-        txtbuscapepdido=(EditText)findViewById(R.id.txtfindpedido);
-        listatodoslospedidos=(ListView)findViewById(R.id.lista_pedidos);
-        optbuscar=(Spinner)findViewById(R.id.sp_findP);
+        pedidobuscar= findViewById(R.id.btn_findpedido);
+        txtbuscapepdido= findViewById(R.id.txtfindpedido);
+        listatodoslospedidos= findViewById(R.id.lista_pedidos);
+        optbuscar= findViewById(R.id.sp_findP);
 
         pedidobuscar.setOnClickListener(this);
         //9+8++8+8+8+8+8++8+8+8+8+8+8+8+8
@@ -129,7 +129,7 @@ Button salirpedidos;
                         listItems.clear();
 
                         hiloconexion2 = new ver_pedidos_hechos.ObtenerWebService();
-                        String cadenallamada2=GET_BY_ID + "?pedido=" + txtbuscapepdido.getText()+"&expo="+listaConta.id_expo.toString();
+                        String cadenallamada2=GET_BY_ID + "?pedido=" + txtbuscapepdido.getText()+"&expo="+ listaConta.id_expo;
                         hiloconexion2.execute(cadenallamada2,"1");
                     }
 
@@ -140,7 +140,7 @@ Button salirpedidos;
         });
         //8+8+8+8+8+8+8+8+8+8+8+8+8+8+8+8
         hiloconexion = new ObtenerWebService();
-        hiloconexion.execute(GET+"?idexpo="+listaConta.id_expo.toString(),"1");
+        hiloconexion.execute(GET+"?idexpo="+ listaConta.id_expo,"1");
 
     }
 
@@ -168,7 +168,7 @@ Button salirpedidos;
                             listItems.clear();
 
                             hiloconexion2 = new ObtenerWebService();
-                            String cadenallamada2=GET_BY_ID2 + "?name=" + txtbuscapepdido.getText()+"&expo="+listaConta.id_expo.toString();
+                            String cadenallamada2=GET_BY_ID2 + "?name=" + txtbuscapepdido.getText()+"&expo="+ listaConta.id_expo;
                             hiloconexion2.execute(cadenallamada2,"1");
 
                         }else{
@@ -183,7 +183,7 @@ Button salirpedidos;
                             listItems.clear();
 
                             hiloconexion2 = new ObtenerWebService();
-                            String cadenallamada2=GET_BY_ID + "?pedido=" + txtbuscapepdido.getText()+"&expo="+listaConta.id_expo.toString();
+                            String cadenallamada2=GET_BY_ID + "?pedido=" + txtbuscapepdido.getText()+"&expo="+ listaConta.id_expo;
                             hiloconexion2.execute(cadenallamada2,"1");
 
                         }
@@ -311,7 +311,7 @@ Button salirpedidos;
 
             //resultado.setText(s);
 
-            if(s.toString()=="No hay alumnos"){
+            if(s =="No hay alumnos"){
                 listItems = new ArrayList<String>();
                 listItems.add("No hay Registros");
                 ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(ver_pedidos_hechos.this, android.R.layout.simple_list_item_1,listItems);

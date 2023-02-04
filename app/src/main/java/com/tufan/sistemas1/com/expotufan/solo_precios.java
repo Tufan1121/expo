@@ -134,19 +134,19 @@ ArrayList<String> pruebaclave= new ArrayList<String>();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_solo_precios);
         //intancia de botones con variables
-        escaner=(Button)findViewById(R.id.btn_escanear);
-        nombretapetes=(TextView)findViewById(R.id.txt_nombre);
-        clavetapete=(TextView)findViewById(R.id.txt_clave);
-        medidatapete=(TextView)findViewById(R.id.txt_medidas);
-        preciolista=(MoneyTextView) findViewById(R.id.txt_precioLista);
-        precioexpo=(MoneyTextView) findViewById(R.id.txt_precioExpo);
-        preciomayoreo=(MoneyTextView) findViewById(R.id.txt_precioMayoreo);
-        imagentapete=(ImageView)findViewById(R.id.img_tapete);
-        existencias=(TextView)findViewById(R.id.txtexistencias);
-        buscarclavemanual=(EditText)findViewById(R.id.txt_clave_manual);
-        claveboton=(Button)findViewById(R.id.btn_buscar);
-        lista_mas_t=(ListView)findViewById(R.id.lista_mas);
-        ymas=(TextView)findViewById(R.id.txt_ymas);
+        escaner= findViewById(R.id.btn_escanear);
+        nombretapetes= findViewById(R.id.txt_nombre);
+        clavetapete= findViewById(R.id.txt_clave);
+        medidatapete= findViewById(R.id.txt_medidas);
+        preciolista= findViewById(R.id.txt_precioLista);
+        precioexpo= findViewById(R.id.txt_precioExpo);
+        preciomayoreo= findViewById(R.id.txt_precioMayoreo);
+        imagentapete= findViewById(R.id.img_tapete);
+        existencias= findViewById(R.id.txtexistencias);
+        buscarclavemanual= findViewById(R.id.txt_clave_manual);
+        claveboton= findViewById(R.id.btn_buscar);
+        lista_mas_t= findViewById(R.id.lista_mas);
+        ymas= findViewById(R.id.txt_ymas);
 
 
         final Activity activity = this;
@@ -236,7 +236,7 @@ ArrayList<String> pruebaclave= new ArrayList<String>();
 
                     */
                     hiloconexion2clave = new solo_precios.ObtenerWebServiceclave();
-                    String cadenallamada2clave = GET_BY_IDclave + "?tabla=spock"+almacen1+"&clave=" + claveendatalle.toString();
+                    String cadenallamada2clave = GET_BY_IDclave + "?tabla=spock"+almacen1+"&clave=" + claveendatalle;
                     hiloconexion2clave.execute(cadenallamada2clave,"2");
                     progress.dismiss();
                 }
@@ -319,7 +319,7 @@ ArrayList<String> pruebaclave= new ArrayList<String>();
                     //String claveconsulta=clavetapete.getText().toString();
                     hiloconexion2clave = new solo_precios.ObtenerWebServiceclave();
                     //String cadenallamada2clave = GET_BY_IDclave + "?clave=" + claveendatalle.toString();
-                    String cadenallamada2clave = GET_BY_IDclave + "?tabla=spock"+almacen1+"&clave=" + claveendatalle.toString();
+                    String cadenallamada2clave = GET_BY_IDclave + "?tabla=spock"+almacen1+"&clave=" + claveendatalle;
                     hiloconexion2clave.execute(cadenallamada2clave,"2");
 
 
@@ -416,7 +416,7 @@ ArrayList<String> pruebaclave= new ArrayList<String>();
 
                     String claveconsulta=clavetapete.getText().toString();
                     hiloconexion2clave = new solo_precios.ObtenerWebServiceclave();
-                    String cadenallamada2clave = GET_BY_IDclave + "?tabla=spock"+almacen1+"&clave=" + claveendatalle.toString();
+                    String cadenallamada2clave = GET_BY_IDclave + "?tabla=spock"+almacen1+"&clave=" + claveendatalle;
                     //String cadenallamada2clave = GET_BY_IDclave + "?clave=" + claveendatalle.toString();
                     hiloconexion2clave.execute(cadenallamada2clave,"2");
                     progress.dismiss();
@@ -435,10 +435,10 @@ ArrayList<String> pruebaclave= new ArrayList<String>();
                     imagentapete.setImageBitmap(null);
 
                     // Toast.makeText(this,"resultado "+cuantaspiesastengo,Toast.LENGTH_LONG).show();
-                    masconsulta=claveendatalle.toString();
+                    masconsulta= claveendatalle;
                     String claveconsulta=clavetapete.getText().toString();
                     hiloconexion2 = new solo_precios.ObtenerWebService();
-                    String cadenallamada2 = GET_BY_IDdosdos + "?clave=" + claveendatalle.toString();
+                    String cadenallamada2 = GET_BY_IDdosdos + "?clave=" + claveendatalle;
                     hiloconexion2.execute(cadenallamada2,"2");
                     progress.dismiss();
                 }
@@ -457,7 +457,7 @@ ArrayList<String> pruebaclave= new ArrayList<String>();
     private void relacionados(String subcatedoria) {
 
         hiloconexion3 = new ObtenerWebService3();
-        String cadenallamada3=GET_BY_ID3 + "?idsubcategoria=" + subcatedoria.toString();
+        String cadenallamada3=GET_BY_ID3 + "?idsubcategoria=" + subcatedoria;
         hiloconexion3.execute(cadenallamada3,"1");
 
 
@@ -465,7 +465,7 @@ ArrayList<String> pruebaclave= new ArrayList<String>();
     private void relacionadosclave(String subcatedoria) {
 
         hiloconexion3 = new ObtenerWebService3();
-        String cadenallamada3=GET_BY_ID3 + "?idsubcategoria=" + subcatedoria.toString();
+        String cadenallamada3=GET_BY_ID3 + "?idsubcategoria=" + subcatedoria;
         hiloconexion3.execute(cadenallamada3,"1");
 
 
@@ -558,7 +558,7 @@ ArrayList<String> pruebaclave= new ArrayList<String>();
 
         @Override
         protected void onPostExecute(String s) {
-            if(s.toString().trim().equalsIgnoreCase("")){
+            if(s.trim().equalsIgnoreCase("")){
 
                 Toast.makeText(solo_precios.this,"No se encuentra en tu inventario",Toast.LENGTH_LONG).show();
                 pruebalista = new ArrayList<String>();
@@ -569,7 +569,7 @@ ArrayList<String> pruebaclave= new ArrayList<String>();
                 // String claveconsulta=clavetapete.getText().toString();
 
                 hiloconexion2clave = new solo_precios.ObtenerWebServiceclave();
-                String cadenallamada2clave = GET_BY_IDclave2 + "?tabla=spock"+almacen1+"&clave=" + masconsulta.toString();
+                String cadenallamada2clave = GET_BY_IDclave2 + "?tabla=spock"+almacen1+"&clave=" + masconsulta;
                 //String cadenallamada2clave = GET_BY_IDclave + "?clave=" + claveendatalle.toString();
                 hiloconexion2clave.execute(cadenallamada2clave,"2");
 
@@ -743,7 +743,7 @@ ArrayList<String> pruebaclave= new ArrayList<String>();
 
             //resultado.setText(s);
 
-            if(s.toString()=="No hay alumnos"){
+            if(s =="No hay alumnos"){
 
                 pruebalista = new ArrayList<String>();
                 pruebalista.add("No hay Registros");
@@ -891,7 +891,7 @@ ArrayList<String> pruebaclave= new ArrayList<String>();
 
         @Override
         protected void onPostExecute(String s) {
-            if(s.toString().trim().equalsIgnoreCase("")){
+            if(s.trim().equalsIgnoreCase("")){
 
                 pruebalista = new ArrayList<String>();
                 pruebalista.add("No hay Registros");
@@ -1075,7 +1075,7 @@ ArrayList<String> pruebaclave= new ArrayList<String>();
 
             //resultado.setText(s);
 
-            if(s.toString()=="No hay alumnos"){
+            if(s =="No hay alumnos"){
 
                 pruebalista = new ArrayList<String>();
                 pruebalista.add("No hay Registros");

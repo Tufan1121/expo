@@ -45,11 +45,9 @@
 
     <string-array name="estatus">
         <item>Selecciona Estatus del Pedido</item>
-        <item>01 Entregado en EXPO</item>
         <item>02 Pendiente Pago (Anticipo)</item>
         <item>03 Pagado Foráneo</item>
         <item>04 Pagado (Recoger en tienda)</item>
-        <item>Cotización</item>
     </string-array>
 
     <string-array name="estatusenvio">
@@ -70,4 +68,25 @@
     <string name="title_activity_reporte_ventas">reporte_ventas</string>
     <string name="busqueda_global">Busqueda Global</string>
 
+    <string-array name="Regimen">
+        <item>601-General de Ley Personas Morales</item>
+        <item>603-Personas Morales con Fines no Lucrativos</item>
+        <item>605-Sueldos y Salarios e Ingresos Asimilados a Salarios</item>
+        <item>606-Arrendamiento</item>
+        <item>607-Régimen de Enajenación o Adquisición de Bienes</item>
+        <item>608-Demás ingresos</item>
+        <item>610-Residentes en el Extranjero sin Establecimiento Permanente en México</item>
+        <item>611-Ingresos por Dividendos (socios y accionistas)</item>
+        <item>612-Personas Físicas con Actividades Empresariales y Profesionales</item>
+        <item>614-Ingresos por intereses</item>
+        <item>615-Régimen de los ingresos por obtención de premios</item>
+        <item>616-Sin obligaciones fiscales</item>
+        <item>620-Sociedades Cooperativas de Producción que optan por diferir sus ingresos</item>
+        <item>621-Incorporación Fiscal</item>
+        <item>622-Actividades Agrícolas, Ganaderas, Silvícolas y Pesqueras</item>
+        <item>623-Opcional para Grupos de Sociedades</item>
+        <item>624-Coordinados</item>
+        <item>625-Régimen de las Actividades Empresariales con ingresos a través de Plataformas Tecnológicas</item>
+    </string-array>
 </resources>
+

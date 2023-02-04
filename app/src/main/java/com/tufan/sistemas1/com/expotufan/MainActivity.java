@@ -49,14 +49,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
 
-        soloprecios=(Button)findViewById(R.id.btn_precio);
-        pedidos=(Button)findViewById(R.id.btn_pedido);
-        verpedidoshechos=(Button)findViewById(R.id.btn_ver_pedidos);
-        salir=(Button)findViewById(R.id.tbn_salir);
-        visita=(Button)findViewById(R.id.visitante);
-        inventariotodo=(Button)findViewById(R.id.btn_inventario_todo);
+        soloprecios= findViewById(R.id.btn_precio);
+        pedidos= findViewById(R.id.btn_pedido);
+        verpedidoshechos= findViewById(R.id.btn_ver_pedidos);
+        salir= findViewById(R.id.tbn_salir);
+        visita= findViewById(R.id.visitante);
+        inventariotodo= findViewById(R.id.btn_inventario_todo);
         //cotiza=(Button)findViewById(R.id.btn_cotizar);
-        reporte_ventas=(Button)findViewById(R.id.btn_reporte_ventas);
+        reporte_ventas= findViewById(R.id.btn_reporte_ventas);
 
 
         soloprecios.setOnClickListener(this);
@@ -69,12 +69,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         reporte_ventas.setOnClickListener(this);
         //Toast.makeText(this,"nombre expo"+listaConta.nombre_Expo,Toast.LENGTH_SHORT).show();
 
-        leertxt();
+        //Valida que el camvpo id_expo no este vacio
+        //03.02.2022
+        //HVS
+            leertxt(); // quitamos el if para forzar que lea denuevo los datos
+
+
 
     }
 
    public void leertxt(){
-
+        // cuando llegue aqui va a llamar todas las variables que tenemos en el txt
+       // con esto aseguras que todos los datos van a jalar..
       String pass = "";
       String expo="";
       String idexpo="";
@@ -149,7 +155,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
        {
            Log.e("Ficheros", "Error al leer fichero desde la memoria interna");
        }
-
+       listaConta.id_expo= idexpo;
        listaConta.almacen1=almacen1;
        listaConta.idusuariotufan=idusuario;
        listaConta.encabrzadopedido=encabezado;

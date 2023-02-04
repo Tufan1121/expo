@@ -90,14 +90,14 @@ private  int total=0;
 
         //pesos.add("0");
         char x;
-        txtpasa=(TextView)findViewById(R.id.txt_pasa);
-        escanerclaves=(Button)findViewById(R.id.btn_codigoxd);
-        hacerpedido=(Button)findViewById(R.id.btn_generarpedido);
-        mlista=(ListView)findViewById(R.id.milista);
-        totalprecioxd=(MoneyTextView) findViewById(R.id.totalxd);
-        btninsert=(Button)findViewById(R.id.btn_insertM);
-        clavemanual=(EditText)findViewById(R.id.txtagregarmanual);
-        invbodegas=(Button)findViewById(R.id.btn_busca_inv_ibodegas);
+        txtpasa= findViewById(R.id.txt_pasa);
+        escanerclaves= findViewById(R.id.btn_codigoxd);
+        hacerpedido= findViewById(R.id.btn_generarpedido);
+        mlista= findViewById(R.id.milista);
+        totalprecioxd= findViewById(R.id.totalxd);
+        btninsert= findViewById(R.id.btn_insertM);
+        clavemanual= findViewById(R.id.txtagregarmanual);
+        invbodegas= findViewById(R.id.btn_busca_inv_ibodegas);
         //inventarioAll=(Button)findViewById(R.id.btn_inventario);
 
         if(listaConta.clavetapete==null){
@@ -560,7 +560,7 @@ private  int total=0;
             }else{
 //******************************************************************************************************Toast.makeText(this,"resultado "+result.getContents(),Toast.LENGTH_LONG).show();
                 int checarlista=arrayList.size();
-                String claveconsulta=result.getContents().toString();
+                String claveconsulta= result.getContents();
 
                 validastock.checartapetelarga(claveconsulta);
 
@@ -604,7 +604,7 @@ private  int total=0;
                                 i++;
                             }
                             i=0;
-                            claveconsulta=claveconsulta.toString();
+                            claveconsulta= claveconsulta;
 
                             while(i<checarlista){
                                 String claveenlista=arrayList.get(i);
@@ -764,7 +764,7 @@ private  int total=0;
 
 
                 //clavemanual.setText("");
-                arrayList.add(s.toString() );//clave del tapete
+                arrayList.add(s);//clave del tapete
                 arrayListdes.add(av_descripcion);//descripcion del tapete
                 arrayListprecio.add(av_precio);//predio 1 del tapete
                 arrayListprecioexpo.add(av_precioe);//precio expo del tapete
@@ -773,7 +773,7 @@ private  int total=0;
                 listaConta.listacont.add("1");
 
                 //txtlista.setText(arrayList.toString());
-                al.add(s.toString());
+                al.add(s);
                 pesos.add(av_precio);
 
                 listaConta.precioXtapete.add(av_precio);//ya
@@ -781,8 +781,8 @@ private  int total=0;
                 listaConta.precioXtapeteMa.add(av_preciom);
                 listaConta.precioseleccionado.add(av_precio);
                 listaConta.opclist.add("1");
-                listaConta.imgserver.add(appRutaservidor.IPIMGpedido+av_imagen.toString());
-                listaConta.clavetapete.add(s.toString());
+                listaConta.imgserver.add(appRutaservidor.IPIMGpedido+ av_imagen);
+                listaConta.clavetapete.add(s);
                 listaConta.medidastapete.add(av_medias);
                 listaConta.descripciontapete.add(av_descripcion);
                 listaConta.clavelarga.add(av_clavelarga);
@@ -999,7 +999,7 @@ private  int total=0;
 
 
                 //clavemanual.setText("");
-                arrayList.add(s.toString() );//clave del tapete
+                arrayList.add(s);//clave del tapete
                 arrayListdes.add(av_descripcion);//descripcion del tapete
                 arrayListprecio.add(av_precio);//predio 1 del tapete
                 arrayListprecioexpo.add(av_precioe);//precio expo del tapete
@@ -1008,7 +1008,7 @@ private  int total=0;
                 listaConta.listacont.add("1");
 
                 //txtlista.setText(arrayList.toString());
-                al.add(s.toString());
+                al.add(s);
                 pesos.add(av_precio);
 
                 listaConta.precioXtapete.add(av_precio);//ya
@@ -1016,8 +1016,8 @@ private  int total=0;
                 listaConta.precioXtapeteMa.add(av_preciom);
                 listaConta.precioseleccionado.add(av_precio);
                 listaConta.opclist.add("1");
-                listaConta.imgserver.add(appRutaservidor.IPIMGpedido+av_imagen.toString());
-                listaConta.clavetapete.add(s.toString());
+                listaConta.imgserver.add(appRutaservidor.IPIMGpedido+ av_imagen);
+                listaConta.clavetapete.add(s);
                 listaConta.medidastapete.add(av_medias);
                 listaConta.descripciontapete.add(av_descripcion);
                 listaConta.clavelarga.add(av_clavelarga);

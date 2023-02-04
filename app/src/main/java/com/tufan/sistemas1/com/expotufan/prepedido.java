@@ -20,31 +20,29 @@ String xx;
         Intent intento=getIntent();
         Bundle extras = intento.getExtras();
         //String dato;
-        if(extras != null){
+        if(extras != null) {
             xx = extras.getString("DATO");
-
-
         }
 
-        redireccionarinv=(Button)findViewById(R.id.btn_donde);
-        selectestatuspedido=(Spinner)findViewById(R.id.spinner_donde);
+        redireccionarinv= findViewById(R.id.btn_donde);
+        selectestatuspedido= findViewById(R.id.spinner_donde);
 
 
         redireccionarinv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                if(selectestatuspedido.getSelectedItem().toString().trim().equalsIgnoreCase("Selecciona Estatus del Pedido")){
+                if(selectestatuspedido.getSelectedItem().toString().trim().equalsIgnoreCase("Selecciona Estatus del Pedido Con Inventario en Bodegas")){
 
-                    Toast.makeText(prepedido.this, "Selecciona donde se va a entregar el epdido",Toast.LENGTH_LONG).show();
+                    Toast.makeText(prepedido.this, "Selecciona donde se va a entregar el pedido",Toast.LENGTH_LONG).show();
                     selectestatuspedido.setFocusable(true);
                     selectestatuspedido.setFocusable(true);
                     selectestatuspedido.setFocusableInTouchMode(true);
                     selectestatuspedido.requestFocus();
 
                 }else if(selectestatuspedido.getSelectedItem().toString().trim().equalsIgnoreCase("01 Entregado en EXPO")){
-                    listaConta.estatusselect="1";
-                    //Toast.makeText(prepedido.this,"se va a ir a inventario de expo ",Toast.LENGTH_SHORT).show();
+                          listaConta.estatusselect="1";
+                    Toast.makeText(prepedido.this,"se va a ir a inventario de expo ",Toast.LENGTH_SHORT).show();
                     Intent intento = new Intent(prepedido.this,listatapetes.class);
                     intento.putExtra("DATO",xx);
                     startActivity(intento);
@@ -75,11 +73,11 @@ String xx;
                     }
 
                     if(selectestatuspedido.getSelectedItem().toString().trim().equalsIgnoreCase("Cotización")){
-                        listaConta.estatusselect="8";
-                        Intent intento = new Intent(prepedido.this,listatapetes3.class);
-                        intento.putExtra("DATO",xx);
-                        startActivity(intento);
-                        finish();
+                       listaConta.estatusselect="8";
+                       Intent intento = new Intent(prepedido.this,listatapetes3.class);
+                       intento.putExtra("DATO",xx);
+                       startActivity(intento);
+                       finish();
                     }
 
                     /*Intent intento = new Intent(prepedido.this,listatapetes.class);

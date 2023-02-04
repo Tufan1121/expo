@@ -59,37 +59,37 @@ ArrayList<String> listad= new ArrayList<String>();
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reporte_ventas);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        titulod=(TextView)findViewById(R.id.txt_x_dia);
-        listView=(ListView)findViewById(R.id.listapagosdia);
-        moneyTextViewdia=(MoneyTextView)findViewById(R.id.totalventasdia);
+        titulod= findViewById(R.id.txt_x_dia);
+        listView= findViewById(R.id.listapagosdia);
+        moneyTextViewdia= findViewById(R.id.totalventasdia);
 
         //*-*--*-*-*--*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*--*-*-*-*-*--*-*-*--*-*-*-*--*-*-*-
         String fecha=(String)getIntent().getSerializableExtra("DATO");
 
-        titulod.setText("Total del día: "+fecha.toString());
+        titulod.setText("Total del día: "+ fecha);
 
 
         hiloconexion = new ObtenerWebService();
-        String cadenallamada=GET_BY_ID + "?fecha=" + fecha.toString();
+        String cadenallamada=GET_BY_ID + "?fecha=" + fecha;
         hiloconexion.execute(cadenallamada,"1");
 
     }
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
@@ -139,7 +139,7 @@ ArrayList<String> listad= new ArrayList<String>();
 
         }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
@@ -259,7 +259,7 @@ ArrayList<String> listad= new ArrayList<String>();
 
             //resultado.setText(s);
 
-            if(s.toString()=="No hay alumnos"){
+            if(s =="No hay alumnos"){
                 listad = new ArrayList<String>();
                 listad.add("No hay Registros");
                 ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(reporte_ventas.this, android.R.layout.simple_list_item_1,listad);

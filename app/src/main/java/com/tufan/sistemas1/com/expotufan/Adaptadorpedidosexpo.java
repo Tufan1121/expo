@@ -53,7 +53,7 @@ public class Adaptadorpedidosexpo extends BaseAdapter{
         this.endatostotalcompra=endatostotalcompra;
 
         //this.dadosimg = dadosimg;
-        inflater=(LayoutInflater)contexto.getSystemService(contexto.LAYOUT_INFLATER_SERVICE);
+        inflater=(LayoutInflater)contexto.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
     @Override
@@ -78,10 +78,10 @@ public class Adaptadorpedidosexpo extends BaseAdapter{
     public View getView(final int position, View convertView, ViewGroup parent) {
 
         final View vistaxpedido = inflater.inflate(R.layout.elemento_listapedido, null);
-        TextView enpedido=(TextView)vistaxpedido.findViewById(R.id.txtclient);
-        TextView enfecha=(TextView)vistaxpedido.findViewById(R.id.entxtfecha);
-        TextView ennombrecliente=(TextView)vistaxpedido.findViewById(R.id.txtclientRFC);
-        MoneyTextView tcompra=(MoneyTextView)vistaxpedido.findViewById(R.id.totalcompra);
+        TextView enpedido= vistaxpedido.findViewById(R.id.txtclient);
+        TextView enfecha= vistaxpedido.findViewById(R.id.entxtfecha);
+        TextView ennombrecliente= vistaxpedido.findViewById(R.id.txtclientRFC);
+        MoneyTextView tcompra= vistaxpedido.findViewById(R.id.totalcompra);
 
         enpedido.setText(endatospedido.get(position));
         enfecha.setText(endatosfecha.get(position));

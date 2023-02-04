@@ -62,11 +62,11 @@ Button pedidobuscar;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ver_pedidos_hechosibodegascotiza);
-        pedidobuscar=(Button)findViewById(R.id.btn_findpedido);
+        pedidobuscar= findViewById(R.id.btn_findpedido);
         //salirpedidos=(Button)findViewById(R.id.btn_salirverpedido);
-        txtbuscapepdido=(EditText)findViewById(R.id.txtfindpedido);
-        listatodoslospedidos=(ListView)findViewById(R.id.lista_pedidos);
-        optbuscar=(Spinner)findViewById(R.id.sp_findP);
+        txtbuscapepdido= findViewById(R.id.txtfindpedido);
+        listatodoslospedidos= findViewById(R.id.lista_pedidos);
+        optbuscar= findViewById(R.id.sp_findP);
 
         pedidobuscar.setOnClickListener(this);
         //salirpedidos.setOnClickListener(this);
@@ -120,7 +120,7 @@ Button pedidobuscar;
                         listItems.clear();
 
                         hiloconexion2 = new ObtenerWebService();
-                        String cadenallamada2=GET_BY_ID2 + "?name=" + txtbuscapepdido.getText()+"&expo="+listaConta.id_expo.toString();
+                        String cadenallamada2=GET_BY_ID2 + "?name=" + txtbuscapepdido.getText()+"&expo="+ listaConta.id_expo;
                         hiloconexion2.execute(cadenallamada2,"1");
 
                     }else{
@@ -134,7 +134,7 @@ Button pedidobuscar;
                         listItems.clear();
 
                         hiloconexion2 = new ObtenerWebService();
-                        String cadenallamada2=GET_BY_ID + "?pedido=" + txtbuscapepdido.getText()+"&expo="+listaConta.id_expo.toString();
+                        String cadenallamada2=GET_BY_ID + "?pedido=" + txtbuscapepdido.getText()+"&expo="+ listaConta.id_expo;
                         hiloconexion2.execute(cadenallamada2,"1");
 
 
@@ -148,7 +148,7 @@ Button pedidobuscar;
             }
         });
         hiloconexion = new ObtenerWebService();
-        hiloconexion.execute(GET+"?idexpo="+listaConta.id_expo.toString(),"1");
+        hiloconexion.execute(GET+"?idexpo="+ listaConta.id_expo,"1");
 
     }
 
@@ -176,7 +176,7 @@ Button pedidobuscar;
                             listItems.clear();
 
                             hiloconexion2 = new ObtenerWebService();
-                            String cadenallamada2=GET_BY_ID2 + "?name=" + txtbuscapepdido.getText()+"&expo="+listaConta.id_expo.toString();
+                            String cadenallamada2=GET_BY_ID2 + "?name=" + txtbuscapepdido.getText()+"&expo="+ listaConta.id_expo;
                             hiloconexion2.execute(cadenallamada2,"1");
 
                         }else{
@@ -190,7 +190,7 @@ Button pedidobuscar;
                             listItems.clear();
 
                             hiloconexion2 = new ObtenerWebService();
-                            String cadenallamada2=GET_BY_ID + "?pedido=" + txtbuscapepdido.getText()+"&expo="+listaConta.id_expo.toString();
+                            String cadenallamada2=GET_BY_ID + "?pedido=" + txtbuscapepdido.getText()+"&expo="+ listaConta.id_expo;
                             hiloconexion2.execute(cadenallamada2,"1");
 
 
@@ -330,7 +330,7 @@ Button pedidobuscar;
 
             //resultado.setText(s);
 
-            if(s.toString()=="No hay alumnos"){
+            if(s =="No hay alumnos"){
                 listItems = new ArrayList<String>();
                 listItems.add("No hay Registros");
                 ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(ver_pedidos_hechosibodegascotiza.this, android.R.layout.simple_list_item_1,listItems);

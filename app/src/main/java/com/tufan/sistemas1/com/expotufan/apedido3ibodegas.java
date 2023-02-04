@@ -73,12 +73,12 @@ public class apedido3ibodegas extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_a_pedido3ibodegas);
-        titulo=(TextView)findViewById(R.id.txt_coleccion);
+        titulo= findViewById(R.id.txt_coleccion);
         //String valor = getIntent().getExtras().getString("nombretapete");
-        lista_x_tapete=(ListView)findViewById(R.id.lista_x_nombre);
+        lista_x_tapete= findViewById(R.id.lista_x_nombre);
         //String valor2x= getIntent().getExtras().getString("nombrextapete");
         //titulo.setText("Colección "+valor2x.toString());
-        consulta=(EditText)findViewById(R.id.editText_compo);
+        consulta= findViewById(R.id.editText_compo);
 
 
 /*
@@ -89,7 +89,7 @@ public class apedido3ibodegas extends AppCompatActivity {
         consulta.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if(consulta.getText().toString().toString().equalsIgnoreCase("")){
+                if(consulta.getText().toString().equalsIgnoreCase("")){
 
                     lista_x_tapete.setAdapter(null);
 
@@ -117,7 +117,7 @@ public class apedido3ibodegas extends AppCompatActivity {
                     miconsulta =  consulta.getText().toString()+"%";
 
                     hiloconexion2 = new apedido3ibodegas.ObtenerWebService();
-                    String cadenallamada2=GET_BY_ID3 + "?calidad=" + miconsulta.toString();
+                    String cadenallamada2=GET_BY_ID3 + "?calidad=" + miconsulta;
                     try {
                         hiloconexion2.execute(cadenallamada2,"2").get();
                     } catch (InterruptedException e) {
@@ -198,11 +198,11 @@ public class apedido3ibodegas extends AppCompatActivity {
                                 xprecio2=solicitaJSON.getJSONObject(i).getString("precio2");
                                 xprecio3=solicitaJSON.getJSONObject(i).getString("precio3");
 
-                                listaxclave.add(xclave.toString());
-                                listaxnombre.add(xnombre.toString());
-                                listaxmedidas.add(xmedida.toString());
-                                listaxstok.add(xstok.toString());
-                                listaximg.add(imgver.toString());
+                                listaxclave.add(xclave);
+                                listaxnombre.add(xnombre);
+                                listaxmedidas.add(xmedida);
+                                listaxstok.add(xstok);
+                                listaximg.add(imgver);
                                 listadiseno.add(xdiseno);
                                 listabodega1.add(xbodega1);
                                 listabodega2.add(xbodega2);
@@ -249,7 +249,7 @@ public class apedido3ibodegas extends AppCompatActivity {
                 miconsulta =  "%"+consulta.getText().toString()+"%";
 
                 hiloconexion2like = new apedido3ibodegas.ObtenerWebService2();
-                String cadenallamada2like=GET_BY_ID3 + "?calidad=" + miconsulta.toString();
+                String cadenallamada2like=GET_BY_ID3 + "?calidad=" + miconsulta;
                 try {
                     hiloconexion2like.execute(cadenallamada2like,"2").get();
                 } catch (InterruptedException e) {
@@ -364,11 +364,11 @@ public class apedido3ibodegas extends AppCompatActivity {
                                 xprecio2=solicitaJSON.getJSONObject(i).getString("precio2");
                                 xprecio3=solicitaJSON.getJSONObject(i).getString("precio3");
 
-                                listaxclave.add(xclave.toString());
-                                listaxnombre.add(xnombre.toString());
-                                listaxmedidas.add(xmedida.toString());
-                                listaxstok.add(xstok.toString());
-                                listaximg.add(imgver.toString());
+                                listaxclave.add(xclave);
+                                listaxnombre.add(xnombre);
+                                listaxmedidas.add(xmedida);
+                                listaxstok.add(xstok);
+                                listaximg.add(imgver);
                                 listadiseno.add(xdiseno);
                                 listabodega1.add(xbodega1);
                                 listabodega2.add(xbodega2);
@@ -416,7 +416,7 @@ public class apedido3ibodegas extends AppCompatActivity {
                 miconsulta =  "% "+consulta.getText().toString()+"%";
 
                 hiloconexion3like = new apedido3ibodegas.ObtenerWebService3();
-                String cadenallamada3like=GET_BY_ID3 + "?calidad=" + miconsulta.toString();
+                String cadenallamada3like=GET_BY_ID3 + "?calidad=" + miconsulta;
                 try {
                     hiloconexion3like.execute(cadenallamada3like,"2").get();
                 } catch (InterruptedException e) {
@@ -531,11 +531,11 @@ public class apedido3ibodegas extends AppCompatActivity {
                                 xprecio2=solicitaJSON.getJSONObject(i).getString("precio2");
                                 xprecio3=solicitaJSON.getJSONObject(i).getString("precio3");
 
-                                listaxclave.add(xclave.toString());
-                                listaxnombre.add(xnombre.toString());
-                                listaxmedidas.add(xmedida.toString());
-                                listaxstok.add(xstok.toString());
-                                listaximg.add(imgver.toString());
+                                listaxclave.add(xclave);
+                                listaxnombre.add(xnombre);
+                                listaxmedidas.add(xmedida);
+                                listaxstok.add(xstok);
+                                listaximg.add(imgver);
                                 listadiseno.add(xdiseno);
                                 listabodega1.add(xbodega1);
                                 listabodega2.add(xbodega2);

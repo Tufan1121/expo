@@ -69,7 +69,7 @@ public class Adaptador_x_nombreexpo extends BaseAdapter{
         this.datosprecio3=datosprecio3;
 
         //this.dadosimg = dadosimg;
-        inflater=(LayoutInflater)contexto.getSystemService(contexto.LAYOUT_INFLATER_SERVICE);
+        inflater=(LayoutInflater)contexto.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
     @Override
@@ -95,18 +95,18 @@ public class Adaptador_x_nombreexpo extends BaseAdapter{
 
         final View vista1 = inflater.inflate(R.layout.elemento_lista_xnombreexpo, null);
 
-        final TextView xlaclave=(TextView)vista1.findViewById(R.id.txt_clave_col);
-        final TextView descrip=(TextView)vista1.findViewById(R.id.txtclient);
-        final TextView medida= (TextView)vista1.findViewById(R.id.txt_medida_col);
-        final TextView stoxk= (TextView)vista1.findViewById(R.id.txt_stok);
-        final TextView bg1=(TextView)vista1.findViewById(R.id.txt_bodega1);
-        final TextView bg2=(TextView)vista1.findViewById(R.id.txt_bodega2);
-        final TextView bg3=(TextView)vista1.findViewById(R.id.txt_bodega3);
-        final MoneyTextView xprecio1=(MoneyTextView) vista1.findViewById(R.id.txt_precio1);
-        final MoneyTextView xprecio2=(MoneyTextView) vista1.findViewById(R.id.txt_precio2);
-        final MoneyTextView xprecio3=(MoneyTextView) vista1.findViewById(R.id.txt_precio3);
+        final TextView xlaclave= vista1.findViewById(R.id.txt_clave_col);
+        final TextView descrip= vista1.findViewById(R.id.txtclient);
+        final TextView medida= vista1.findViewById(R.id.txt_medida_col);
+        final TextView stoxk= vista1.findViewById(R.id.txt_stok);
+        final TextView bg1= vista1.findViewById(R.id.txt_bodega1);
+        final TextView bg2= vista1.findViewById(R.id.txt_bodega2);
+        final TextView bg3= vista1.findViewById(R.id.txt_bodega3);
+        final MoneyTextView xprecio1= vista1.findViewById(R.id.txt_precio1);
+        final MoneyTextView xprecio2= vista1.findViewById(R.id.txt_precio2);
+        final MoneyTextView xprecio3= vista1.findViewById(R.id.txt_precio3);
 
-        smartImageView=(SmartImageView)vista1.findViewById(R.id.imgver);
+        smartImageView= vista1.findViewById(R.id.imgver);
 
         xlaclave.setText(datos.get(position));
         descrip.setText(datosdes.get(position)+" "+datosdiseno.get(position));

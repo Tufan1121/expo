@@ -17,20 +17,20 @@ import android.widget.ListView;
 
 public class SwipeListViewTouchListener implements View.OnTouchListener {
     // Cached ViewConfiguration and system-wide constant values
-    private int mSlop;
-    private int mMinFlingVelocity;
-    private int mMaxFlingVelocity;
-    private long mAnimationTime;
+    private final int mSlop;
+    private final int mMinFlingVelocity;
+    private final int mMaxFlingVelocity;
+    private final long mAnimationTime;
 
     // Fixed properties
-    private ListView mListView;
-    private OnSwipeCallback mCallback;
+    private final ListView mListView;
+    private final OnSwipeCallback mCallback;
     private int mViewWidth = 1; // 1 and not 0 to prevent dividing by zero
     private boolean dismissLeft = true;
     private boolean dismissRight = true;
 
     // Transient properties
-    private List<PendingSwipeData> mPendingSwipes = new ArrayList<PendingSwipeData>();
+    private final List<PendingSwipeData> mPendingSwipes = new ArrayList<PendingSwipeData>();
     private int mDismissAnimationRefCount = 0;
     private float mDownX;
     private boolean mSwiping;

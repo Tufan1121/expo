@@ -93,8 +93,8 @@ public class listaConta {
         sizedelist=listacont.size();
 
         for (i=0;i<sizedelist;i++){
-            valorlstacont=Integer.parseInt(listacont.get(i).toString());
-            valorlistaprecio=Integer.parseInt(precioseleccionado.get(i).toString());
+            valorlstacont=Integer.parseInt(listacont.get(i));
+            valorlistaprecio=Integer.parseInt(precioseleccionado.get(i));
 
             total=valorlistaprecio*valorlstacont;
 
@@ -130,8 +130,8 @@ public class listaConta {
         sizedelist=listacont.size();
 
         for (i=0;i<sizedelist;i++){
-            valorlstacont=Integer.parseInt(listacont.get(i).toString());
-            valorlistaprecio=Integer.parseInt(precioseleccionado.get(i).toString());
+            valorlstacont=Integer.parseInt(listacont.get(i));
+            valorlistaprecio=Integer.parseInt(precioseleccionado.get(i));
 
             total=valorlistaprecio*valorlstacont;
 
@@ -155,8 +155,8 @@ public class listaConta {
         sizedelist=listacont.size();
 
         for (i=0;i<sizedelist;i++){
-            valorlstacont=Integer.parseInt(listacont.get(i).toString());
-            valorlistaprecio=Integer.parseInt(precioseleccionado.get(i).toString());
+            valorlstacont=Integer.parseInt(listacont.get(i));
+            valorlistaprecio=Integer.parseInt(precioseleccionado.get(i));
 
             total=valorlistaprecio*valorlstacont;
 
@@ -180,8 +180,8 @@ public class listaConta {
         sizedelist=listacont.size();
 
         for (i=0;i<sizedelist;i++){
-            valorlstacont=Integer.parseInt(listacont.get(i).toString());
-            valorlistaprecio=Integer.parseInt(precioseleccionado.get(i).toString());
+            valorlstacont=Integer.parseInt(listacont.get(i));
+            valorlistaprecio=Integer.parseInt(precioseleccionado.get(i));
 
             total=valorlistaprecio*valorlstacont;
 

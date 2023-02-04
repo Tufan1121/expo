@@ -32,7 +32,7 @@ public class Adaptadorclient extends BaseAdapter{
         this.cdatosDIR=cdatosDIR;
 
         //this.dadosimg = dadosimg;
-        inflater=(LayoutInflater)contexto.getSystemService(contexto.LAYOUT_INFLATER_SERVICE);
+        inflater=(LayoutInflater)contexto.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
     @Override
@@ -58,10 +58,10 @@ public class Adaptadorclient extends BaseAdapter{
 
         final View vistaxclient = inflater.inflate(R.layout.elemento_listauser, null);
 
-        TextView nombreclient= (TextView)vistaxclient.findViewById(R.id.txtclient);
-        TextView clienterfc= (TextView)vistaxclient.findViewById(R.id.txtclientRFC);
-        TextView clientecorreo= (TextView)vistaxclient.findViewById(R.id.txtclientC);
-        TextView clientedir= (TextView)vistaxclient.findViewById(R.id.txtclientDIR);
+        TextView nombreclient= vistaxclient.findViewById(R.id.txtclient);
+        TextView clienterfc= vistaxclient.findViewById(R.id.txtclientRFC);
+        TextView clientecorreo= vistaxclient.findViewById(R.id.txtclientC);
+        TextView clientedir= vistaxclient.findViewById(R.id.txtclientDIR);
 
         nombreclient.setText(cdatosname.get(position));
         clienterfc.setText(cdatosrfc.get(position));

@@ -1,6 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/activity_a_pedido2ibodegas.xml" value="0.3582427536231884" />
+        <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/activity_a_pedido2ibodegascotiza.xml" value="0.3625" />
+        <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/activity_a_pedido3ibodegas.xml" value="0.3582427536231884" />
+        <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/activity_busquedaglobal.xml" value="0.25" />
+        <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/activity_clientesnuevos.xml" value="0.25" />
+        <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/activity_cotiza.xml" value="0.2911458333333333" />
+        <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/activity_entrega_estatus_pedido.xml" value="0.2911458333333333" />
+        <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/activity_entrega_estatus_pedido_anticipo.xml" value="0.2911458333333333" />
+        <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/activity_entrega_estatus_pedido_foraneo.xml" value="0.2911458333333333" />
+        <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/activity_entrega_estatus_pedido_tienda.xml" value="0.2911458333333333" />
+        <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/activity_estatus_pedidos.xml" value="0.2911458333333333" />
+        <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/activity_genera_cotizacion.xml" value="0.18645833333333334" />
+        <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/activity_genera_pedido.xml" value="0.3625" />
+        <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/activity_img.xml" value="0.2911458333333333" />
+        <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/activity_inventario.xml" value="0.3582427536231884" />
+        <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/activity_invpornombre.xml" value="0.3582427536231884" />
+        <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/activity_invpornombreibodegas.xml" value="0.309375" />
+        <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/activity_listatapetescotiza.xml" value="0.2911458333333333" />
+        <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/activity_pedidoestatusexpo.xml" value="0.2911458333333333" />
+        <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/activity_pedidoestatustienda.xml" value="0.2911458333333333" />
+        <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/activity_pedidos.xml" value="0.3625" />
+        <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/activity_pedidoshechos.xml" value="0.3625" />
+        <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/activity_pre_reporte.xml" value="0.2911458333333333" />
+        <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/activity_prepedido.xml" value="0.2911458333333333" />
+        <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/activity_preupdate.xml" value="0.2911458333333333" />
+        <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/activity_solo_precios.xml" value="0.2911458333333333" />
+        <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/activity_ver_pedidos_hechos.xml" value="0.2911458333333333" />
+        <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/activity_ver_pedidos_hechos_modificar.xml" value="0.2911458333333333" />
+        <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/activity_ver_pedidos_hechosibodegas.xml" value="0.2911458333333333" />
+        <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/app_bar_main3.xml" value="0.2911458333333333" />
+        <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/content_main3.xml" value="0.2911458333333333" />
+        <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/content_reporte_ventas.xml" value="0.2911458333333333" />
+        <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/elemento_lista.xml" value="0.1398148148148148" />
+        <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/elemento_lista_bg.xml" value="0.2911458333333333" />
+        <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/elemento_lista_inv.xml" value="0.2911458333333333" />
+        <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/elemento_lista_xnombre.xml" value="0.2911458333333333" />
+        <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/elemento_lista_xnombreexpo.xml" value="0.2911458333333333" />
+        <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/elemento_lista_xnombreibodegas.xml" value="0.2911458333333333" />
+        <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/elemento_listapedido.xml" value="0.2911458333333333" />
+        <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/elemento_listauser.xml" value="0.2911458333333333" />
+        <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/nav_header_main3.xml" value="0.2911458333333333" />
+        <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/nav_header_reporte_ventas.xml" value="0.2911458333333333" />
+        <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/xactivity_genera_pedido.xml" value="0.2911458333333333" />
+        <entry key="..\:/Stuff/FarzinInventario/app/src/main/res/layout/activity_invpornombreibodegas.xml" value="0.2509057971014493" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
