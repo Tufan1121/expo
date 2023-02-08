@@ -14,6 +14,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -45,15 +46,21 @@ EditText rfc;
 EditText telefono;
 EditText direccion;
 EditText correo;
- Spinner usoCFDIvar;
- Spinner rasonsocial;
-    String idclientepasa;
-    int clientenum=0;
+Spinner usoCFDIvar;
+Spinner rasonsocial;
+String idclientepasa;
+int clientenum=0;
+
+EditText razon;
+EditText cp;
+Spinner regimen;
+Switch refac;
+String requierefac="";
 
     ObtenerWebService hiloconexion;
     ObtenerWebService2 hiloconexion2;
     //String IP = "http://192.168.1.70/notificaciones";
-    String INSERT = appRutaservidor.IP  + "/insertar_cliente.php";
+    String INSERT = appRutaservidor.IP  + "/insertar_cliente_2.php";
     String GET = appRutaservidor.IP  + "/obtener_clientes.php";
 
     @Override
@@ -83,6 +90,12 @@ EditText correo;
         correo= findViewById(R.id.txt_correoelectronico);
         usoCFDIvar= findViewById(R.id.spinnerusoCFDI);
         rasonsocial= findViewById(R.id.spinnerRazonSocial);
+
+        razon= findViewById(R.id.txt_razon);
+        cp= findViewById(R.id.txt_cp);
+        regimen= findViewById(R.id.spinnerRegimen);
+        refac= findViewById(R.id.refac);
+
         contadoruser();
 
         guardar.setOnClickListener(this);
@@ -92,7 +105,9 @@ EditText correo;
         telefono.setText("");
         direccion.setText("");
         correo.setText("");
-
+        razon.setText("");
+        cp.setText("");
+        refac.setChecked(false);
     }
 
     @Override
@@ -168,6 +183,7 @@ EditText correo;
         String i= listaConta.idusuariotufan + clientenum;
         String textousoCFDI="";
         String textorasonsocial="";
+        String textoRazon="";
 
         //*-*-*-*-*-*-*-*-*-*-*-*-*--*--*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-**-*-*-*-*
         if(usoCFDIvar.getSelectedItem().toString().trim().equalsIgnoreCase("P01-Por Definir")){
@@ -190,9 +206,18 @@ EditText correo;
             textorasonsocial="Persona Moral";
         }
 
+        if(rasonsocial.getSelectedItem().toString().trim().equalsIgnoreCase("Persona Moral")){
+            textorasonsocial="Persona Moral";
+        }
 
+        if (refac.isChecked()){
+            requierefac="SI";
+        }else{
+            requierefac="NO";
+        }
 
-        hiloconexion.execute(INSERT,"3",i,nombre.getText().toString(),apellido.getText().toString(),direccion.getText().toString(),telefono.getText().toString(),correo.getText().toString(),rfc.getText().toString(),textorasonsocial,textousoCFDI);   // Parámetros que recibe doInBackground
+        //parametros que se pasan al PHP
+        hiloconexion.execute(INSERT,"3",i,nombre.getText().toString(),apellido.getText().toString(),direccion.getText().toString(),telefono.getText().toString(),correo.getText().toString(),rfc.getText().toString(),textorasonsocial,textousoCFDI,requierefac.toString());   // Parámetros que recibe doInBackground
 
 
     }
@@ -328,7 +353,7 @@ EditText correo;
 
             }
             else if(params[1]=="3"){    // insert a base de dattos
-
+                //arma la cadena json para enviar a insert
                 try {
                     HttpURLConnection urlConn;
 
@@ -346,16 +371,16 @@ EditText correo;
                     //int iduserxd=Integer.parseInt(params[2]);
                    // int telefonousuario=Integer.parseInt(params[6]);
                     JSONObject jsonParam = new JSONObject();
-                    jsonParam.put("id_cliente", params[2]);
-                    jsonParam.put("nom_cliente", params[3]);
-                    jsonParam.put("ap_cliente", params[4]);
-                    jsonParam.put("dir_cliente", params[5]);
-                    jsonParam.put("tel_cliente", params[6]);
-                    jsonParam.put("correo_cliente", params[7]);
-                    jsonParam.put("rfc_cliente", params[8]);
-                    jsonParam.put("tipopersona", params[9]);
-                    jsonParam.put("usocfdi", params[10]);
-
+                                jsonParam.put("id_cliente", params[2]);
+                                jsonParam.put("nom_cliente", params[3]);
+                                jsonParam.put("ap_cliente", params[4]);
+                                jsonParam.put("dir_cliente", params[5]);
+                                jsonParam.put("tel_cliente", params[6]);
+                                jsonParam.put("correo_cliente", params[7]);
+                                jsonParam.put("rfc_cliente", params[8]);
+                                jsonParam.put("tipopersona", params[9]);
+                                jsonParam.put("usocfdi", params[10]);
+                                jsonParam.put("factura", params[11]);
 
                     // Envio los parámetros post.
                     OutputStream os = urlConn.getOutputStream();
@@ -556,6 +581,7 @@ EditText correo;
                     //Toast.makeText(getApplicationContext(),"dato "+datoss,Toast.LENGTH_SHORT).show();
                     listaConta.correoxcliente=correo.getText().toString();
                     listaConta.WhatsApp=telefono.getText().toString();
+
                     Intent intento = new Intent(clientesnuevos.this,prepedido.class);
 
 

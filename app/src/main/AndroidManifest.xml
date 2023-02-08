@@ -222,6 +222,7 @@
             android:windowSoftInputMode="adjustResize|stateAlwaysHidden"
             ></activity>
 
+
     </application>
 
 </manifest>
