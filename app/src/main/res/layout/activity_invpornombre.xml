@@ -26,8 +26,8 @@
 
     <ListView
         android:id="@+id/lista_x_nombre"
-        android:layout_width="368dp"
-        android:layout_height="466dp"
+        android:layout_width="394dp"
+        android:layout_height="637dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"

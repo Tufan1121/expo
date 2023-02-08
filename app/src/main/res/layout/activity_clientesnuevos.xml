@@ -61,14 +61,14 @@
         android:id="@+id/txt_apellido"
         android:layout_width="318dp"
         android:layout_height="47dp"
-        android:layout_marginRight="48dp"
+        android:layout_marginRight="40dp"
         android:ems="10"
         android:hint="Apellido(s)"
         android:inputType="textCapSentences|textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.227" />
+        app:layout_constraintVertical_bias="0.223" />
 
     <EditText
         android:id="@+id/txt_rfc"
@@ -79,22 +79,22 @@
         android:inputType="textCapCharacters"
         android:maxLength="13"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.55"
+        app:layout_constraintHorizontal_bias="0.569"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.604" />
+        app:layout_constraintVertical_bias="0.605" />
 
     <TextView
         android:id="@+id/textView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="196dp"
+        android:layout_marginStart="192dp"
         android:text="Regimen"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.728" />
+        app:layout_constraintVertical_bias="0.733" />
 
     <Spinner
         android:id="@+id/spinnerusoCFDI"
@@ -102,7 +102,7 @@
         android:layout_height="35dp"
         android:entries="@array/usoCFDI"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.205"
+        app:layout_constraintHorizontal_bias="0.188"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -114,7 +114,7 @@
         android:layout_height="35dp"
         android:entries="@array/personaFisicaOmoral"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.832"
+        app:layout_constraintHorizontal_bias="0.913"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -129,11 +129,11 @@
         android:inputType="textCapCharacters"
         android:maxLength="13"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.645"
+        app:layout_constraintHorizontal_bias="0.688"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.675" />
+        app:layout_constraintVertical_bias="0.674" />
 
     <EditText
         android:id="@+id/txt_cp"
@@ -144,7 +144,7 @@
         android:inputType="phone"
         android:maxLength="13"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintHorizontal_bias="0.187"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -157,10 +157,10 @@
         android:entries="@array/Regimen"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.876"
+        app:layout_constraintHorizontal_bias="0.909"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.73" />
+        app:layout_constraintVertical_bias="0.738" />
 
     <TextView
         android:id="@+id/textView15"
@@ -205,15 +205,15 @@
         android:id="@+id/refac"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Requiere Factura"
         android:onClick="onClick"
+        android:text="Requiere Factura"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.84"
+        app:layout_constraintHorizontal_bias="0.822"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.513" />
+        app:layout_constraintVertical_bias="0.488" />
 
     <EditText
         android:id="@+id/txt_correoelectronico"

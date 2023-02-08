@@ -60,7 +60,7 @@ String requierefac="";
     ObtenerWebService hiloconexion;
     ObtenerWebService2 hiloconexion2;
     //String IP = "http://192.168.1.70/notificaciones";
-    String INSERT = appRutaservidor.IP  + "/insertar_cliente_2.php";
+    String INSERT = appRutaservidor.IP  + "/insertar_cliente.php";
     String GET = appRutaservidor.IP  + "/obtener_clientes.php";
 
     @Override
@@ -107,7 +107,7 @@ String requierefac="";
         correo.setText("");
         razon.setText("");
         cp.setText("");
-        refac.setChecked(false);
+        refac.setChecked(true);
     }
 
     @Override
@@ -149,7 +149,6 @@ String requierefac="";
                     rfc.requestFocus();
                     Snackbar.make(v,"Coloca RFC del Cliente",Snackbar.LENGTH_LONG).setAction("Accion",null).show();
 
-
                 }else{
 
                     insertBase();
@@ -157,7 +156,25 @@ String requierefac="";
                     finish();
                 }
 
+                if (refac.isChecked()){
+                    if (regimen.getSelectedItem().toString().trim().equalsIgnoreCase("")){
+                        regimen.requestFocus();
+                        Snackbar.make(v,"Falta Regimen Fiscal",Snackbar.LENGTH_LONG).setAction("Accion",null).show();
+                    }
+                    if (usoCFDIvar.getSelectedItem().toString().trim().equalsIgnoreCase("")){
+                        usoCFDIvar.requestFocus();
+                        Snackbar.make(v,"Falta Uso CFDI",Snackbar.LENGTH_LONG).setAction("Accion",null).show();
+                    }
 
+                    if (razon.getText().toString().trim().equalsIgnoreCase("")){
+                        razon.requestFocus();
+                        Snackbar.make(v,"Falta Razon Social Sin Regimen Capital (Nombre SAT)",Snackbar.LENGTH_LONG).setAction("Accion",null).show();
+                    }
+                    if (cp.getText().toString().trim().equalsIgnoreCase("")){
+                        cp.requestFocus();
+                        Snackbar.make(v,"Falta Codigo Postal",Snackbar.LENGTH_LONG).setAction("Accion",null).show();
+                    }
+                }
 
                 break;
                 default:
@@ -183,7 +200,11 @@ String requierefac="";
         String i= listaConta.idusuariotufan + clientenum;
         String textousoCFDI="";
         String textorasonsocial="";
-        String textoRazon="";
+        String _regimen="";
+        String _uso="";
+
+        _regimen=regimen.getSelectedItem().toString().trim().substring(0,3);
+        _uso=usoCFDIvar.getSelectedItem().toString().trim().substring(0,3);
 
         //*-*-*-*-*-*-*-*-*-*-*-*-*--*--*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-**-*-*-*-*
         if(usoCFDIvar.getSelectedItem().toString().trim().equalsIgnoreCase("P01-Por Definir")){
@@ -217,7 +238,7 @@ String requierefac="";
         }
 
         //parametros que se pasan al PHP
-        hiloconexion.execute(INSERT,"3",i,nombre.getText().toString(),apellido.getText().toString(),direccion.getText().toString(),telefono.getText().toString(),correo.getText().toString(),rfc.getText().toString(),textorasonsocial,textousoCFDI,requierefac.toString());   // Parámetros que recibe doInBackground
+        hiloconexion.execute(INSERT,"3",i,nombre.getText().toString(),apellido.getText().toString(),direccion.getText().toString(),telefono.getText().toString(),correo.getText().toString(),rfc.getText().toString(),textorasonsocial,textousoCFDI,requierefac.toString(),cp.getText().toString(),razon.getText().toString(),_regimen,_uso);   // Parámetros que recibe doInBackground
 
 
     }
@@ -381,6 +402,11 @@ String requierefac="";
                                 jsonParam.put("tipopersona", params[9]);
                                 jsonParam.put("usocfdi", params[10]);
                                 jsonParam.put("factura", params[11]);
+                                jsonParam.put("cp", params[12]);
+                                jsonParam.put("razonsocial", params[13]);
+                                jsonParam.put("regimen", params[14]);
+                                jsonParam.put("uso", params[15]);
+
 
                     // Envio los parámetros post.
                     OutputStream os = urlConn.getOutputStream();

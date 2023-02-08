@@ -5,8 +5,12 @@ import java.util.ArrayList;
 public class listaConta {
     //*-*-*-*-*-*--*-*-*-*-*---**-*--*-*-**-1*1-*1-*1-1*1-*1-*1-*1-*1*-1-*21*-21-*21-*12-*21-*2-1*
     public static String imgver1;
+    public static String imgver2;
     public static String nombresT;
     public static String medidasT;
+    public static String compo1T;
+    public static String compo2T;
+
 
     //********-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*--*--*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
     //TODO... ID cliente SELECCIONADO

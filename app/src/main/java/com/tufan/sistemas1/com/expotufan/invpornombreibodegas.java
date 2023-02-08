@@ -490,7 +490,7 @@ public class invpornombreibodegas extends AppCompatActivity {
                                 xnombre=solicitaJSON.getJSONObject(i).getString("descripcio");
                                 xmedida=solicitaJSON.getJSONObject(i).getString("medidas");
                                 xstok=solicitaJSON.getJSONObject(i).getString("hm");
-                                imgver=solicitaJSON.getJSONObject(i).getString("pathima1");
+                                imgver=solicitaJSON.getJSONObject(i).getString("pathima2");
                                 xdiseno=solicitaJSON.getJSONObject(i).getString("diseno");
                                 xbodega1=solicitaJSON.getJSONObject(i).getString("bodega1");
                                 xbodega2=solicitaJSON.getJSONObject(i).getString("bodega2");

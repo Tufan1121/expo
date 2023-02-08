@@ -14,6 +14,8 @@ public class img extends AppCompatActivity {
 SmartImageView smartImageView;
 TextView nombreT;
 TextView medidaT;
+    TextView compo1;
+    TextView compo2;
 
     private ScaleGestureDetector mScaleGestureDetector;
     private float mScaleFactor = 1.0f;
@@ -27,11 +29,15 @@ TextView medidaT;
         smartImageView= findViewById(R.id.imgver);
         nombreT= findViewById(R.id.txtnombreT);
         medidaT= findViewById(R.id.txtmedidaT);
+        compo1= findViewById(R.id.txt_compo1);
+        compo2= findViewById(R.id.txt_compo2);
 
         String urlfinal=appRutaservidor.IPIMG+ listaConta.imgver1;
         Rect rect=new Rect(smartImageView.getLeft(),smartImageView.getTop(),smartImageView.getRight(),smartImageView.getBottom());
         nombreT.setText(listaConta.nombresT);
         medidaT.setText(listaConta.medidasT);
+        compo1.setText(listaConta.compo1T);
+        compo2.setText(listaConta.compo2T);
         smartImageView.setImageUrl(urlfinal,rect);
 
         mScaleGestureDetector = new ScaleGestureDetector(this, new ScaleListener());
