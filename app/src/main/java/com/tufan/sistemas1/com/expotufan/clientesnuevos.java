@@ -95,6 +95,7 @@ String requierefac="";
         cp= findViewById(R.id.txt_cp);
         regimen= findViewById(R.id.spinnerRegimen);
         refac= findViewById(R.id.refac);
+        refac.setOnClickListener(this::onClick);
 
         contadoruser();
 
@@ -179,6 +180,14 @@ String requierefac="";
                 break;
                 default:
                     break;
+            case R.id.refac:
+                if(refac.isChecked()){
+                    rfc.setText("");
+                    break;
+                }else{
+                    rfc.setText("XAXX010101000");
+                    break;
+                }
 
         }
     }
