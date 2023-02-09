@@ -95,7 +95,8 @@ String requierefac="";
         cp= findViewById(R.id.txt_cp);
         regimen= findViewById(R.id.spinnerRegimen);
         refac= findViewById(R.id.refac);
-        refac.setOnClickListener(this::onClick);
+        refac.setOnClickListener(this);
+
 
         contadoruser();
 
@@ -151,32 +152,29 @@ String requierefac="";
                     Snackbar.make(v,"Coloca RFC del Cliente",Snackbar.LENGTH_LONG).setAction("Accion",null).show();
 
                 }else{
+                    if (refac.isChecked()){
+                        if (regimen.getSelectedItem().toString().trim().equalsIgnoreCase("")){
+                            regimen.requestFocus();
+                            Snackbar.make(v,"Falta Regimen Fiscal",Snackbar.LENGTH_LONG).setAction("Accion",null).show();
+                        }
+                        if (usoCFDIvar.getSelectedItem().toString().trim().equalsIgnoreCase("")){
+                            usoCFDIvar.requestFocus();
+                            Snackbar.make(v,"Falta Uso CFDI",Snackbar.LENGTH_LONG).setAction("Accion",null).show();
+                        }
 
+                        if (razon.getText().toString().trim().equalsIgnoreCase("")){
+                            razon.requestFocus();
+                            Snackbar.make(v,"Falta Razon Social Sin Regimen Capital (Nombre SAT)",Snackbar.LENGTH_LONG).setAction("Accion",null).show();
+                        }
+                        if (cp.getText().toString().trim().equalsIgnoreCase("")){
+                            cp.requestFocus();
+                            Snackbar.make(v,"Falta Codigo Postal",Snackbar.LENGTH_LONG).setAction("Accion",null).show();
+                        }
+                    }
                     insertBase();
 
                     finish();
                 }
-
-                if (refac.isChecked()){
-                    if (regimen.getSelectedItem().toString().trim().equalsIgnoreCase("")){
-                        regimen.requestFocus();
-                        Snackbar.make(v,"Falta Regimen Fiscal",Snackbar.LENGTH_LONG).setAction("Accion",null).show();
-                    }
-                    if (usoCFDIvar.getSelectedItem().toString().trim().equalsIgnoreCase("")){
-                        usoCFDIvar.requestFocus();
-                        Snackbar.make(v,"Falta Uso CFDI",Snackbar.LENGTH_LONG).setAction("Accion",null).show();
-                    }
-
-                    if (razon.getText().toString().trim().equalsIgnoreCase("")){
-                        razon.requestFocus();
-                        Snackbar.make(v,"Falta Razon Social Sin Regimen Capital (Nombre SAT)",Snackbar.LENGTH_LONG).setAction("Accion",null).show();
-                    }
-                    if (cp.getText().toString().trim().equalsIgnoreCase("")){
-                        cp.requestFocus();
-                        Snackbar.make(v,"Falta Codigo Postal",Snackbar.LENGTH_LONG).setAction("Accion",null).show();
-                    }
-                }
-
                 break;
                 default:
                     break;
@@ -188,7 +186,6 @@ String requierefac="";
                     rfc.setText("XAXX010101000");
                     break;
                 }
-
         }
     }
 
