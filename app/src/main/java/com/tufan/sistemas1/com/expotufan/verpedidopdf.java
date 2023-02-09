@@ -37,7 +37,7 @@ public class verpedidopdf extends AppCompatActivity {
 
         pedidoverurl=(String) getIntent().getSerializableExtra("pedido");
 
-        url=(WebView)findViewById(R.id.urlverpdf3);
+        url= findViewById(R.id.urlverpdf3);
         hiloconexion = new ObtenerWebService();
         hiloconexion.execute(GET2+"?pedido="+pedidoverurl,"1");
 

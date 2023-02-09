@@ -95,13 +95,13 @@ private  int total=0;
 
         //pesos.add("0");
         char x;
-        txtpasa=(TextView)findViewById(R.id.txt_pasa);
-        escanerclaves=(Button)findViewById(R.id.btn_codigoxd);
-        hacerpedido=(Button)findViewById(R.id.btn_generarpedido);
-        mlista=(ListView)findViewById(R.id.milista);
-        totalprecioxd=(MoneyTextView) findViewById(R.id.totalxd);
-        btninsert=(Button)findViewById(R.id.btn_insertM);
-        clavemanual=(EditText)findViewById(R.id.txtagregarmanual);
+        txtpasa= findViewById(R.id.txt_pasa);
+        escanerclaves= findViewById(R.id.btn_codigoxd);
+        hacerpedido= findViewById(R.id.btn_generarpedido);
+        mlista= findViewById(R.id.milista);
+        totalprecioxd= findViewById(R.id.totalxd);
+        btninsert= findViewById(R.id.btn_insertM);
+        clavemanual= findViewById(R.id.txtagregarmanual);
         //inventarioAll=(Button)findViewById(R.id.btn_inventario);
 
         if(listaConta.clavetapete==null){
@@ -223,7 +223,7 @@ private  int total=0;
                             claveconsulta=claveconsulta.toUpperCase();
                             if(checarlista==0){
                                 hiloconexion2 = new listatapetes.ObtenerWebService();
-                                String cadenallamada2 = GET_BY_ID + "?tabla=spock"+listaConta.almacen1.toString()+"&clave=" + claveconsulta;
+                                String cadenallamada2 = GET_BY_ID + "?tabla=spock"+ listaConta.almacen1 +"&clave=" + claveconsulta;
                                 hiloconexion2.execute(cadenallamada2,"2");
 
                             }else{
@@ -302,7 +302,7 @@ private  int total=0;
 
                                     //Toast.makeText(listatapetes.this,""+claveconsulta,Toast.LENGTH_LONG).show();
                                     hiloconexion2 = new listatapetes.ObtenerWebService();
-                                    String cadenallamada2 = GET_BY_ID + "?tabla=spock"+listaConta.almacen1.toString()+"&clave=" + claveconsulta;
+                                    String cadenallamada2 = GET_BY_ID + "?tabla=spock"+ listaConta.almacen1 +"&clave=" + claveconsulta;
                                     hiloconexion2.execute(cadenallamada2,"2");
 
                                 }
@@ -359,7 +359,7 @@ private  int total=0;
                             claveconsulta=claveconsulta.toUpperCase();
                             if(checarlista==0){
                                 hiloconexion2 = new listatapetes.ObtenerWebService();
-                                String cadenallamada2 = GET_BY_ID + "?tabla=spock"+listaConta.almacen1.toString()+"&clave=" + claveconsulta;
+                                String cadenallamada2 = GET_BY_ID + "?tabla=spock"+ listaConta.almacen1 +"&clave=" + claveconsulta;
                                 hiloconexion2.execute(cadenallamada2,"2");
 
                             }else{
@@ -437,7 +437,7 @@ private  int total=0;
 
                                     //Toast.makeText(listatapetes.this,""+claveconsulta,Toast.LENGTH_LONG).show();
                                     hiloconexion2 = new listatapetes.ObtenerWebService();
-                                    String cadenallamada2 = GET_BY_ID + "?tabla=spock"+listaConta.almacen1.toString()+"&clave=" + claveconsulta;
+                                    String cadenallamada2 = GET_BY_ID + "?tabla=spock"+ listaConta.almacen1 +"&clave=" + claveconsulta;
                                     hiloconexion2.execute(cadenallamada2,"2");
 
                                 }
@@ -507,7 +507,7 @@ private  int total=0;
 
             }else{
 //******************************************************************************************************Toast.makeText(this,"resultado "+result.getContents(),Toast.LENGTH_LONG).show();
-                String claveconsulta=result.getContents().toString();
+                String claveconsulta= result.getContents();
 
                 if(claveconsulta.length()<18){
                     //corta
@@ -536,7 +536,7 @@ private  int total=0;
                             claveconsulta=claveconsulta.toUpperCase();
                             if(checarlista==0){
                                 hiloconexion2 = new listatapetes.ObtenerWebService();
-                                String cadenallamada2 = GET_BY_ID + "?tabla=spock"+listaConta.almacen1.toString()+"&clave=" + claveconsulta;
+                                String cadenallamada2 = GET_BY_ID + "?tabla=spock"+ listaConta.almacen1 +"&clave=" + claveconsulta;
                                 hiloconexion2.execute(cadenallamada2,"2");
 
                             }else{
@@ -555,7 +555,7 @@ private  int total=0;
                                     i++;
                                 }
                                 i=0;
-                                claveconsulta=claveconsulta.toString();
+                                claveconsulta= claveconsulta;
 
                                 while(i<checarlista){
                                     String claveenlista=arrayList.get(i);
@@ -588,7 +588,7 @@ private  int total=0;
 
                                     //Toast.makeText(listatapetes.this,""+claveconsulta,Toast.LENGTH_LONG).show();
                                     hiloconexion2 = new listatapetes.ObtenerWebService();
-                                    String cadenallamada2 = GET_BY_ID + "?tabla=spock"+listaConta.almacen1.toString()+"&clave=" + claveconsulta;
+                                    String cadenallamada2 = GET_BY_ID + "?tabla=spock"+ listaConta.almacen1 +"&clave=" + claveconsulta;
                                     hiloconexion2.execute(cadenallamada2,"2");
 
                                 }
@@ -625,7 +625,7 @@ private  int total=0;
                             claveconsulta=claveconsulta.toUpperCase();
                             if(checarlista==0){
                                 hiloconexion2 = new listatapetes.ObtenerWebService();
-                                String cadenallamada2 = GET_BY_IDLG + "?tabla=spock"+listaConta.almacen1.toString()+"&clave=" + claveconsulta;
+                                String cadenallamada2 = GET_BY_IDLG + "?tabla=spock"+ listaConta.almacen1 +"&clave=" + claveconsulta;
                                 hiloconexion2.execute(cadenallamada2,"2");
 
                             }else{
@@ -644,7 +644,7 @@ private  int total=0;
                                     i++;
                                 }
                                 i=0;
-                                claveconsulta=claveconsulta.toString();
+                                claveconsulta= claveconsulta;
 
                                 while(i<checarlista){
                                     String claveenlista=arrayList.get(i);
@@ -677,7 +677,7 @@ private  int total=0;
 
                                     //Toast.makeText(listatapetes.this,""+claveconsulta,Toast.LENGTH_LONG).show();
                                     hiloconexion2 = new listatapetes.ObtenerWebService();
-                                    String cadenallamada2 = GET_BY_IDLG + "?tabla=spock"+listaConta.almacen1.toString()+"&clave=" + claveconsulta;
+                                    String cadenallamada2 = GET_BY_IDLG + "?tabla=spock"+ listaConta.almacen1 +"&clave=" + claveconsulta;
                                     hiloconexion2.execute(cadenallamada2,"2");
 
                                 }
@@ -811,7 +811,7 @@ private  int total=0;
 
 
                 //clavemanual.setText("");
-                arrayList.add(s.toString() );//clave del tapete
+                arrayList.add(s);//clave del tapete
                 arrayListdes.add(av_descripcion);//descripcion del tapete
                 arrayListprecio.add(av_precio);//predio 1 del tapete
                 arrayListprecioexpo.add(av_precioe);//precio expo del tapete
@@ -820,7 +820,7 @@ private  int total=0;
                 listaConta.listacont.add("1");
 
                 //txtlista.setText(arrayList.toString());
-                al.add(s.toString());
+                al.add(s);
                 pesos.add(av_precio);
 
                 listaConta.precioXtapete.add(av_precio);//ya
@@ -828,8 +828,8 @@ private  int total=0;
                 listaConta.precioXtapeteMa.add(av_preciom);
                 listaConta.precioseleccionado.add(av_precio);
                 listaConta.opclist.add("1");
-                listaConta.imgserver.add(appRutaservidor.IPIMGpedido+av_imagen.toString());
-                listaConta.clavetapete.add(s.toString());
+                listaConta.imgserver.add(appRutaservidor.IPIMGpedido+ av_imagen);
+                listaConta.clavetapete.add(s);
                 listaConta.medidastapete.add(av_medias);
                 listaConta.descripciontapete.add(av_descripcion);
                 listaConta.clavelarga.add(av_clavelarga);

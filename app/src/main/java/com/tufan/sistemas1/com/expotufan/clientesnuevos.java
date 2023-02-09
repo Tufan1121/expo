@@ -14,6 +14,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -33,6 +34,7 @@ import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.regex.Pattern;
 
@@ -44,10 +46,16 @@ EditText rfc;
 EditText telefono;
 EditText direccion;
 EditText correo;
- Spinner usoCFDIvar;
- Spinner rasonsocial;
-    String idclientepasa;
-    int clientenum=0;
+Spinner usoCFDIvar;
+Spinner rasonsocial;
+String idclientepasa;
+int clientenum=0;
+
+EditText razon;
+EditText cp;
+Spinner regimen;
+Switch refac;
+String requierefac="";
 
     ObtenerWebService hiloconexion;
     ObtenerWebService2 hiloconexion2;
@@ -73,15 +81,21 @@ EditText correo;
         setContentView(R.layout.activity_clientesnuevos);
 
 
-        guardar=(Button)findViewById(R.id.btn_agregar);
-        nombre=(EditText)findViewById(R.id.txt_nombre_user);
-        apellido=(EditText)findViewById(R.id.txt_apellido);
-        rfc=(EditText)findViewById(R.id.txt_rfc);
-        telefono=(EditText)findViewById(R.id.txt_telefono);
-        direccion=(EditText)findViewById(R.id.txt_direccion2);
-        correo=(EditText)findViewById(R.id.txt_correoelectronico);
-        usoCFDIvar=(Spinner)findViewById(R.id.spinnerusoCFDI);
-        rasonsocial=(Spinner)findViewById(R.id.spinnerRazonSocial);
+        guardar= findViewById(R.id.btn_agregar);
+        nombre= findViewById(R.id.txt_nombre_user);
+        apellido= findViewById(R.id.txt_apellido);
+        rfc= findViewById(R.id.txt_rfc);
+        telefono= findViewById(R.id.txt_telefono);
+        direccion= findViewById(R.id.txt_direccion2);
+        correo= findViewById(R.id.txt_correoelectronico);
+        usoCFDIvar= findViewById(R.id.spinnerusoCFDI);
+        rasonsocial= findViewById(R.id.spinnerRazonSocial);
+
+        razon= findViewById(R.id.txt_razon);
+        cp= findViewById(R.id.txt_cp);
+        regimen= findViewById(R.id.spinnerRegimen);
+        refac= findViewById(R.id.refac);
+
         contadoruser();
 
         guardar.setOnClickListener(this);
@@ -91,7 +105,9 @@ EditText correo;
         telefono.setText("");
         direccion.setText("");
         correo.setText("");
-
+        razon.setText("");
+        cp.setText("");
+        refac.setChecked(true);
     }
 
     @Override
@@ -133,7 +149,6 @@ EditText correo;
                     rfc.requestFocus();
                     Snackbar.make(v,"Coloca RFC del Cliente",Snackbar.LENGTH_LONG).setAction("Accion",null).show();
 
-
                 }else{
 
                     insertBase();
@@ -141,7 +156,25 @@ EditText correo;
                     finish();
                 }
 
+                if (refac.isChecked()){
+                    if (regimen.getSelectedItem().toString().trim().equalsIgnoreCase("")){
+                        regimen.requestFocus();
+                        Snackbar.make(v,"Falta Regimen Fiscal",Snackbar.LENGTH_LONG).setAction("Accion",null).show();
+                    }
+                    if (usoCFDIvar.getSelectedItem().toString().trim().equalsIgnoreCase("")){
+                        usoCFDIvar.requestFocus();
+                        Snackbar.make(v,"Falta Uso CFDI",Snackbar.LENGTH_LONG).setAction("Accion",null).show();
+                    }
 
+                    if (razon.getText().toString().trim().equalsIgnoreCase("")){
+                        razon.requestFocus();
+                        Snackbar.make(v,"Falta Razon Social Sin Regimen Capital (Nombre SAT)",Snackbar.LENGTH_LONG).setAction("Accion",null).show();
+                    }
+                    if (cp.getText().toString().trim().equalsIgnoreCase("")){
+                        cp.requestFocus();
+                        Snackbar.make(v,"Falta Codigo Postal",Snackbar.LENGTH_LONG).setAction("Accion",null).show();
+                    }
+                }
 
                 break;
                 default:
@@ -164,9 +197,14 @@ EditText correo;
 }
     public void insertBase(){
         hiloconexion = new ObtenerWebService();
-        String i=listaConta.idusuariotufan.toString()+Integer.toString(clientenum);
+        String i= listaConta.idusuariotufan + clientenum;
         String textousoCFDI="";
         String textorasonsocial="";
+        String _regimen="";
+        String _uso="";
+
+        _regimen=regimen.getSelectedItem().toString().trim().substring(0,3);
+        _uso=usoCFDIvar.getSelectedItem().toString().trim().substring(0,3);
 
         //*-*-*-*-*-*-*-*-*-*-*-*-*--*--*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-**-*-*-*-*
         if(usoCFDIvar.getSelectedItem().toString().trim().equalsIgnoreCase("P01-Por Definir")){
@@ -189,9 +227,18 @@ EditText correo;
             textorasonsocial="Persona Moral";
         }
 
+        if(rasonsocial.getSelectedItem().toString().trim().equalsIgnoreCase("Persona Moral")){
+            textorasonsocial="Persona Moral";
+        }
 
+        if (refac.isChecked()){
+            requierefac="SI";
+        }else{
+            requierefac="NO";
+        }
 
-        hiloconexion.execute(INSERT,"3",i,nombre.getText().toString(),apellido.getText().toString(),direccion.getText().toString(),telefono.getText().toString(),correo.getText().toString(),rfc.getText().toString(),textorasonsocial,textousoCFDI);   // Parámetros que recibe doInBackground
+        //parametros que se pasan al PHP
+        hiloconexion.execute(INSERT,"3",i,nombre.getText().toString(),apellido.getText().toString(),direccion.getText().toString(),telefono.getText().toString(),correo.getText().toString(),rfc.getText().toString(),textorasonsocial,textousoCFDI,requierefac.toString(),cp.getText().toString(),razon.getText().toString(),_regimen,_uso);   // Parámetros que recibe doInBackground
 
 
     }
@@ -327,7 +374,7 @@ EditText correo;
 
             }
             else if(params[1]=="3"){    // insert a base de dattos
-
+                //arma la cadena json para enviar a insert
                 try {
                     HttpURLConnection urlConn;
 
@@ -345,21 +392,26 @@ EditText correo;
                     //int iduserxd=Integer.parseInt(params[2]);
                    // int telefonousuario=Integer.parseInt(params[6]);
                     JSONObject jsonParam = new JSONObject();
-                    jsonParam.put("id_cliente", params[2]);
-                    jsonParam.put("nom_cliente", params[3]);
-                    jsonParam.put("ap_cliente", params[4]);
-                    jsonParam.put("dir_cliente", params[5]);
-                    jsonParam.put("tel_cliente", params[6]);
-                    jsonParam.put("correo_cliente", params[7]);
-                    jsonParam.put("rfc_cliente", params[8]);
-                    jsonParam.put("tipopersona", params[9]);
-                    jsonParam.put("usocfdi", params[10]);
+                                jsonParam.put("id_cliente", params[2]);
+                                jsonParam.put("nom_cliente", params[3]);
+                                jsonParam.put("ap_cliente", params[4]);
+                                jsonParam.put("dir_cliente", params[5]);
+                                jsonParam.put("tel_cliente", params[6]);
+                                jsonParam.put("correo_cliente", params[7]);
+                                jsonParam.put("rfc_cliente", params[8]);
+                                jsonParam.put("tipopersona", params[9]);
+                                jsonParam.put("usocfdi", params[10]);
+                                jsonParam.put("factura", params[11]);
+                                jsonParam.put("cp", params[12]);
+                                jsonParam.put("razonsocial", params[13]);
+                                jsonParam.put("regimen", params[14]);
+                                jsonParam.put("uso", params[15]);
 
 
                     // Envio los parámetros post.
                     OutputStream os = urlConn.getOutputStream();
                     BufferedWriter writer = new BufferedWriter(
-                            new OutputStreamWriter(os, "UTF-8"));
+                            new OutputStreamWriter(os, StandardCharsets.UTF_8));
                     writer.write(jsonParam.toString());
                     writer.flush();
                     writer.close();
@@ -429,7 +481,7 @@ EditText correo;
                     // Envio los parámetros post.
                     OutputStream os = urlConn.getOutputStream();
                     BufferedWriter writer = new BufferedWriter(
-                            new OutputStreamWriter(os, "UTF-8"));
+                            new OutputStreamWriter(os, StandardCharsets.UTF_8));
                     writer.write(jsonParam.toString());
                     writer.flush();
                     writer.close();
@@ -495,7 +547,7 @@ EditText correo;
                     // Envio los parámetros post.
                     OutputStream os = urlConn.getOutputStream();
                     BufferedWriter writer = new BufferedWriter(
-                            new OutputStreamWriter(os, "UTF-8"));
+                            new OutputStreamWriter(os, StandardCharsets.UTF_8));
                     writer.write(jsonParam.toString());
                     writer.flush();
                     writer.close();
@@ -555,6 +607,7 @@ EditText correo;
                     //Toast.makeText(getApplicationContext(),"dato "+datoss,Toast.LENGTH_SHORT).show();
                     listaConta.correoxcliente=correo.getText().toString();
                     listaConta.WhatsApp=telefono.getText().toString();
+
                     Intent intento = new Intent(clientesnuevos.this,prepedido.class);
 
 

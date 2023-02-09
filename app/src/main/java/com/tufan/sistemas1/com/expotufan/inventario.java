@@ -52,9 +52,9 @@ Button busquedaglobal;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inventario);
         //listatodo=(ListView)findViewById(R.id.lista_todo);
-        inventarioExpo=(Button)findViewById(R.id.inv_enexpo);
-        inventarioIbodegas=(Button)findViewById(R.id.inv_ibodegas);
-        busquedaglobal=(Button)findViewById(R.id.inv_global);
+        inventarioExpo= findViewById(R.id.inv_enexpo);
+        inventarioIbodegas= findViewById(R.id.inv_ibodegas);
+        busquedaglobal= findViewById(R.id.inv_global);
         //buscarentodo= (Button)findViewById(R.id.btn_buscainventario);
         //claveinventario= (EditText)findViewById(R.id.caja_clave);
 

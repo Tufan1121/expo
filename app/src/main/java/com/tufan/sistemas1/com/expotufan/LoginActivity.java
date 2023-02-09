@@ -121,9 +121,9 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        mensaje=(TextView)findViewById(R.id.txtmensajeserver);
-        mPasswordView = (EditText) findViewById(R.id.password);
-        selec_expo=(Spinner)findViewById(R.id.sp_expo);
+        mensaje= findViewById(R.id.txtmensajeserver);
+        mPasswordView = findViewById(R.id.password);
+        selec_expo= findViewById(R.id.sp_expo);
 
         //cerrarxdxd();
 
@@ -279,7 +279,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             }
         });
 
-        Button mEmailSignInButton = (Button) findViewById(R.id.email_sign_in_button);
+        Button mEmailSignInButton = findViewById(R.id.email_sign_in_button);
         mEmailSignInButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -755,7 +755,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                             try {
                                 OutputStreamWriter fout = new OutputStreamWriter(openFileOutput("idusuario.txt", Context.MODE_PRIVATE));
 
-                                fout.write(listaConta.idusuariotufan.toString());
+                                fout.write(listaConta.idusuariotufan);
                                 fout.close();
                             } catch (Exception ex) {
                                 Log.e("Ficheros", "Error al escribir fichero en la memoria interna");
@@ -1080,7 +1080,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                             try {
                                 OutputStreamWriter fout = new OutputStreamWriter(openFileOutput("meminterna2.txt", Context.MODE_PRIVATE));
 
-                                fout.write(listaConta.nombre_Expo.toString().trim());
+                                fout.write(listaConta.nombre_Expo.trim());
                                 fout.close();
                             } catch (Exception ex) {
                                 Log.e("Ficheros", "Error al escribir fichero en la memoria interna");
@@ -1091,7 +1091,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                             try {
                                 OutputStreamWriter fout = new OutputStreamWriter(openFileOutput("idexpo.txt", Context.MODE_PRIVATE));
 
-                                fout.write(listaConta.id_expo.toString().trim());
+                                fout.write(listaConta.id_expo.trim());
                                 fout.close();
                             } catch (Exception ex) {
                                 Log.e("Ficheros", "Error al escribir fichero en la memoria interna");
@@ -1102,7 +1102,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                             try {
                                 OutputStreamWriter fout = new OutputStreamWriter(openFileOutput("encabezadoexpo.txt", Context.MODE_PRIVATE));
 
-                                fout.write(listaConta.encabrzadopedido.toString().trim());
+                                fout.write(listaConta.encabrzadopedido.trim());
                                 fout.close();
                             } catch (Exception ex) {
                                 Log.e("Ficheros", "Error al escribir fichero en la memoria interna");
@@ -1113,7 +1113,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                             try {
                                 OutputStreamWriter fout = new OutputStreamWriter(openFileOutput("almacen1.txt", Context.MODE_PRIVATE));
 
-                                fout.write(listaConta.almacen1.toString().trim());
+                                fout.write(listaConta.almacen1.trim());
                                 fout.close();
                             } catch (Exception ex) {
                                 Log.e("Ficheros", "Error al escribir fichero en la memoria interna");

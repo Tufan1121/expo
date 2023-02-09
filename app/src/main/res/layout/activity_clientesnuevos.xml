@@ -18,44 +18,57 @@
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@mipmap/logot" />
 
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Registro de Clientes"
+        android:text="Datos de Contacto"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.062"
+        app:layout_constraintHorizontal_bias="0.199"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.085" />
+        app:layout_constraintVertical_bias="0.128" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Datos de Facturación"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.206"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.556" />
 
     <EditText
         android:id="@+id/txt_nombre_user"
         android:layout_width="318dp"
         android:layout_height="47dp"
         android:ems="10"
-        android:hint="Nombre"
-        android:inputType="textCapSentences|textPersonName"
+        android:hint="Nombre(s)"
+        android:inputType="textCapWords|textAutoCorrect"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.559"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.161" />
+        app:layout_constraintVertical_bias="0.16" />
 
     <EditText
         android:id="@+id/txt_apellido"
         android:layout_width="318dp"
         android:layout_height="47dp"
+        android:layout_marginRight="40dp"
         android:ems="10"
-        android:hint="Apellido"
+        android:hint="Apellido(s)"
         android:inputType="textCapSentences|textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.286" />
-
+        app:layout_constraintVertical_bias="0.223" />
 
     <EditText
         android:id="@+id/txt_rfc"
@@ -63,13 +76,25 @@
         android:layout_height="46dp"
         android:ems="10"
         android:hint="RFC"
-        android:maxLength="13"
         android:inputType="textCapCharacters"
+        android:maxLength="13"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.569"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.718" />
+        app:layout_constraintVertical_bias="0.605" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="192dp"
+        android:text="Regimen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.733" />
 
     <Spinner
         android:id="@+id/spinnerusoCFDI"
@@ -77,11 +102,11 @@
         android:layout_height="35dp"
         android:entries="@array/usoCFDI"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.867"
+        app:layout_constraintHorizontal_bias="0.188"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.819" />
+        app:layout_constraintVertical_bias="0.83" />
 
     <Spinner
         android:id="@+id/spinnerRazonSocial"
@@ -89,37 +114,106 @@
         android:layout_height="35dp"
         android:entries="@array/personaFisicaOmoral"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.132"
+        app:layout_constraintHorizontal_bias="0.913"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.819" />
+        app:layout_constraintVertical_bias="0.83" />
 
     <EditText
-        android:id="@+id/txt_telefono"
-        android:layout_width="318dp"
-        android:layout_height="46dp"
+        android:id="@+id/txt_razon"
+        android:layout_width="334dp"
+        android:layout_height="53dp"
         android:ems="10"
-        android:hint="WhatsApp"
-        android:inputType="phone"
+        android:hint="Razon Social sin Regimen de Capital"
+        android:inputType="textCapCharacters"
+        android:maxLength="13"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.688"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.498" />
+        app:layout_constraintVertical_bias="0.674" />
+
+    <EditText
+        android:id="@+id/txt_cp"
+        android:layout_width="128dp"
+        android:layout_height="39dp"
+        android:ems="10"
+        android:hint="Codigo Postal"
+        android:inputType="phone"
+        android:maxLength="13"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.187"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.736" />
+
+    <Spinner
+        android:id="@+id/spinnerRegimen"
+        android:layout_width="135dp"
+        android:layout_height="35dp"
+        android:entries="@array/Regimen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.909"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.738" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:text="Uso CFDI"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.785" />
 
     <EditText
         android:id="@+id/txt_direccion2"
-        android:layout_width="318dp"
-        android:layout_height="46dp"
+        android:layout_width="322dp"
+        android:layout_height="81dp"
         android:ems="10"
         android:hint="Direccion"
         android:inputType="textCapSentences|textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.58"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.404" />
+        app:layout_constraintVertical_bias="0.308" />
+
+    <EditText
+        android:id="@+id/txt_telefono"
+        android:layout_width="154dp"
+        android:layout_height="47dp"
+        android:ems="10"
+        android:hint="WhatsApp"
+        android:inputType="phone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.205"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.473" />
+
+    <Switch
+        android:id="@+id/refac"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClick"
+        android:text="Requiere Factura"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.822"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.488" />
 
     <EditText
         android:id="@+id/txt_correoelectronico"
@@ -129,10 +223,11 @@
         android:hint="Correo Electronico"
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.55"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.594" />
+        app:layout_constraintVertical_bias="0.407" />
 
     <Button
         android:id="@+id/btn_agregar"
@@ -146,5 +241,6 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.964" />
+
 
 </android.support.constraint.ConstraintLayout>

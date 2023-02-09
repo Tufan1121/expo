@@ -72,8 +72,8 @@ public class invpornombre extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_invpornombre);
-        lista_x_tapete1=(ListView)findViewById(R.id.lista_x_nombre);
-        calidadexpo=(EditText)findViewById(R.id.editText_calidad3expo);
+        lista_x_tapete1= findViewById(R.id.lista_x_nombre);
+        calidadexpo= findViewById(R.id.editText_calidad3expo);
         //*-*-*TODO PARA SABER QUE ALMACEN BUSCAR;*-*-*-*-*-*-*-*-*-*-
         try
         {
@@ -91,7 +91,7 @@ public class invpornombre extends AppCompatActivity {
         calidadexpo.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if(calidadexpo.getText().toString().toString().equalsIgnoreCase("")){
+                if(calidadexpo.getText().toString().equalsIgnoreCase("")){
 
                     lista_x_tapete1.setAdapter(null);
 
@@ -115,7 +115,7 @@ public class invpornombre extends AppCompatActivity {
                     miconsulta =  calidadexpo.getText().toString();
 
                     hiloconexion2 = new invpornombre.ObtenerWebService();
-                    String cadenallamada2=GET_BY_ID3 + "?tabla=spock"+almacen1.toString()+"&calidad=" + miconsulta.toString();
+                    String cadenallamada2=GET_BY_ID3 + "?tabla=spock"+ almacen1 +"&calidad=" + miconsulta;
                     try {
                         hiloconexion2.execute(cadenallamada2,"2").get();
                     } catch (InterruptedException e) {
@@ -195,15 +195,15 @@ public class invpornombre extends AppCompatActivity {
                                 xprecio3=solicitaJSON.getJSONObject(i).getString("precio3");
 
 
-                                listaxclave.add(xclave.toString());
-                                listaxnombre.add(xnombre.toString());
-                                listaxmedidas.add(xmedida.toString());
-                                listaxstok.add(xstok.toString());
-                                listaximg.add(imgver.toString());
-                                listadiseno.add(xdiseno.toString());
-                                listaprecioenxpo1.add(xprecio1.toString());
-                                listaprecioenxpo2.add(xprecio2.toString());
-                                listaprecioenxpo3.add(xprecio3.toString());
+                                listaxclave.add(xclave);
+                                listaxnombre.add(xnombre);
+                                listaxmedidas.add(xmedida);
+                                listaxstok.add(xstok);
+                                listaximg.add(imgver);
+                                listadiseno.add(xdiseno);
+                                listaprecioenxpo1.add(xprecio1);
+                                listaprecioenxpo2.add(xprecio2);
+                                listaprecioenxpo3.add(xprecio3);
 
 
                             }
@@ -243,7 +243,7 @@ public class invpornombre extends AppCompatActivity {
                 miconsulta =  "%"+calidadexpo.getText().toString()+"%";
 
                 hiloconexion2like = new invpornombre.ObtenerWebServicelike2();
-                String cadenallamada2like=GET_BY_ID3 + "?tabla=spock"+almacen1.toString()+"&calidad=" + miconsulta.toString();
+                String cadenallamada2like=GET_BY_ID3 + "?tabla=spock"+ almacen1 +"&calidad=" + miconsulta;
                 try {
                     hiloconexion2like.execute(cadenallamada2like,"2").get();
                 } catch (InterruptedException e) {
@@ -348,15 +348,15 @@ public class invpornombre extends AppCompatActivity {
                                 xprecio3=solicitaJSON.getJSONObject(i).getString("precio3");
 
 
-                                listaxclave.add(xclave.toString());
-                                listaxnombre.add(xnombre.toString());
-                                listaxmedidas.add(xmedida.toString());
-                                listaxstok.add(xstok.toString());
-                                listaximg.add(imgver.toString());
-                                listadiseno.add(xdiseno.toString());
-                                listaprecioenxpo1.add(xprecio1.toString());
-                                listaprecioenxpo2.add(xprecio2.toString());
-                                listaprecioenxpo3.add(xprecio3.toString());
+                                listaxclave.add(xclave);
+                                listaxnombre.add(xnombre);
+                                listaxmedidas.add(xmedida);
+                                listaxstok.add(xstok);
+                                listaximg.add(imgver);
+                                listadiseno.add(xdiseno);
+                                listaprecioenxpo1.add(xprecio1);
+                                listaprecioenxpo2.add(xprecio2);
+                                listaprecioenxpo3.add(xprecio3);
 
 
                             }
@@ -502,15 +502,15 @@ public class invpornombre extends AppCompatActivity {
                                 xprecio3=solicitaJSON.getJSONObject(i).getString("precio3");
 
 
-                                listaxclave.add(xclave.toString());
-                                listaxnombre.add(xnombre.toString());
-                                listaxmedidas.add(xmedida.toString());
-                                listaxstok.add(xstok.toString());
-                                listaximg.add(imgver.toString());
-                                listadiseno.add(xdiseno.toString());
-                                listaprecioenxpo1.add(xprecio1.toString());
-                                listaprecioenxpo2.add(xprecio2.toString());
-                                listaprecioenxpo3.add(xprecio3.toString());
+                                listaxclave.add(xclave);
+                                listaxnombre.add(xnombre);
+                                listaxmedidas.add(xmedida);
+                                listaxstok.add(xstok);
+                                listaximg.add(imgver);
+                                listadiseno.add(xdiseno);
+                                listaprecioenxpo1.add(xprecio1);
+                                listaprecioenxpo2.add(xprecio2);
+                                listaprecioenxpo3.add(xprecio3);
 
 
                             }

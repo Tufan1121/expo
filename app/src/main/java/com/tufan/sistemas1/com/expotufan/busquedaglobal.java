@@ -103,18 +103,18 @@ public class busquedaglobal extends AppCompatActivity {
    protected void onCreate(Bundle savedInstanceState) {
        super.onCreate(savedInstanceState);
        setContentView(R.layout.activity_busquedaglobal);
-       titulo=(TextView)findViewById(R.id.txt_coleccion);
-       lista_x_tapete=(ListView)findViewById(R.id.lista_x_nombre);
-       consulta=(EditText)findViewById(R.id.editText_compo);
+       titulo= findViewById(R.id.txt_coleccion);
+       lista_x_tapete= findViewById(R.id.lista_x_nombre);
+       consulta= findViewById(R.id.editText_compo);
 
 
        //Parametros Nuevos
-       _diseno=(EditText)findViewById(R.id.editText_compo3);
-       _largo1=(EditText)findViewById(R.id.largo1);
-       _largo2=(EditText)findViewById(R.id.largo2);
-       _ancho1=(EditText)findViewById(R.id.ancho1);
-       _ancho2=(EditText)findViewById(R.id.ancho2);
-       _buscar=(Button)findViewById(R.id.buscar);
+       _diseno= findViewById(R.id.editText_compo3);
+       _largo1= findViewById(R.id.largo1);
+       _largo2= findViewById(R.id.largo2);
+       _ancho1= findViewById(R.id.ancho1);
+       _ancho2= findViewById(R.id.ancho2);
+       _buscar= findViewById(R.id.buscar);
 
        listaxclave.clear();
        listaxnombre.clear();
@@ -202,7 +202,7 @@ public class busquedaglobal extends AppCompatActivity {
                    miconsulta =  consulta.getText().toString();
 
                    hiloconexion2 = new busquedaglobal.ObtenerWebService();
-                   String cadenallamada2=GET_BY_ID3 + "?descripcio=" + miconsulta.toString()+"&diseno="+_diseno.getText().toString()+"&largo1="+ _largo1.getText().toString()+"&largo2="+ _largo2.getText().toString()+"&ancho1="+ _ancho1.getText().toString()+"&ancho2="+ _ancho2.getText().toString();
+                   String cadenallamada2=GET_BY_ID3 + "?descripcio=" + miconsulta +"&diseno="+_diseno.getText().toString()+"&largo1="+ _largo1.getText().toString()+"&largo2="+ _largo2.getText().toString()+"&ancho1="+ _ancho1.getText().toString()+"&ancho2="+ _ancho2.getText().toString();
 
                    try {
 
@@ -284,11 +284,11 @@ public class busquedaglobal extends AppCompatActivity {
                                 xalmacen=solicitaJSON.getJSONObject(i).getString("desalmacen");
 
 
-                                listaxclave.add(xclave.toString());
-                                listaxnombre.add(xnombre.toString());
-                                listaxmedidas.add(xmedida.toString());
-                                listaxstok.add(xstok.toString());
-                                listaximg.add(imgver.toString());
+                                listaxclave.add(xclave);
+                                listaxnombre.add(xnombre);
+                                listaxmedidas.add(xmedida);
+                                listaxstok.add(xstok);
+                                listaximg.add(imgver);
                                 listadiseno.add(xdiseno);
                                 listalmacen.add(xalmacen);
 
@@ -444,11 +444,11 @@ public class busquedaglobal extends AppCompatActivity {
                                 xprecio2=solicitaJSON.getJSONObject(i).getString("precio2");
                                 xprecio3=solicitaJSON.getJSONObject(i).getString("precio3");
 
-                                listaxclave.add(xclave.toString());
-                                listaxnombre.add(xnombre.toString());
-                                listaxmedidas.add(xmedida.toString());
-                                listaxstok.add(xstok.toString());
-                                listaximg.add(imgver.toString());
+                                listaxclave.add(xclave);
+                                listaxnombre.add(xnombre);
+                                listaxmedidas.add(xmedida);
+                                listaxstok.add(xstok);
+                                listaximg.add(imgver);
                                 listadiseno.add(xdiseno);
                                 //listabodega1.add(xbodega1);
                                 //listabodega2.add(xbodega2);
@@ -495,7 +495,7 @@ public class busquedaglobal extends AppCompatActivity {
                 miconsulta =  consulta.getText().toString();
 
                 hiloconexion3like = new busquedaglobal.ObtenerWebServicelike3();
-                String cadenallamada3like=GET_BY_ID3 + "?descripcio=" + miconsulta.toString();
+                String cadenallamada3like=GET_BY_ID3 + "?descripcio=" + miconsulta;
 
                 try {
                     hiloconexion3like.execute(cadenallamada3like,"2").get();
@@ -600,11 +600,11 @@ public class busquedaglobal extends AppCompatActivity {
                                 xprecio2=solicitaJSON.getJSONObject(i).getString("precio2");
                                 xprecio3=solicitaJSON.getJSONObject(i).getString("precio3");
 
-                                listaxclave.add(xclave.toString());
-                                listaxnombre.add(xnombre.toString());
-                                listaxmedidas.add(xmedida.toString());
-                                listaxstok.add(xstok.toString());
-                                listaximg.add(imgver.toString());
+                                listaxclave.add(xclave);
+                                listaxnombre.add(xnombre);
+                                listaxmedidas.add(xmedida);
+                                listaxstok.add(xstok);
+                                listaximg.add(imgver);
                                 listadiseno.add(xdiseno);
 
                                 //listabodega1.add(xbodega1);

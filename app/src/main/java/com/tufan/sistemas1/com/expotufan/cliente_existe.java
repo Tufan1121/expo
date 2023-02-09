@@ -67,11 +67,11 @@ ListView listaclientes;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cliente_existe);
-        nombreorfc=(EditText)findViewById(R.id.edit_nombreorfc);
-        spinner=(Spinner)findViewById(R.id.spinnerBusqueda);
+        nombreorfc= findViewById(R.id.edit_nombreorfc);
+        spinner= findViewById(R.id.spinnerBusqueda);
         //spinner.setFocusable(true);
-        listaclientes=(ListView)findViewById(R.id.listaconsultaClientes);
-        buscarcliente=(Button)findViewById(R.id.btn_buscar);
+        listaclientes= findViewById(R.id.listaconsultaClientes);
+        buscarcliente= findViewById(R.id.btn_buscar);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
 
         nombreorfc.setVisibility(View.INVISIBLE);
@@ -292,10 +292,10 @@ ListView listaclientes;
                                 av_cdir=solicitaJSON.getJSONObject(i).getString("dir_cliente") + " " +
                                         solicitaJSON.getJSONObject(i).getString("tel_cliente");
 
-                                cname.add(av_cmane.toString());
-                                crfc.add(av_crfc.toString());
-                                ccorreo.add(av_ccorreo.toString());
-                                cdir.add(av_cdir.toString());
+                                cname.add(av_cmane);
+                                crfc.add(av_crfc);
+                                ccorreo.add(av_ccorreo);
+                                cdir.add(av_cdir);
 
 
                                 listaConta.correoenviar.add(solicitaJSON.getJSONObject(i).getString("correo_cliente"));
@@ -340,7 +340,7 @@ ListView listaclientes;
 
             //resultado.setText(s);
 
-            if(s.toString()=="No hay alumnos"){
+            if(s =="No hay alumnos"){
                 listItems = new ArrayList<String>();
                 listItems.add("No hay Registros");
                 ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(cliente_existe.this, android.R.layout.simple_list_item_1,listItems);

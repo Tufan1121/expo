@@ -29,6 +29,7 @@ import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
 public class visitante extends AppCompatActivity {
@@ -63,17 +64,17 @@ Button guarda_visita;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_visitante);
-    escanearcliente=(Button)findViewById(R.id.codigo_visita);
-        txt1=(EditText)findViewById(R.id.txtV1);
-        txt2=(EditText)findViewById(R.id.txtV2);
-        txt3=(EditText)findViewById(R.id.txtV3);
-        txt4=(EditText)findViewById(R.id.txtV4);
-        txt5=(EditText)findViewById(R.id.txtV5);
-        txt6=(EditText)findViewById(R.id.txtV6);
-        txt7=(EditText)findViewById(R.id.txtV7);
-        txt8=(EditText)findViewById(R.id.txtV8);
-        txt9=(EditText)findViewById(R.id.txtV9);
-        txt10=(EditText)findViewById(R.id.txtV10);
+    escanearcliente= findViewById(R.id.codigo_visita);
+        txt1= findViewById(R.id.txtV1);
+        txt2= findViewById(R.id.txtV2);
+        txt3= findViewById(R.id.txtV3);
+        txt4= findViewById(R.id.txtV4);
+        txt5= findViewById(R.id.txtV5);
+        txt6= findViewById(R.id.txtV6);
+        txt7= findViewById(R.id.txtV7);
+        txt8= findViewById(R.id.txtV8);
+        txt9= findViewById(R.id.txtV9);
+        txt10= findViewById(R.id.txtV10);
 
 
 
@@ -81,7 +82,7 @@ Button guarda_visita;
         contadoruser();
 
 
-        guarda_visita=(Button)findViewById(R.id.btn_guarda_visita);
+        guarda_visita= findViewById(R.id.btn_guarda_visita);
 
     escanearcliente.setOnClickListener(new View.OnClickListener() {
         @Override
@@ -134,7 +135,7 @@ Button guarda_visita;
                 txt10.setText("");
 
                 al2.clear();
-                String Str = new String(result.getContents().toString());
+                String Str = result.getContents();
                 System.out.println("Return Value :" );
                 for (String retval: Str.split("\n")) {
                     System.out.println(retval);
@@ -227,7 +228,7 @@ Button guarda_visita;
     }
     public void insertBase(){
         hiloconexion = new visitante.ObtenerWebService();
-        String i=listaConta.idusuariotufan.toString()+Integer.toString(clientenum);
+        String i= listaConta.idusuariotufan + clientenum;
 
         //*-*-*-*-*-*-*-*-*-*-*-*-*--*--*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-**-*-*-*-*
 
@@ -395,7 +396,7 @@ Button guarda_visita;
                     // Envio los parámetros post.
                     OutputStream os = urlConn.getOutputStream();
                     BufferedWriter writer = new BufferedWriter(
-                            new OutputStreamWriter(os, "UTF-8"));
+                            new OutputStreamWriter(os, StandardCharsets.UTF_8));
                     writer.write(jsonParam.toString());
                     writer.flush();
                     writer.close();
@@ -465,7 +466,7 @@ Button guarda_visita;
                     // Envio los parámetros post.
                     OutputStream os = urlConn.getOutputStream();
                     BufferedWriter writer = new BufferedWriter(
-                            new OutputStreamWriter(os, "UTF-8"));
+                            new OutputStreamWriter(os, StandardCharsets.UTF_8));
                     writer.write(jsonParam.toString());
                     writer.flush();
                     writer.close();
@@ -531,7 +532,7 @@ Button guarda_visita;
                     // Envio los parámetros post.
                     OutputStream os = urlConn.getOutputStream();
                     BufferedWriter writer = new BufferedWriter(
-                            new OutputStreamWriter(os, "UTF-8"));
+                            new OutputStreamWriter(os, StandardCharsets.UTF_8));
                     writer.write(jsonParam.toString());
                     writer.flush();
                     writer.close();

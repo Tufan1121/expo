@@ -59,9 +59,9 @@ int k=0;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pre_reporte);
-        listaxdia=(ListView)findViewById(R.id.lista_dia);
-        totaventa=(MoneyTextView)findViewById(R.id.totalventas);
-        barras= (BarChart)findViewById(R.id.bar1);
+        listaxdia= findViewById(R.id.lista_dia);
+        totaventa= findViewById(R.id.totalventas);
+        barras= findViewById(R.id.bar1);
 
 
         xdia.clear();
@@ -71,12 +71,12 @@ int k=0;
         ld.clear();
 
         hiloconexion = new ObtenerWebService();
-        hiloconexion.execute(GET+"?idexpo="+listaConta.id_expo.toString(),"1");
+        hiloconexion.execute(GET+"?idexpo="+ listaConta.id_expo,"1");
 
 
 
         hiloconexion2 = new ObtenerWebService2();
-        hiloconexion2.execute(GET2+"?idexpo="+listaConta.id_expo.toString(),"1");
+        hiloconexion2.execute(GET2+"?idexpo="+ listaConta.id_expo,"1");
 
 
 
@@ -198,7 +198,7 @@ int k=0;
 
             //resultado.setText(s);
 
-            if(s.toString()=="No hay alumnos"){
+            if(s =="No hay alumnos"){
 
             }else{
 
@@ -327,7 +327,7 @@ int k=0;
 
             //resultado.setText(s);
 
-            if(s.toString()=="No hay alumnos"){
+            if(s =="No hay alumnos"){
                 listdia = new ArrayList<String>();
                 listdia.add("No hay Registros");
                 ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(pre_reporte.this, android.R.layout.simple_list_item_1,listdia);
@@ -347,7 +347,7 @@ int k=0;
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         // Toast.makeText(getApplicationContext(),"Posision "+position,Toast.LENGTH_SHORT).show();
 
-                        String datoss = listdia.get(position).toString();
+                        String datoss = listdia.get(position);
                         // Toast.makeText(getApplicationContext(),"dato de lista "+datoss,Toast.LENGTH_SHORT).show();
                         // Toast.makeText(getApplicationContext(),"dato de base de datos"+datosreales,Toast.LENGTH_SHORT).show();
 

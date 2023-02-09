@@ -43,10 +43,10 @@ public class entrega_estatus_pedido_foraneo extends AppCompatActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_entrega_estatus_pedido);
-        pedidobuscar=(Button)findViewById(R.id.btn_findpedido);
-        salirpedidos=(Button)findViewById(R.id.btn_salirverpedido);
-        txtbuscapepdido=(EditText)findViewById(R.id.txtfindpedido);
-        listatodoslospedidos=(ListView)findViewById(R.id.lista_pedidos);
+        pedidobuscar= findViewById(R.id.btn_findpedido);
+        salirpedidos= findViewById(R.id.btn_salirverpedido);
+        txtbuscapepdido= findViewById(R.id.txtfindpedido);
+        listatodoslospedidos= findViewById(R.id.lista_pedidos);
 
         pedidobuscar.setOnClickListener(this);
         salirpedidos.setOnClickListener(this);
@@ -198,7 +198,7 @@ public class entrega_estatus_pedido_foraneo extends AppCompatActivity implements
 
             //resultado.setText(s);
 
-            if(s.toString()=="No hay alumnos"){
+            if(s =="No hay alumnos"){
                 listItems = new ArrayList<String>();
                 listItems.add("No hay Registros");
                 ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(entrega_estatus_pedido_foraneo.this, android.R.layout.simple_list_item_1,listItems);

@@ -44,7 +44,7 @@ public class Adaptador_inv extends BaseAdapter{
     public Adaptador_inv(Context contexto,  ArrayList<String> datosdes) {
         this.contexto = contexto;
         this.datosdes = datosdes;
-        inflater=(LayoutInflater)contexto.getSystemService(contexto.LAYOUT_INFLATER_SERVICE);
+        inflater=(LayoutInflater)contexto.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
     @Override
@@ -70,7 +70,7 @@ public class Adaptador_inv extends BaseAdapter{
 
         final View vista = inflater.inflate(R.layout.elemento_lista_inv, null);
 
-        TextView titulo = (TextView) vista.findViewById(R.id.txtclient);
+        TextView titulo = vista.findViewById(R.id.txtclient);
         titulo.setText(datosdes.get(position));
 
         return vista;

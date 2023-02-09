@@ -30,12 +30,12 @@ public class Main2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-        escaner=(Button)findViewById(R.id.btn_codigo);
+        escaner= findViewById(R.id.btn_codigo);
         final Activity activity = this;
         //activity.setRequestedOrientation(ActivityInfo.o);
         //txtlista=(TextView)findViewById(R.id.txt_lista);
-        mlista=(ListView)findViewById(R.id.milista);
-        actualiza=(Button)findViewById(R.id.btn_actualizalista) ;
+        mlista= findViewById(R.id.milista);
+        actualiza= findViewById(R.id.btn_actualizalista);
         actualiza.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,7 +75,7 @@ public class Main2Activity extends AppCompatActivity {
 
                 Toast.makeText(this,"resultado "+result.getContents(),Toast.LENGTH_LONG).show();
                 arrayList.add(result.getContents()+"\n");
-                al.add(result.getContents().toString());
+                al.add(result.getContents());
 
                 //txtlista.setText(arrayList.toString());
                 ArrayAdapter<String> adapter= new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,arrayList);

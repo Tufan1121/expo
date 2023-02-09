@@ -23,14 +23,14 @@ Button botoneditpedidos2;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_estatus_pedidos);
 
-        botonentregadoexpo=(Button)findViewById(R.id.btn_entregadoexpo);
-        botonpendientepago=(Button)findViewById(R.id.btn_pendiente_pago);
-        botonpagadoforaneo=(Button)findViewById(R.id.btn_pagado_foraneo);
-        botonpagadorecogertienda=(Button)findViewById(R.id.btn_pagado_tienda);
-        botonpedidoseliminados=(Button)findViewById(R.id.btn_eliminados);
-        botontodoslospedidos=(Button)findViewById(R.id.btn_pedidostodos);
-        botoneditpedidos=(Button)findViewById(R.id.btn_modificarpedidoxd);
-        botoneditpedidos2=(Button)findViewById(R.id.btn_modificarpedidoxd2);
+        botonentregadoexpo= findViewById(R.id.btn_entregadoexpo);
+        botonpendientepago= findViewById(R.id.btn_pendiente_pago);
+        botonpagadoforaneo= findViewById(R.id.btn_pagado_foraneo);
+        botonpagadorecogertienda= findViewById(R.id.btn_pagado_tienda);
+        botonpedidoseliminados= findViewById(R.id.btn_eliminados);
+        botontodoslospedidos= findViewById(R.id.btn_pedidostodos);
+        botoneditpedidos= findViewById(R.id.btn_modificarpedidoxd);
+        botoneditpedidos2= findViewById(R.id.btn_modificarpedidoxd2);
 
         botonentregadoexpo.setOnClickListener(this);
         botonpendientepago.setOnClickListener(this);

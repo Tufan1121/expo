@@ -5,8 +5,12 @@ import java.util.ArrayList;
 public class listaConta {
     //*-*-*-*-*-*--*-*-*-*-*---**-*--*-*-**-1*1-*1-*1-1*1-*1-*1-*1-*1*-1-*21*-21-*21-*12-*21-*2-1*
     public static String imgver1;
+    public static String imgver2;
     public static String nombresT;
     public static String medidasT;
+    public static String compo1T;
+    public static String compo2T;
+
 
     //********-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*--*--*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
     //TODO... ID cliente SELECCIONADO
@@ -93,8 +97,8 @@ public class listaConta {
         sizedelist=listacont.size();
 
         for (i=0;i<sizedelist;i++){
-            valorlstacont=Integer.parseInt(listacont.get(i).toString());
-            valorlistaprecio=Integer.parseInt(precioseleccionado.get(i).toString());
+            valorlstacont=Integer.parseInt(listacont.get(i));
+            valorlistaprecio=Integer.parseInt(precioseleccionado.get(i));
 
             total=valorlistaprecio*valorlstacont;
 
@@ -130,8 +134,8 @@ public class listaConta {
         sizedelist=listacont.size();
 
         for (i=0;i<sizedelist;i++){
-            valorlstacont=Integer.parseInt(listacont.get(i).toString());
-            valorlistaprecio=Integer.parseInt(precioseleccionado.get(i).toString());
+            valorlstacont=Integer.parseInt(listacont.get(i));
+            valorlistaprecio=Integer.parseInt(precioseleccionado.get(i));
 
             total=valorlistaprecio*valorlstacont;
 
@@ -155,8 +159,8 @@ public class listaConta {
         sizedelist=listacont.size();
 
         for (i=0;i<sizedelist;i++){
-            valorlstacont=Integer.parseInt(listacont.get(i).toString());
-            valorlistaprecio=Integer.parseInt(precioseleccionado.get(i).toString());
+            valorlstacont=Integer.parseInt(listacont.get(i));
+            valorlistaprecio=Integer.parseInt(precioseleccionado.get(i));
 
             total=valorlistaprecio*valorlstacont;
 
@@ -180,8 +184,8 @@ public class listaConta {
         sizedelist=listacont.size();
 
         for (i=0;i<sizedelist;i++){
-            valorlstacont=Integer.parseInt(listacont.get(i).toString());
-            valorlistaprecio=Integer.parseInt(precioseleccionado.get(i).toString());
+            valorlstacont=Integer.parseInt(listacont.get(i));
+            valorlistaprecio=Integer.parseInt(precioseleccionado.get(i));
 
             total=valorlistaprecio*valorlstacont;
 

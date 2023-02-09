@@ -53,7 +53,7 @@ public class validastock {
         //String GET_BY_ID2x = appRutaservidor.IP  + "/obtener_clave_por_id_dedetalle.php";
         //int si;//Si variable si =0 no hay .... si = 1 si hay disponibles.....
         cuantaspiesastengovalida=0;
-        String claveendatalle=clavetapetes.toString();
+        String claveendatalle= clavetapetes;
 /*
 
         hiloconexion3 = new validastock.ObtenerWebService3();
@@ -69,13 +69,13 @@ public class validastock {
         }
 */
 
-        String claveconsulta=clavetapetes.toString();
+        String claveconsulta= clavetapetes;
         hiloconexion2 = new validastock.ObtenerWebService();
 
 
         try {
 
-            String cadenallamada2 = GET_BY_ID + "?tabla=spock"+listaConta.almacen1.toString()+"&clave=" + claveendatalle.toString();
+            String cadenallamada2 = GET_BY_ID + "?tabla=spock"+ listaConta.almacen1 +"&clave=" + claveendatalle;
             hiloconexion2.execute(cadenallamada2,"2").get();
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -98,7 +98,7 @@ public class validastock {
         //String GET_BY_ID2x = appRutaservidor.IP  + "/obtener_clave_por_id_dedetalle.php";
         //int si;//Si variable si =0 no hay .... si = 1 si hay disponibles.....
         cuantaspiesastengovalida=0;
-        String claveendatalle=clavetapetes.toString();
+        String claveendatalle= clavetapetes;
 /*
 
         hiloconexion3 = new validastock.ObtenerWebService3();
@@ -114,13 +114,13 @@ public class validastock {
         }
 */
 
-        String claveconsulta=clavetapetes.toString();
+        String claveconsulta= clavetapetes;
         hiloconexion2 = new validastock.ObtenerWebService();
 
 
         try {
 
-            String cadenallamada2 = GET_BY_IDLG + "?tabla=spock"+listaConta.almacen1.toString()+"&clave=" + claveendatalle.toString();
+            String cadenallamada2 = GET_BY_IDLG + "?tabla=spock"+ listaConta.almacen1 +"&clave=" + claveendatalle;
             hiloconexion2.execute(cadenallamada2,"2").get();
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -209,7 +209,7 @@ public class validastock {
 
         @Override
         protected void onPostExecute(String s) {
-            if(s.toString().trim().equalsIgnoreCase("No hay Registros")){
+            if(s.trim().equalsIgnoreCase("No hay Registros")){
                 stockspropreciovalida="0";
                 error404=0;
             }else {
@@ -254,7 +254,7 @@ public class validastock {
         //String GET_BY_ID2x = appRutaservidor.IP  + "/obtener_clave_por_id_dedetalle.php";
         //int si;//Si variable si =0 no hay .... si = 1 si hay disponibles.....
         cuantaspiesastengovalida2=0;
-        String claveendatalle=clavetapetes.toString();
+        String claveendatalle= clavetapetes;
 /*
 
         hiloconexion3 = new validastock.ObtenerWebService3();
@@ -273,13 +273,13 @@ public class validastock {
         }
 */
 
-        String claveconsulta=clavetapetes.toString();
+        String claveconsulta= clavetapetes;
         hiloconexion2 = new validastock.ObtenerWebServicelarga();
 
 
         try {
 
-            String cadenallamada2 = GET_BY_ID + "?clave=" + claveendatalle.toString();
+            String cadenallamada2 = GET_BY_ID + "?clave=" + claveendatalle;
             hiloconexion2.execute(cadenallamada2,"2").get();
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -367,7 +367,7 @@ public class validastock {
 
         @Override
         protected void onPostExecute(String s) {
-            if(s.toString().trim().equalsIgnoreCase("No hay Registros")){
+            if(s.trim().equalsIgnoreCase("No hay Registros")){
                 stockspropreciovalida2="0";
                 error404=0;
             }else {
@@ -409,16 +409,16 @@ public class validastock {
         //String GET_BY_ID2x = appRutaservidor.IP  + "/obtener_clave_por_id_dedetalle.php";
         //int si;//Si variable si =0 no hay .... si = 1 si hay disponibles.....
         cuantastengoibodegas=0;
-        String claveendatalle=clavetapetes.toString();
+        String claveendatalle= clavetapetes;
 
 
-        String claveconsulta=clavetapetes.toString();
+        String claveconsulta= clavetapetes;
         hiloconexioncorta = new validastock.ObtenerWebServicecorta();
 
 
         try {
 
-            String cadenallamada2 = GET_BY_ID + "?clave=" + claveendatalle.toString();
+            String cadenallamada2 = GET_BY_ID + "?clave=" + claveendatalle;
             hiloconexioncorta.execute(cadenallamada2,"2").get();
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -506,7 +506,7 @@ public class validastock {
 
         @Override
         protected void onPostExecute(String s) {
-            if(s.toString().trim().equalsIgnoreCase("No hay Registros")){
+            if(s.trim().equalsIgnoreCase("No hay Registros")){
                 stockibodegasclavecorta="0";
                 error404=0;
             }else {

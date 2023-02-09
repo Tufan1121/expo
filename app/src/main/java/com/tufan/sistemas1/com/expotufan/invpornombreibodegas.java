@@ -1,12 +1,15 @@
 package com.tufan.sistemas1.com.expotufan;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -51,7 +54,7 @@ public class invpornombreibodegas extends AppCompatActivity {
     String xprecio1;
     String xprecio2;
     String xprecio3;
-
+    Button _buscar;
 
     ArrayList<String> listaxclave= new ArrayList<>();
     ArrayList<String> listaxnombre= new ArrayList<>();
@@ -72,59 +75,50 @@ public class invpornombreibodegas extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_invpornombreibodegas);
-        titulo=(TextView)findViewById(R.id.txt_coleccion);
-        lista_x_tapete=(ListView)findViewById(R.id.lista_x_nombre);
-        consulta=(EditText)findViewById(R.id.editText_compo);
+        titulo= findViewById(R.id.txt_coleccion);
+        lista_x_tapete= findViewById(R.id.lista_x_nombre);
+        consulta= findViewById(R.id.editText_compo);
+        _buscar= findViewById(R.id.buscari);
 
 
-        consulta.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if(consulta.getText().toString().toString().equalsIgnoreCase("")){
-
-                    lista_x_tapete.setAdapter(null);
-
-                }else{
-                    //*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*--*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
-                    //aqui la consulta
-                    listaxclave.clear();
-                    listaxnombre.clear();
-                    listaxmedidas.clear();
-                    listaxstok.clear();
-                    listaximg.clear();
-                    listadiseno.clear();
-                    listabodega1.clear();
-                    listabodega2.clear();
-                    listabodega3.clear();
-                    listabodega4.clear();
+        _buscar.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                HideKeyboard(v);
+                listaxclave.clear();
+                listaxnombre.clear();
+                listaxmedidas.clear();
+                listaxstok.clear();
+                listaximg.clear();
+                listadiseno.clear();
+                listabodega1.clear();
+                listabodega2.clear();
+                listabodega3.clear();
+                listabodega4.clear();
 
 
-                    xlistaprecio1.clear();
-                    xlistaprecio2.clear();
-                    xlistaprecio3.clear();
+                xlistaprecio1.clear();
+                xlistaprecio2.clear();
+                xlistaprecio3.clear();
 
 
-                    String miconsulta="";
+                String miconsulta="";
 
-                    miconsulta =  consulta.getText().toString();
+                miconsulta =  consulta.getText().toString();
 
-                    hiloconexion2 = new invpornombreibodegas.ObtenerWebService();
-                    String cadenallamada2=GET_BY_ID3 + "?calidad=" + miconsulta.toString();
-                    try {
-                        hiloconexion2.execute(cadenallamada2,"2").get();
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    } catch (ExecutionException e) {
-                        e.printStackTrace();
-                    }
-                    //*-*-*-*-*-**--*-*-*-*-**--*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*--*-*-*-*-*-
-
+                hiloconexion2 = new invpornombreibodegas.ObtenerWebService();
+                String cadenallamada2=GET_BY_ID3 + "?calidad=" + miconsulta;
+                try {
+                    hiloconexion2.execute(cadenallamada2,"2").get();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } catch (ExecutionException e) {
+                    e.printStackTrace();
                 }
-                return false;
             }
         });
-
     }
+
+
 
     public class ObtenerWebService extends AsyncTask<String,Void,String> {
 
@@ -190,11 +184,11 @@ public class invpornombreibodegas extends AppCompatActivity {
                                 xprecio2=solicitaJSON.getJSONObject(i).getString("precio2");
                                 xprecio3=solicitaJSON.getJSONObject(i).getString("precio3");
 
-                                listaxclave.add(xclave.toString());
-                                listaxnombre.add(xnombre.toString());
-                                listaxmedidas.add(xmedida.toString());
-                                listaxstok.add(xstok.toString());
-                                listaximg.add(imgver.toString());
+                                listaxclave.add(xclave);
+                                listaxnombre.add(xnombre);
+                                listaxmedidas.add(xmedida);
+                                listaxstok.add(xstok);
+                                listaximg.add(imgver);
                                 listadiseno.add(xdiseno);
                                 listabodega1.add(xbodega1);
                                 listabodega2.add(xbodega2);
@@ -237,12 +231,12 @@ public class invpornombreibodegas extends AppCompatActivity {
 
             if(s=="No"){
                 //Toast.makeText(invpornombreibodegas.this,"No se escuentra en la explo",Toast.LENGTH_LONG).show();
-                /*String miconsulta="";
+                String miconsulta="";
 
                 miconsulta =  "%"+consulta.getText().toString()+"%";
 
                 hiloconexion2like = new invpornombreibodegas.ObtenerWebServicelike2();
-                String cadenallamada2like=GET_BY_ID3 + "?calidad=" + miconsulta.toString();
+                String cadenallamada2like=GET_BY_ID3 + "?calidad=" + miconsulta;
                 try {
                     hiloconexion2like.execute(cadenallamada2like,"2").get();
                 } catch (InterruptedException e) {
@@ -250,7 +244,6 @@ public class invpornombreibodegas extends AppCompatActivity {
                 } catch (ExecutionException e) {
                     e.printStackTrace();
                 }
-*/
 
             }else {
 
@@ -350,11 +343,11 @@ public class invpornombreibodegas extends AppCompatActivity {
                                 xprecio2=solicitaJSON.getJSONObject(i).getString("precio2");
                                 xprecio3=solicitaJSON.getJSONObject(i).getString("precio3");
 
-                                listaxclave.add(xclave.toString());
-                                listaxnombre.add(xnombre.toString());
-                                listaxmedidas.add(xmedida.toString());
-                                listaxstok.add(xstok.toString());
-                                listaximg.add(imgver.toString());
+                                listaxclave.add(xclave);
+                                listaxnombre.add(xnombre);
+                                listaxmedidas.add(xmedida);
+                                listaxstok.add(xstok);
+                                listaximg.add(imgver);
                                 listadiseno.add(xdiseno);
                                 listabodega1.add(xbodega1);
                                 listabodega2.add(xbodega2);
@@ -402,7 +395,7 @@ public class invpornombreibodegas extends AppCompatActivity {
                 miconsulta =  "% "+consulta.getText().toString()+"%";
 
                 hiloconexion3like = new invpornombreibodegas.ObtenerWebServicelike3();
-                String cadenallamada3like=GET_BY_ID3 + "?calidad=" + miconsulta.toString();
+                String cadenallamada3like=GET_BY_ID3 + "?calidad=" + miconsulta;
                 try {
                     hiloconexion3like.execute(cadenallamada3like,"2").get();
                 } catch (InterruptedException e) {
@@ -497,7 +490,7 @@ public class invpornombreibodegas extends AppCompatActivity {
                                 xnombre=solicitaJSON.getJSONObject(i).getString("descripcio");
                                 xmedida=solicitaJSON.getJSONObject(i).getString("medidas");
                                 xstok=solicitaJSON.getJSONObject(i).getString("hm");
-                                imgver=solicitaJSON.getJSONObject(i).getString("pathima1");
+                                imgver=solicitaJSON.getJSONObject(i).getString("pathima2");
                                 xdiseno=solicitaJSON.getJSONObject(i).getString("diseno");
                                 xbodega1=solicitaJSON.getJSONObject(i).getString("bodega1");
                                 xbodega2=solicitaJSON.getJSONObject(i).getString("bodega2");
@@ -508,11 +501,11 @@ public class invpornombreibodegas extends AppCompatActivity {
                                 xprecio2=solicitaJSON.getJSONObject(i).getString("precio2");
                                 xprecio3=solicitaJSON.getJSONObject(i).getString("precio3");
 
-                                listaxclave.add(xclave.toString());
-                                listaxnombre.add(xnombre.toString());
-                                listaxmedidas.add(xmedida.toString());
-                                listaxstok.add(xstok.toString());
-                                listaximg.add(imgver.toString());
+                                listaxclave.add(xclave);
+                                listaxnombre.add(xnombre);
+                                listaxmedidas.add(xmedida);
+                                listaxstok.add(xstok);
+                                listaximg.add(imgver);
                                 listadiseno.add(xdiseno);
                                 listabodega1.add(xbodega1);
                                 listabodega2.add(xbodega2);
@@ -590,4 +583,8 @@ public class invpornombreibodegas extends AppCompatActivity {
         }
     }
 
+    private void HideKeyboard(View v) {
+        InputMethodManager teclado = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        teclado.hideSoftInputFromWindow(v.getWindowToken(), 0);
+    }
 }

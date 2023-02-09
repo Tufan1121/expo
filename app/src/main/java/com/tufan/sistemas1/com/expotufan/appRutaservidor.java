@@ -5,9 +5,9 @@ public class appRutaservidor {
     //*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*--*-*-*-*--*-*-*--*-*-*--*-*-*--*-*-*--*-*-*-*-*-*-*-*-*-*-*-*-
     //*-*-*-*-*-*-CONECXION DE LA BUENA MANO*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*--*-*-*-*-**-*-*-
 
-    //public static String IP = "http://tufanvpn.dyndns-ip.com:444/notificaciones";/// ruta de servidor---
-    public static String IP = "https://apps.tapetestufan.com/notificaciones" +
-            "";/// ruta de servidor---
+    public static String IP = "http://tufanvpn.dyndns-ip.com:444/notificaciones";/// ruta de servidor---
+    //public static String IP = "https://apps.tapetestufan.com/notificaciones" +
+            //"";/// ruta de servidor---
 
     //public static String IPIMG="http://app.tapetestufan.com/img/";///imagenes
     public static String IPIMG="http://tufanvpn.dyndns-ip.com:444/imagen/";///imagenes

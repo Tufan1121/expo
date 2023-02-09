@@ -43,8 +43,8 @@
 
     <ListView
         android:id="@+id/milista"
-        android:layout_width="377dp"
-        android:layout_height="362dp"
+        android:layout_width="388dp"
+        android:layout_height="572dp"
 
         android:layout_marginStart="8dp"
         android:layout_marginTop="2dp"
@@ -52,9 +52,10 @@
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline6"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintHorizontal_bias="0.578"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline7">
+        app:layout_constraintTop_toTopOf="@+id/guideline7"
+        app:layout_constraintVertical_bias="0.0">
 
     </ListView>
 
@@ -106,7 +107,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="485dp" />
+        app:layout_constraintGuide_begin="690dp" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline7"

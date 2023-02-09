@@ -41,6 +41,7 @@ import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -100,7 +101,7 @@ public class generaPedido2 extends AppCompatActivity implements View.OnClickList
     ObtenerWebService6 hiloconexion6;
     ObtenerWebService7 hiloconexion7;
     String entrega;
-
+    String _numeroped;
     //Variables para campos digitos
 
     EditText digi1;
@@ -124,10 +125,10 @@ public class generaPedido2 extends AppCompatActivity implements View.OnClickList
 
     int year;
     String kx;
-    private String []header2={"","","",""};
-    private String[]header={"Cantidad","Clave","Descripcion","Medidas","Precio"};
+    private final String []header2={"","","",""};
+    private final String[]header={"Cantidad","Clave","Descripcion","Medidas","Precio"};
     private String shorttext="hola";
-    private String longtext="WWW.TAPETESTUFAN.COM";
+    private final String longtext="WWW.TAPETESTUFAN.COM";
     private TemplatePDF templatePDF;
     int numeroLista;
     String claveconsulta="";
@@ -181,33 +182,33 @@ public class generaPedido2 extends AppCompatActivity implements View.OnClickList
         kx=listaConta.idclientesp;
 
 
-        metodopago=(Spinner)findViewById(R.id.spinnerGP_metodo);
-        metodopago2=(Spinner)findViewById(R.id.spinnerGP_metodo2);
-        metodopago3=(Spinner)findViewById(R.id.spinnerGP_metodo3);
+        metodopago= findViewById(R.id.spinnerGP_metodo);
+        metodopago2= findViewById(R.id.spinnerGP_metodo2);
+        metodopago3= findViewById(R.id.spinnerGP_metodo3);
 
-        lbpedido=(TextView)findViewById(R.id.lb_pedido);
-        lbtotalp=(TextView)findViewById(R.id.lb_totalp);
-        lbdebep=(TextView)findViewById(R.id.lb_debep);
-        lbanti=(TextView)findViewById(R.id.lb_anti);
-        lbmetodo=(TextView)findViewById(R.id.lb_metodo);
-        lbbase=(TextView)findViewById(R.id.lb_obse);
+        lbpedido= findViewById(R.id.lb_pedido);
+        lbtotalp= findViewById(R.id.lb_totalp);
+        lbdebep= findViewById(R.id.lb_debep);
+        lbanti= findViewById(R.id.lb_anti);
+        lbmetodo= findViewById(R.id.lb_metodo);
+        lbbase= findViewById(R.id.lb_obse);
 
-        observaciones=(EditText)findViewById(R.id.editText_observacion);
+        observaciones= findViewById(R.id.editText_observacion);
         //previo=(Button)findViewById(R.id.btn_GP_previo);
-        guardaP=(Button)findViewById(R.id.btn_GP_guardar);
-        comentarios=(EditText)findViewById(R.id.editText_observacion);
-        numeroPedido=(TextView)findViewById(R.id.txt_GP_numeropedido);
+        guardaP= findViewById(R.id.btn_GP_guardar);
+        comentarios= findViewById(R.id.editText_observacion);
+        numeroPedido= findViewById(R.id.txt_GP_numeropedido);
         //estatuspedido=(Spinner)findViewById(R.id.sp_estatuspedido);
-        totalpagarpedido=(MoneyTextView) findViewById(R.id.txt_totalpagarM);
-        debeporpagar=(MoneyTextView)findViewById(R.id.txtdebeporpagar);
-        cuanto_anticipo=(EditText)findViewById(R.id.txt_anticipo);
-        cuanto_anticipo2=(EditText)findViewById(R.id.txt_anticipo2);
-        cuanto_anticipo3=(EditText)findViewById(R.id.txt_anticipo3);
-        salirpedido2=(Button)findViewById(R.id.btnSalirpedido2);
-        msg2=(TextView)findViewById(R.id.txt_msg2);
-        pendiente=(CheckBox)findViewById(R.id.checkBox4pendiente);
-        entregado=(CheckBox)findViewById(R.id.checkBox_entregado);
-        pagartotalP=Integer.parseInt(listaConta.totalpagartodo.toString());
+        totalpagarpedido= findViewById(R.id.txt_totalpagarM);
+        debeporpagar= findViewById(R.id.txtdebeporpagar);
+        cuanto_anticipo= findViewById(R.id.txt_anticipo);
+        cuanto_anticipo2= findViewById(R.id.txt_anticipo2);
+        cuanto_anticipo3= findViewById(R.id.txt_anticipo3);
+        salirpedido2= findViewById(R.id.btnSalirpedido2);
+        msg2= findViewById(R.id.txt_msg2);
+        pendiente= findViewById(R.id.checkBox4pendiente);
+        entregado= findViewById(R.id.checkBox_entregado);
+        pagartotalP=Integer.parseInt(listaConta.totalpagartodo);
         cuanto_anticipo.setEnabled(false);
         cuanto_anticipo2.setEnabled(false);
         cuanto_anticipo3.setEnabled(false);
@@ -215,9 +216,9 @@ public class generaPedido2 extends AppCompatActivity implements View.OnClickList
 
 
         //Digitos
-        digi1=(EditText)findViewById(R.id.digi1);
-        digi2=(EditText)findViewById(R.id.digi2);
-        digi3=(EditText)findViewById(R.id.digi3);
+        digi1= findViewById(R.id.digi1);
+        digi2= findViewById(R.id.digi2);
+        digi3= findViewById(R.id.digi3);
         digi1.setVisibility(View.INVISIBLE);
         digi2.setVisibility(View.INVISIBLE);
         digi3.setVisibility(View.INVISIBLE);
@@ -246,7 +247,7 @@ public class generaPedido2 extends AppCompatActivity implements View.OnClickList
         pendiente.setChecked(true);
             for(int i=0;i<numeroLista;i++){
                     //aqui hacemos consulta de los tapetes que van a ir en el pedido
-                    claveconsulta=lista.get(i).toString();
+                    claveconsulta= lista.get(i);
                     //String claveconsulta=clavetapete.getText().toString();
                     hiloconexion2 = new ObtenerWebService();
                     String cadenallamada2 = GET_BY_ID + "?clave=" + claveconsulta;
@@ -577,33 +578,7 @@ public class generaPedido2 extends AppCompatActivity implements View.OnClickList
 
                             while(i<numeroLista){
 
-                                //int update=Integer.parseInt( lista_stok.get(i))-Integer.parseInt(listaConta.listacont.get(i));
-                                //String actializastok=Integer.toString(update);
                                 String claveconsultaddd=lista.get(i);
-                                //hilo="hiloconecion"+Integer.toString(i);
-//                                ObtenerWebService8 hilo = new ObtenerWebService8();
-//                                hilo.execute(UPDATE,"4",claveconsultaddd,actializastok);
-
-                                //hilo.executeOnExecutor(UPDATE,"4",claveconsulta,actializastok)
-                                /*
-                                //aqui hacemos consulta de los tapetes que van a ir en el pedido
-                                claveconsulta=lista.get(i).toString();
-                                //String claveconsulta=clavetapete.getText().toString();
-
-                                hiloconexion2 = new ObtenerWebService();
-                                String cadenallamada2 = GET_BY_ID + "?clave=" + claveconsulta;
-                                hiloconexion2.execute(cadenallamada2,"2");
-
-                                stocksentero=Integer.parseInt(sttok);
-*/
-                                /*if (stocksentero==0){
-                                    //NO TE VA A REGISTRAR MANO DE LOS MANOS
-                                }else{*/
-                                    //SI HAY ESXISTENCIAS LO VA A INSERTAR EN BASE DE DATOS DETALLE
-                                    //CONSULTA DE ID PARA EL DETALLEPEDIDO AJA AJA *********************
-                                    //sacarconsecutivodedetallepedido();
-                                    //String pp=Integer.toString(numerodetallepedido);
-
                                 String claveinventa=lista.get(i);
                                 insertardetallepedido(i,claveinventa);
 
@@ -613,6 +588,7 @@ public class generaPedido2 extends AppCompatActivity implements View.OnClickList
                             }
                             //insert para agregar el detalle de los tapetes que se van a pasar
 
+                            //21.01.2022
                             enviopedidocorreo=appRutaservidor.IP+"/pedidoibodegas.php?pedido="+listaConta.pedidoverpdf;
                             envioWhatsApp="https://api.whatsapp.com/send?phone=52"+listaConta.WhatsApp+"&text=Hola,"+" este es tu pedido: "+appRutaservidor.IP+"/pedidoibodegas.php?pedido="+listaConta.pedidoverpdf+" Gracias por tu compra.";
                             enviawhatsapp(envioWhatsApp);
@@ -697,7 +673,7 @@ public class generaPedido2 extends AppCompatActivity implements View.OnClickList
     private void insertarpedido() {
 
         hiloconexion4 = new ObtenerWebService4();
-        String i=Integer.toString(numeropedido)+listaConta.idusuariotufan.toString();
+        String i= numeropedido + listaConta.idusuariotufan;
 
         maxpedidopasaadetalle=Integer.toString(numeropedido);
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
@@ -760,22 +736,26 @@ public class generaPedido2 extends AppCompatActivity implements View.OnClickList
         }
 //*-*-*-*-*-*-*-*--*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*--*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
 
-        //******************************************************
+        //******************************************************}
         listaConta.pedidoverpdf=numeroPedido.getText().toString();
         //String entregado=Integer.toString(entrega);
         //hiloconexion4.execute(INSERTPEDIDO,"3",i,kx,fechaComoCadena,metododepagod.toString(),metododepagod2.toString(),metododepagod3.toString(),observaciones.getText().toString(),listaConta.idusuariotufan.toString(),numeroPedido.getText().toString(),listaConta.id_expo.toString(),listaConta.estatusselect,cuanto_anticipo.getText().toString(),cuanto_anticipo2.getText().toString(),cuanto_anticipo3.getText().toString(),listaConta.totalpagartodo.toString(),entrega,_di1,_di2,_di3);   // Parámetros que recibe doInBackground
-        hiloconexion4.execute(INSERTPEDIDO,"3",i,kx,fechaComoCadena,metododepagod.toString(),metododepagod2.toString(),metododepagod3.toString(),observaciones.getText().toString(),listaConta.idusuariotufan.toString(),numeroPedido.getText().toString(),listaConta.id_expo.toString(),listaConta.estatusselect,cuanto_anticipo.getText().toString(),cuanto_anticipo2.getText().toString(),cuanto_anticipo3.getText().toString(),listaConta.totalpagartodo.toString(),entrega);   // Parámetros que recibe doInBackgroun
+
+
+        hiloconexion4.execute(INSERTPEDIDO,"3",i,kx,fechaComoCadena, metododepagod, metododepagod2, metododepagod3,observaciones.getText().toString(), listaConta.idusuariotufan,numeroPedido.getText().toString(), listaConta.id_expo,listaConta.estatusselect,cuanto_anticipo.getText().toString(),cuanto_anticipo2.getText().toString(),cuanto_anticipo3.getText().toString(), listaConta.totalpagartodo,entrega);   // Parámetros que recibe doInBackgroun
 
     }
 
     private void insertardetallepedido(int pordondeesta,String thisclave) {
 
+        _numeroped=(listaConta.encabrzadopedido+"-"+numeropedido+listaConta.idusuariotufan+"B");
         numerodetallepedido++;
         hiloconexion7 = new ObtenerWebService7();
-        String idetalle=Integer.toString(numerodetallepedido)+listaConta.idusuariotufan;
+        String idetalle= numerodetallepedido +listaConta.idusuariotufan;
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
         String fechaComoCadena = sdf.format(new Date());
-        hiloconexion7.execute(INSERTdetallePEDIDO,"3",idetalle,maxpedidopasaadetalle+listaConta.idusuariotufan,thisclave,listaConta.clavelarga.get(pordondeesta).toString(),listaConta.listacont.get(pordondeesta).toString(),listaConta.precioseleccionado.get(pordondeesta).toString(),listaConta.estatusselect);   // Parámetros que recibe doInBackground
+        //hiloconexion7.execute(INSERTdetallePEDIDO,"3",idetalle,maxpedidopasaadetalle+listaConta.idusuariotufan,thisclave, listaConta.clavelarga.get(pordondeesta), listaConta.listacont.get(pordondeesta), listaConta.precioseleccionado.get(pordondeesta),listaConta.estatusselect);   // Parámetros que recibe doInBackground
+        hiloconexion7.execute(INSERTdetallePEDIDO,"3",idetalle,maxpedidopasaadetalle+listaConta.idusuariotufan,thisclave, listaConta.clavelarga.get(pordondeesta), listaConta.listacont.get(pordondeesta), listaConta.precioseleccionado.get(pordondeesta),listaConta.estatusselect);   // Parámetros que recibe doInBackground
 
     }
 
@@ -822,7 +802,7 @@ public class generaPedido2 extends AppCompatActivity implements View.OnClickList
     }
     public void verpdf(View view){
 
-        if (observaciones.getText().toString().toString().equalsIgnoreCase("")){
+        if (observaciones.getText().toString().equalsIgnoreCase("")){
 
                     observaciones.requestFocus();
                     Toast.makeText(this,"Coloca las Observaciones del Pedido",Toast.LENGTH_LONG).show();
@@ -869,6 +849,7 @@ public class generaPedido2 extends AppCompatActivity implements View.OnClickList
 
             URL url = null; // Url de donde queremos obtener información
             String devuelve ="";
+
             String micadenadelista;
             if(params[1]=="1"){    // Consulta de todos LOS PEDIDOS
 
@@ -951,8 +932,8 @@ public class generaPedido2 extends AppCompatActivity implements View.OnClickList
 
             //numeroPedido.setText(listaConta.encabrzadopedido+"-"+numeropedido+"B"+listaConta.idusuariotufan);
 
-
             pedidoserie=numeroPedido.getText().toString();
+
         }
 
         @Override
@@ -1241,7 +1222,7 @@ public class generaPedido2 extends AppCompatActivity implements View.OnClickList
                     // Envio los parámetros post.
                     OutputStream os = urlConn.getOutputStream();
                     BufferedWriter writer = new BufferedWriter(
-                            new OutputStreamWriter(os, "UTF-8"));
+                            new OutputStreamWriter(os, StandardCharsets.UTF_8));
                     writer.write(jsonParam.toString());
                     writer.flush();
                     writer.close();
@@ -1267,7 +1248,10 @@ public class generaPedido2 extends AppCompatActivity implements View.OnClickList
                         String resultJSON = respuestaJSON.getString("estado");   // estado es el nombre del campo en el JSON
                         int generapedidoresul=Integer.parseInt(resultJSON);
                         if (generapedidoresul == 1) {      // hay un alumno que mostrar
-                            devuelve = "Pedido insertado correctamente";
+                            //devuelve = "Pedido insertado correctamente "+numeroPedido.getText().toString();
+                            //devuelve = devuelve2+numeroPedido.getText().toString();
+                            String devuelve2 ="http://tufanvpn.dyndns-ip.com:444/notificaciones/pedidoibodegas.php?pedido=";
+                            devuelve2 = devuelve2+numeroPedido.getText().toString();
 
                         } else if (generapedidoresul == 2) {
                             devuelve = "El Pedido no pudo insertarse";
@@ -1478,7 +1462,7 @@ public class generaPedido2 extends AppCompatActivity implements View.OnClickList
                     // Envio los parámetros post.
                     OutputStream os = urlConn.getOutputStream();
                     BufferedWriter writer = new BufferedWriter(
-                            new OutputStreamWriter(os, "UTF-8"));
+                            new OutputStreamWriter(os, StandardCharsets.UTF_8));
                     writer.write(jsonParam.toString());
                     writer.flush();
                     writer.close();
@@ -1504,7 +1488,7 @@ public class generaPedido2 extends AppCompatActivity implements View.OnClickList
                         String resultJSON = respuestaJSON.getString("estado");   // estado es el nombre del campo en el JSON
                         int generapedidoresul= Integer.parseInt(resultJSON);
                         if (generapedidoresul == 1) {      // hay un alumno que mostrar
-                            devuelvex = "Pedido insertado correctamente";
+                            devuelvex = "Pedido insertado correctamente 1";
 
                         } else if (generapedidoresul == 2) {
                             devuelvex = "El Pedido no pudo insertarse";
@@ -1547,7 +1531,7 @@ public class generaPedido2 extends AppCompatActivity implements View.OnClickList
                     // Envio los parámetros post.
                     OutputStream os = urlConn.getOutputStream();
                     BufferedWriter writer = new BufferedWriter(
-                            new OutputStreamWriter(os, "UTF-8"));
+                            new OutputStreamWriter(os, StandardCharsets.UTF_8));
                     writer.write(jsonParam.toString());
                     writer.flush();
                     writer.close();
@@ -1573,7 +1557,7 @@ public class generaPedido2 extends AppCompatActivity implements View.OnClickList
                         String resultJSON = respuestaJSON.getString("estado");   // estado es el nombre del campo en el JSON
                         int generapedidoresul= Integer.parseInt(resultJSON);
                         if (generapedidoresul == 1) {      // hay un alumno que mostrar
-                            devuelvex = "Alumno actualizado correctamente";
+                            devuelvex = "Alumno actualizado correctamente 2";
 
                         } else if (generapedidoresul == 2) {
                             devuelvex = "El alumno no pudo actualizarse";
@@ -1613,7 +1597,7 @@ public class generaPedido2 extends AppCompatActivity implements View.OnClickList
                     // Envio los parámetros post.
                     OutputStream os = urlConn.getOutputStream();
                     BufferedWriter writer = new BufferedWriter(
-                            new OutputStreamWriter(os, "UTF-8"));
+                            new OutputStreamWriter(os, StandardCharsets.UTF_8));
                     writer.write(jsonParam.toString());
                     writer.flush();
                     writer.close();
@@ -1737,7 +1721,7 @@ public class generaPedido2 extends AppCompatActivity implements View.OnClickList
                     // Envio los parámetros post.
                     OutputStream os = urlConn.getOutputStream();
                     BufferedWriter writer = new BufferedWriter(
-                            new OutputStreamWriter(os, "UTF-8"));
+                            new OutputStreamWriter(os, StandardCharsets.UTF_8));
                     writer.write(jsonParam.toString());
                     writer.flush();
                     writer.close();
@@ -1807,7 +1791,7 @@ public class generaPedido2 extends AppCompatActivity implements View.OnClickList
                     // Envio los parámetros post.
                     OutputStream os = urlConn.getOutputStream();
                     BufferedWriter writer = new BufferedWriter(
-                            new OutputStreamWriter(os, "UTF-8"));
+                            new OutputStreamWriter(os, StandardCharsets.UTF_8));
                     writer.write(jsonParam.toString());
                     writer.flush();
                     writer.close();
@@ -1902,9 +1886,9 @@ public class generaPedido2 extends AppCompatActivity implements View.OnClickList
         //      String sAsunto = xAsunto.getText().toString().trim();
         //      String sMensaje = xMensaje.getText().toString().trim();
 
-        String sCorreo = listaConta.correoxcliente.toString();
+        String sCorreo = listaConta.correoxcliente;
         String sAsunto = "Pedido Tapetestufan    su numero de orden es "+numeroPedido.getText().toString();
-        String sMensaje = valorenvio.toString();
+        String sMensaje = valorenvio;
 
         clsEnviaCorreo objCorreo = new clsEnviaCorreo(generaPedido2.this, sCorreo, sAsunto, sMensaje);
         objCorreo.execute();
@@ -1918,7 +1902,7 @@ public class generaPedido2 extends AppCompatActivity implements View.OnClickList
 
         String sCorreo = "expo@tapetestufan.com";
         String sAsunto = "Pedido realizado el numero de orden es: "+numeroPedido.getText().toString();
-        String sMensaje = valorenvio.toString();
+        String sMensaje = valorenvio;
 
         clsEnviaCorreo objCorreo = new clsEnviaCorreo(generaPedido2.this, sCorreo, sAsunto, sMensaje);
         objCorreo.execute();

@@ -40,6 +40,7 @@ import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -115,10 +116,10 @@ int x=0;
 
     int year;
     String kx;
-    private String []header2={"","","",""};
-    private String[]header={"Cantidad","Clave","Descripcion","Medidas","Precio"};
+    private final String []header2={"","","",""};
+    private final String[]header={"Cantidad","Clave","Descripcion","Medidas","Precio"};
     private String shorttext="hola";
-    private String longtext="WWW.TAPETESTUFAN.COM";
+    private final String longtext="WWW.TAPETESTUFAN.COM";
     private TemplatePDF templatePDF;
     int numeroLista;
     String claveconsulta="";
@@ -167,22 +168,22 @@ int x=0;
 
 
 
-        observaciones=(EditText)findViewById(R.id.editText_observacion);
+        observaciones= findViewById(R.id.editText_observacion);
         //previo=(Button)findViewById(R.id.btn_GP_previo);
-        guardaP=(Button)findViewById(R.id.btn_GP_guardar);
-        comentarios=(EditText)findViewById(R.id.editText_observacion);
-        numeroPedido=(TextView)findViewById(R.id.txt_GP_numeropedido);
+        guardaP= findViewById(R.id.btn_GP_guardar);
+        comentarios= findViewById(R.id.editText_observacion);
+        numeroPedido= findViewById(R.id.txt_GP_numeropedido);
         //estatuspedido=(Spinner)findViewById(R.id.sp_estatuspedido);
-        totalpagarpedido=(MoneyTextView) findViewById(R.id.txt_totalpagarM);
-        debeporpagar=(MoneyTextView)findViewById(R.id.txtdebeporpagar);
-        salircotiza=(Button)findViewById(R.id.btnSalircotiza);
-        pendiente=(CheckBox)findViewById(R.id.checkBox4pendiente);
-        entregado=(CheckBox)findViewById(R.id.checkBox_entregado);
-        pagartotalP=Integer.parseInt(listaConta.totalpagartodo.toString());
-        msg3=(TextView)findViewById(R.id.txt_msg3);
-        lbcotiza=(TextView)findViewById(R.id.lb_cotiza);
-        lbtotalp=(TextView)findViewById(R.id.lb_totalp);
-        lbobse=(TextView)findViewById(R.id.lb_obse);
+        totalpagarpedido= findViewById(R.id.txt_totalpagarM);
+        debeporpagar= findViewById(R.id.txtdebeporpagar);
+        salircotiza= findViewById(R.id.btnSalircotiza);
+        pendiente= findViewById(R.id.checkBox4pendiente);
+        entregado= findViewById(R.id.checkBox_entregado);
+        pagartotalP=Integer.parseInt(listaConta.totalpagartodo);
+        msg3= findViewById(R.id.txt_msg3);
+        lbcotiza= findViewById(R.id.lb_cotiza);
+        lbtotalp= findViewById(R.id.lb_totalp);
+        lbobse= findViewById(R.id.lb_obse);
 
         finaliza3=0;
         totalpagarpedido.setAmount(pagartotalP);
@@ -205,7 +206,7 @@ int x=0;
         numeroLista=lista.size();
             for(int i=0;i<numeroLista;i++){
                     //aqui hacemos consulta de los tapetes que van a ir en el pedido
-                    claveconsulta=lista.get(i).toString();
+                    claveconsulta= lista.get(i);
                     //String claveconsulta=clavetapete.getText().toString();
                     hiloconexion2 = new ObtenerWebService();
                     String cadenallamada2 = GET_BY_ID + "?clave=" + claveconsulta;
@@ -271,8 +272,8 @@ protected void onRestart() {
 
                             enviopedidocorreo=appRutaservidor.IP+"/pedidoibodegas.php?pedido="+listaConta.pedidoverpdf;
 
-                            envioWhatsApp="https://api.whatsapp.com/send?phone=52"+listaConta.WhatsApp+"&text=Hola,"+" este es tu cotización : "+appRutaservidor.IP+"/pedido.php?pedido="+listaConta.pedidoverpdf + "Te recuerdo que tiene vigencia solo hasta el final de la Expo.";
-                            enviawhatsapp(envioWhatsApp);
+                            //envioWhatsApp="https://api.whatsapp.com/send?phone=52"+listaConta.WhatsApp+"&text=Hola,"+" este es tu cotización : "+appRutaservidor.IP+"/pedido.php?pedido="+listaConta.pedidoverpdf + "Te recuerdo que tiene vigencia solo hasta el final de la Expo.";
+                            //enviawhatsapp(envioWhatsApp);
 
                          //EnviarCorreo(enviopedidocorreo);
                          // EnviarCorreoUser(enviopedidocorreo);
@@ -333,7 +334,7 @@ protected void onRestart() {
     private void insertarpedido() {
 
         hiloconexion4 = new ObtenerWebService4();
-        String i=Integer.toString(numeropedido)+listaConta.idusuariotufan.toString();
+        String i= numeropedido + listaConta.idusuariotufan;
         maxpedidopasaadetalle=Integer.toString(numeropedido);
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
         String fechaComoCadena = sdf.format(new Date());
@@ -348,7 +349,7 @@ protected void onRestart() {
         listaConta.pedidoverpdf=numeroPedido.getText().toString();
         //String entregado=Integer.toString(entrega);
 
-        hiloconexion4.execute(INSERTPEDIDO,"3",i,kx,fechaComoCadena,metododepagod.toString(),metododepagod2.toString(),metododepagod3.toString(),observaciones.getText().toString(),listaConta.idusuariotufan.toString(),numeroPedido.getText().toString(),listaConta.id_expo.toString(),listaConta.estatusselect,"0","0","0",listaConta.totalpagartodo.toString(),"0");   // Parámetros que recibe doInBackground
+        hiloconexion4.execute(INSERTPEDIDO,"3",i,kx,fechaComoCadena, metododepagod, metododepagod2, metododepagod3,observaciones.getText().toString(), listaConta.idusuariotufan,numeroPedido.getText().toString(), listaConta.id_expo,listaConta.estatusselect,"0","0","0", listaConta.totalpagartodo,"0");   // Parámetros que recibe doInBackground
 
 
     }
@@ -357,10 +358,10 @@ protected void onRestart() {
 
         numerodetallepedido++;
         hiloconexion7 = new ObtenerWebService7();
-        String idetalle=Integer.toString(numerodetallepedido)+listaConta.idusuariotufan;
+        String idetalle= numerodetallepedido +listaConta.idusuariotufan;
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
         String fechaComoCadena = sdf.format(new Date());
-        hiloconexion7.execute(INSERTdetallePEDIDO,"3",idetalle,maxpedidopasaadetalle+listaConta.idusuariotufan,thisclave,listaConta.clavelarga.get(pordondeesta).toString(),listaConta.listacont.get(pordondeesta).toString(),listaConta.precioseleccionado.get(pordondeesta).toString(),listaConta.estatusselect);   // Parámetros que recibe doInBackground
+        hiloconexion7.execute(INSERTdetallePEDIDO,"3",idetalle,maxpedidopasaadetalle+listaConta.idusuariotufan,thisclave, listaConta.clavelarga.get(pordondeesta), listaConta.listacont.get(pordondeesta), listaConta.precioseleccionado.get(pordondeesta),listaConta.estatusselect);   // Parámetros que recibe doInBackground
 
     }
 
@@ -407,7 +408,7 @@ protected void onRestart() {
     }
     public void verpdf(View view){
 
-        if (observaciones.getText().toString().toString().equalsIgnoreCase("")){
+        if (observaciones.getText().toString().equalsIgnoreCase("")){
 
                     observaciones.requestFocus();
                     Toast.makeText(this,"Coloca las Observaciones del Pedido",Toast.LENGTH_LONG).show();
@@ -821,7 +822,7 @@ protected void onRestart() {
                     // Envio los parámetros post.
                     OutputStream os = urlConn.getOutputStream();
                     BufferedWriter writer = new BufferedWriter(
-                            new OutputStreamWriter(os, "UTF-8"));
+                            new OutputStreamWriter(os, StandardCharsets.UTF_8));
                     writer.write(jsonParam.toString());
                     writer.flush();
                     writer.close();
@@ -1058,7 +1059,7 @@ protected void onRestart() {
                     // Envio los parámetros post.
                     OutputStream os = urlConn.getOutputStream();
                     BufferedWriter writer = new BufferedWriter(
-                            new OutputStreamWriter(os, "UTF-8"));
+                            new OutputStreamWriter(os, StandardCharsets.UTF_8));
                     writer.write(jsonParam.toString());
                     writer.flush();
                     writer.close();
@@ -1127,7 +1128,7 @@ protected void onRestart() {
                     // Envio los parámetros post.
                     OutputStream os = urlConn.getOutputStream();
                     BufferedWriter writer = new BufferedWriter(
-                            new OutputStreamWriter(os, "UTF-8"));
+                            new OutputStreamWriter(os, StandardCharsets.UTF_8));
                     writer.write(jsonParam.toString());
                     writer.flush();
                     writer.close();
@@ -1193,7 +1194,7 @@ protected void onRestart() {
                     // Envio los parámetros post.
                     OutputStream os = urlConn.getOutputStream();
                     BufferedWriter writer = new BufferedWriter(
-                            new OutputStreamWriter(os, "UTF-8"));
+                            new OutputStreamWriter(os, StandardCharsets.UTF_8));
                     writer.write(jsonParam.toString());
                     writer.flush();
                     writer.close();
@@ -1317,7 +1318,7 @@ protected void onRestart() {
                     // Envio los parámetros post.
                     OutputStream os = urlConn.getOutputStream();
                     BufferedWriter writer = new BufferedWriter(
-                            new OutputStreamWriter(os, "UTF-8"));
+                            new OutputStreamWriter(os, StandardCharsets.UTF_8));
                     writer.write(jsonParam.toString());
                     writer.flush();
                     writer.close();
@@ -1387,7 +1388,7 @@ protected void onRestart() {
                     // Envio los parámetros post.
                     OutputStream os = urlConn.getOutputStream();
                     BufferedWriter writer = new BufferedWriter(
-                            new OutputStreamWriter(os, "UTF-8"));
+                            new OutputStreamWriter(os, StandardCharsets.UTF_8));
                     writer.write(jsonParam.toString());
                     writer.flush();
                     writer.close();
@@ -1483,9 +1484,9 @@ protected void onRestart() {
         //      String sAsunto = xAsunto.getText().toString().trim();
         //      String sMensaje = xMensaje.getText().toString().trim();
 
-        String sCorreo = listaConta.correoxcliente.toString();
+        String sCorreo = listaConta.correoxcliente;
         String sAsunto = "Pedido Tapetestufan    su numero de orden es "+numeroPedido.getText().toString();
-        String sMensaje = valorenvio.toString();
+        String sMensaje = valorenvio;
 
         clsEnviaCorreo objCorreo = new clsEnviaCorreo(generaPedido3.this, sCorreo, sAsunto, sMensaje);
         objCorreo.execute();
@@ -1499,7 +1500,7 @@ protected void onRestart() {
 
         String sCorreo = "expo@tapetestufan.com";
         String sAsunto = "Pedido realizado el numero de orden es: "+numeroPedido.getText().toString();
-        String sMensaje = valorenvio.toString();
+        String sMensaje = valorenvio;
 
         clsEnviaCorreo objCorreo = new clsEnviaCorreo(generaPedido3.this, sCorreo, sAsunto, sMensaje);
         objCorreo.execute();

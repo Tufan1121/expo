@@ -43,8 +43,8 @@
 
     <ListView
         android:id="@+id/milista"
-        android:layout_width="377dp"
-        android:layout_height="362dp"
+        android:layout_width="392dp"
+        android:layout_height="551dp"
 
         android:layout_marginStart="8dp"
         android:layout_marginTop="2dp"
@@ -106,7 +106,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="485dp" />
+        app:layout_constraintGuide_begin="694dp" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline7"

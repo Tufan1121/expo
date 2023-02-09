@@ -39,20 +39,20 @@ import static com.tufan.sistemas1.com.expotufan.R.mipmap.logot;
 import static com.tufan.sistemas1.com.expotufan.generaPedido.pedidoserie;
 
 public class TemplatePDF extends BitmapFactory {
-    private Context context;
+    private final Context context;
     public static File pdffile;
     private Document document;
     private PdfWriter pdfWriter;
     private Paragraph paragraph;
     //private MarginLayoutParamsCompat
-    private Font fTitlex= new Font(Font.FontFamily.TIMES_ROMAN,16,Font.BOLD);
-    private Font fSubTitlex= new Font(Font.FontFamily.TIMES_ROMAN,12,Font.BOLD);
-    private Font fTextx= new Font(Font.FontFamily.TIMES_ROMAN,8,Font.BOLD);
+    private final Font fTitlex= new Font(Font.FontFamily.TIMES_ROMAN,16,Font.BOLD);
+    private final Font fSubTitlex= new Font(Font.FontFamily.TIMES_ROMAN,12,Font.BOLD);
+    private final Font fTextx= new Font(Font.FontFamily.TIMES_ROMAN,8,Font.BOLD);
 
-    private Font fTitle= new Font(Font.FontFamily.TIMES_ROMAN,11,Font.ITALIC);
-    private Font fSubTitle= new Font(Font.FontFamily.TIMES_ROMAN,11,Font.BOLD);
-    private Font fText= new Font(Font.FontFamily.TIMES_ROMAN,11,Font.BOLD);
-    private Font fHighText= new Font(Font.FontFamily.TIMES_ROMAN,11,Font.BOLD, BaseColor.RED);
+    private final Font fTitle= new Font(Font.FontFamily.TIMES_ROMAN,11,Font.ITALIC);
+    private final Font fSubTitle= new Font(Font.FontFamily.TIMES_ROMAN,11,Font.BOLD);
+    private final Font fText= new Font(Font.FontFamily.TIMES_ROMAN,11,Font.BOLD);
+    private final Font fHighText= new Font(Font.FontFamily.TIMES_ROMAN,11,Font.BOLD, BaseColor.RED);
 
     public TemplatePDF(Context context) {
         this.context=context;
