@@ -236,7 +236,7 @@ ArrayList<String> pruebaclave= new ArrayList<String>();
 
                     */
                     hiloconexion2clave = new solo_precios.ObtenerWebServiceclave();
-                    String cadenallamada2clave = GET_BY_IDclave + "?tabla=spock"+almacen1+"&clave=" + claveendatalle;
+                        String cadenallamada2clave = GET_BY_IDclave + "?tabla=spock"+almacen1+"&clave=" + claveendatalle;
                     hiloconexion2clave.execute(cadenallamada2clave,"2");
                     progress.dismiss();
                 }
@@ -399,7 +399,7 @@ ArrayList<String> pruebaclave= new ArrayList<String>();
                 String claveendatalle=clavetapete.getText().toString();
 
                 if(claveendatalle.length()<15){
-                    Toast.makeText(this,"escanear corta",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this,"Escanear Clave Corta",Toast.LENGTH_SHORT).show();
 
                     pruebalista.clear();
                     pruebaclave.clear();
@@ -418,6 +418,7 @@ ArrayList<String> pruebaclave= new ArrayList<String>();
                     hiloconexion2clave = new solo_precios.ObtenerWebServiceclave();
                     String cadenallamada2clave = GET_BY_IDclave + "?tabla=spock"+almacen1+"&clave=" + claveendatalle;
                     //String cadenallamada2clave = GET_BY_IDclave + "?clave=" + claveendatalle.toString();
+                    //String cadenallamada2clave = GET_BY_ID + "?clave=" + claveendatalle;
                     hiloconexion2clave.execute(cadenallamada2clave,"2");
                     progress.dismiss();
 
@@ -883,6 +884,8 @@ ArrayList<String> pruebaclave= new ArrayList<String>();
 
             return null;
         }
+
+
 
         @Override
         protected void onCancelled(String s) {

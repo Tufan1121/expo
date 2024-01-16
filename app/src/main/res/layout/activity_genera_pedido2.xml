@@ -8,25 +8,6 @@
     tools:context=".generaPedido2">
 
 
-    <TextView
-        android:id="@+id/txt_msg2"
-        android:layout_width="0dp"
-        android:layout_height="26dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:fontFamily="@font/oswald_light"
-        android:text="Pedido generado correctamente"
-        android:textAlignment="center"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="18sp"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <Spinner
         android:id="@+id/spinnerGP_metodo3"
         android:layout_width="161dp"
@@ -132,54 +113,25 @@
 
     <EditText
         android:id="@+id/editText_observacion"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="256dp"
+        android:layout_width="373dp"
+        android:layout_height="184dp"
+        android:layout_marginTop="232dp"
         android:ems="10"
+        android:hint="Observaciones"
         android:imeOptions="actionDone"
         android:inputType="textLongMessage"
-        app:layout_constraintHorizontal_bias="0.0"
+        android:maxLength="255"
+        app:layout_constraintHorizontal_bias="0.421"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btn_GP_guardar"
-        android:layout_width="140dp"
-        android:layout_height="133dp"
-        android:layout_marginTop="380dp"
-        android:background="@mipmap/firmamesadetrabajo"
-        android:fontFamily="@font/oswald_light"
-        android:gravity="top|center_horizontal"
-        android:text="Guardar"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintHorizontal_bias="0.098"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/lb_obse"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="236dp"
-        android:layout_marginEnd="8dp"
-        android:text="Observaciones"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.512"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/lb_anti"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="192dp"
-        android:layout_marginTop="80dp"
-        android:text="Anticipo o Pago"
+        android:layout_marginStart="248dp"
+        android:layout_marginTop="72dp"
+        android:text="Monto Cobrado "
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -261,21 +213,72 @@
         android:layout_width="108dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="320dp"
+        android:layout_marginTop="432dp"
         android:layout_marginEnd="8dp"
         android:fontFamily="@font/oswald_light"
         android:text="Entregado"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.187"
+        app:layout_constraintHorizontal_bias="0.177"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_GP_guardar"
+        android:layout_width="140dp"
+        android:layout_height="133dp"
+        android:layout_marginTop="492dp"
+        android:background="@mipmap/firmamesadetrabajo"
+        android:fontFamily="@font/oswald_light"
+        android:gravity="top|center_horizontal"
+        android:text="Guardar"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintHorizontal_bias="0.088"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnSalirpedido2"
+        android:layout_width="137dp"
+        android:layout_height="121dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="504dp"
+        android:layout_marginEnd="8dp"
+        android:background="@mipmap/closex"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.953"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_msg2"
+        android:layout_width="0dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/oswald_light"
+        android:text="Pedido generado correctamente"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.663" />
 
     <CheckBox
         android:id="@+id/checkBox4pendiente"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="220dp"
-        android:layout_marginTop="320dp"
+        android:layout_marginTop="432dp"
         android:layout_marginEnd="8dp"
         android:fontFamily="@font/oswald_light"
         android:text="pendiente fin de expo"
@@ -305,19 +308,6 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="179dp" />
 
-    <Button
-        android:id="@+id/btnSalirpedido2"
-        android:layout_width="137dp"
-        android:layout_height="121dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="392dp"
-        android:layout_marginEnd="8dp"
-        android:background="@mipmap/closex"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.965"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <EditText
         android:id="@+id/digi1"
         android:layout_width="78dp"
@@ -325,10 +315,8 @@
         android:layout_marginStart="6dp"
         android:layout_marginTop="2dp"
         android:layout_marginEnd="9dp"
-        android:layout_marginBottom="96dp"
         android:hint="4 Digitos"
         android:numeric="integer"
-        app:layout_constraintBottom_toTopOf="@+id/lb_obse"
         app:layout_constraintEnd_toStartOf="@+id/txt_anticipo2"
         app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toEndOf="@+id/spinnerGP_metodo2"
@@ -340,13 +328,10 @@
         android:layout_height="39dp"
         android:layout_marginStart="4dp"
         android:layout_marginEnd="6dp"
-        android:layout_marginBottom="55dp"
         android:hint="4 Digitos"
-        app:layout_constraintBottom_toTopOf="@+id/lb_obse"
         app:layout_constraintEnd_toStartOf="@+id/txt_anticipo2"
         app:layout_constraintStart_toEndOf="@+id/spinnerGP_metodo3"
-        app:layout_constraintTop_toBottomOf="@+id/digi1"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/digi1" />
 
     <EditText
         android:id="@+id/digi3"
@@ -354,9 +339,7 @@
         android:layout_height="39dp"
         android:layout_marginStart="4dp"
         android:layout_marginEnd="6dp"
-        android:layout_marginBottom="16dp"
         android:hint="4 Digitos"
-        app:layout_constraintBottom_toTopOf="@+id/lb_obse"
         app:layout_constraintEnd_toStartOf="@+id/txt_anticipo2"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/spinnerGP_metodo3"

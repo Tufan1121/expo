@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
@@ -7,7 +6,7 @@
         <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/activity_a_pedido2ibodegascotiza.xml" value="0.3625" />
         <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/activity_a_pedido3ibodegas.xml" value="0.3582427536231884" />
         <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/activity_busquedaglobal.xml" value="0.25" />
-        <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/activity_clientesnuevos.xml" value="0.25" />
+        <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/activity_clientesnuevos.xml" value="0.33" />
         <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/activity_cotiza.xml" value="0.2911458333333333" />
         <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/activity_entrega_estatus_pedido.xml" value="0.2911458333333333" />
         <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/activity_entrega_estatus_pedido_anticipo.xml" value="0.2911458333333333" />
@@ -15,7 +14,9 @@
         <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/activity_entrega_estatus_pedido_tienda.xml" value="0.2911458333333333" />
         <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/activity_estatus_pedidos.xml" value="0.2911458333333333" />
         <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/activity_genera_cotizacion.xml" value="0.18645833333333334" />
-        <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/activity_genera_pedido.xml" value="0.3625" />
+        <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/activity_genera_pedido.xml" value="0.25" />
+        <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/activity_genera_pedido2.xml" value="0.33" />
+        <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/activity_genera_pedido3.xml" value="0.24635416666666668" />
         <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/activity_img.xml" value="0.67" />
         <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/activity_inventario.xml" value="0.3582427536231884" />
         <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/activity_invpornombre.xml" value="0.3582427536231884" />
@@ -26,6 +27,7 @@
         <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/activity_listatapetescotiza.xml" value="0.2911458333333333" />
         <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/activity_login.xml" value="0.3333333333333333" />
         <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/activity_main.xml" value="0.3333333333333333" />
+        <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/activity_main3.xml" value="0.24635416666666668" />
         <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/activity_pedido_update.xml" value="0.32916666666666666" />
         <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/activity_pedidoestatusanticipo.xml" value="0.32916666666666666" />
         <entry key="..\:/Stuff/ExpoTufan/app/src/main/res/layout/activity_pedidoestatusexpo.xml" value="0.2911458333333333" />
@@ -59,7 +61,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="jbr-17" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

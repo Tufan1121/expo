@@ -25,11 +25,11 @@
         android:layout_height="wrap_content"
         android:text="Datos de Contacto"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.199"
+        app:layout_constraintHorizontal_bias="0.172"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.128" />
+        app:layout_constraintVertical_bias="0.101" />
 
     <TextView
         android:id="@+id/textView17"
@@ -37,11 +37,11 @@
         android:layout_height="wrap_content"
         android:text="Datos de Facturación"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.206"
+        app:layout_constraintHorizontal_bias="0.189"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.556" />
+        app:layout_constraintVertical_bias="0.554" />
 
     <EditText
         android:id="@+id/txt_nombre_user"
@@ -51,24 +51,26 @@
         android:hint="Nombre(s)"
         android:inputType="textCapWords|textAutoCorrect"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.559"
+        app:layout_constraintHorizontal_bias="0.548"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.16" />
+        app:layout_constraintVertical_bias="0.133" />
 
     <EditText
         android:id="@+id/txt_apellido"
         android:layout_width="318dp"
         android:layout_height="47dp"
+        android:layout_marginStart="52dp"
         android:layout_marginRight="40dp"
         android:ems="10"
         android:hint="Apellido(s)"
         android:inputType="textCapSentences|textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.223" />
+        app:layout_constraintVertical_bias="0.201" />
 
     <EditText
         android:id="@+id/txt_rfc"
@@ -175,17 +177,23 @@
 
     <EditText
         android:id="@+id/txt_direccion2"
-        android:layout_width="322dp"
-        android:layout_height="81dp"
+        android:layout_width="327dp"
+        android:layout_height="89dp"
         android:ems="10"
         android:hint="Direccion"
-        android:inputType="textCapSentences|textPersonName"
+        android:inputType="textLongMessage"
+        android:maxLength="255"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.58"
+        app:layout_constraintHorizontal_bias="0.607"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.308" />
+        app:layout_constraintVertical_bias="0.288"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMinTextSize="12sp"
+        android:autoSizeMaxTextSize="100sp"
+        android:autoSizeStepGranularity="2sp"
+        />
 
     <EditText
         android:id="@+id/txt_telefono"
@@ -195,7 +203,7 @@
         android:hint="WhatsApp"
         android:inputType="phone"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.205"
+        app:layout_constraintHorizontal_bias="0.198"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
