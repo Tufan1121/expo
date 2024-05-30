@@ -126,51 +126,48 @@ String requierefac="";
                     Snackbar.make(v,"Coloca el Apellido del Cliente",Snackbar.LENGTH_LONG).setAction("Accion",null).show();
 
                 }else
-                if (direccion.getText().toString().trim().equalsIgnoreCase("")){
-                    direccion.requestFocus();
-                    Snackbar.make(v,"Coloca la Direcion del Cliente",Snackbar.LENGTH_LONG).setAction("Accion",null).show();
-
-                }else
+                //if (direccion.getText().toString().trim().equalsIgnoreCase("")){
+                //    direccion.requestFocus();
+                //    Snackbar.make(v,"Coloca la Direcion del Cliente",Snackbar.LENGTH_LONG).setAction("Accion",null).show();
+                //}else
                 if(telefono.getText().toString().trim().equalsIgnoreCase("")){
                     telefono.requestFocus();
                     Snackbar.make(v,"Coloca el Telefono del Cliente",Snackbar.LENGTH_LONG).setAction("Accion",null).show();
 
-                }else
-                if(correo.getText().toString().trim().equalsIgnoreCase("")){
-                    correo.requestFocus();
-                    Snackbar.make(v,"Coloca el Correo del Cliente",Snackbar.LENGTH_LONG).setAction("Accion",null).show();
+                //}else
+                //if(correo.getText().toString().trim().equalsIgnoreCase("")){
+                //    correo.requestFocus();
+                //    Snackbar.make(v,"Coloca el Correo del Cliente",Snackbar.LENGTH_LONG).setAction("Accion",null).show();
 
-                }else if(!validarimail(correo.getText())){
-                    correo.requestFocus();
-                    Snackbar.make(v,"Correo del Cliente no Válido",Snackbar.LENGTH_LONG).setAction("Accion",null).show();
+                //}else if(!validarimail(correo.getText())){
+                //    correo.requestFocus();
+                //    Snackbar.make(v,"Correo del Cliente no Válido",Snackbar.LENGTH_LONG).setAction("Accion",null).show();
+                //}else
 
+                //if (rfc.getText().toString().trim().equalsIgnoreCase("")){
+                //    rfc.requestFocus();
+                //    Snackbar.make(v,"Coloca RFC del Cliente",Snackbar.LENGTH_LONG).setAction("Accion",null).show();
 
-                }else
+                //}else{
+                //    if (refac.isChecked()){
+                //        if (regimen.getSelectedItem().toString().trim().equalsIgnoreCase("")){
+                //            regimen.requestFocus();
+                //           Snackbar.make(v,"Falta Regimen Fiscal",Snackbar.LENGTH_LONG).setAction("Accion",null).show();
+                    //        }
+                    //        if (usoCFDIvar.getSelectedItem().toString().trim().equalsIgnoreCase("")){
+                    //        usoCFDIvar.requestFocus();
+                //        Snackbar.make(v,"Falta Uso CFDI",Snackbar.LENGTH_LONG).setAction("Accion",null).show();
+                    //        }
 
-                if (rfc.getText().toString().trim().equalsIgnoreCase("")){
-                    rfc.requestFocus();
-                    Snackbar.make(v,"Coloca RFC del Cliente",Snackbar.LENGTH_LONG).setAction("Accion",null).show();
-
-                }else{
-                    if (refac.isChecked()){
-                        if (regimen.getSelectedItem().toString().trim().equalsIgnoreCase("")){
-                            regimen.requestFocus();
-                            Snackbar.make(v,"Falta Regimen Fiscal",Snackbar.LENGTH_LONG).setAction("Accion",null).show();
-                        }
-                        if (usoCFDIvar.getSelectedItem().toString().trim().equalsIgnoreCase("")){
-                            usoCFDIvar.requestFocus();
-                            Snackbar.make(v,"Falta Uso CFDI",Snackbar.LENGTH_LONG).setAction("Accion",null).show();
-                        }
-
-                        if (razon.getText().toString().trim().equalsIgnoreCase("")){
-                            razon.requestFocus();
-                            Snackbar.make(v,"Falta Razon Social Sin Regimen Capital (Nombre SAT)",Snackbar.LENGTH_LONG).setAction("Accion",null).show();
-                        }
-                        if (cp.getText().toString().trim().equalsIgnoreCase("")){
-                            cp.requestFocus();
-                            Snackbar.make(v,"Falta Codigo Postal",Snackbar.LENGTH_LONG).setAction("Accion",null).show();
-                        }
-                    }
+                    //        if (razon.getText().toString().trim().equalsIgnoreCase("")){
+                    //        razon.requestFocus();
+                //        Snackbar.make(v,"Falta Razon Social Sin Regimen Capital (Nombre SAT)",Snackbar.LENGTH_LONG).setAction("Accion",null).show();
+                    //        }
+                    //    if (cp.getText().toString().trim().equalsIgnoreCase("")){
+                    //        cp.requestFocus();
+                //       Snackbar.make(v,"Falta Codigo Postal",Snackbar.LENGTH_LONG).setAction("Accion",null).show();
+                //       }
+                    //   }
                     insertBase();
 
                     finish();
